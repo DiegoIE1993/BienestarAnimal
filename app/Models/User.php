@@ -38,7 +38,8 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function role(){
-        return $this-> belongsTo('App\Role');
+    
+    public function roles(){
+        return $this-> belongsToMany('App\Models\Role')->withTimesTamps();
     }
 }
