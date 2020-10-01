@@ -6,12 +6,17 @@ use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
+use Spatie\Permission\Models\Permission;
+
 
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
 
+    use HasRoles;
     /**
+    * 
      * The attributes that are mass assignable.
      *
      * @var array
@@ -29,6 +34,12 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function setPasswordAttibute($value)
+    {
+            if( !empty($value)){
+                $this->attributes['password'] = bcrypt($value);
+            }
+    }
     /**
      * The attributes that should be cast to native types.
      *
@@ -39,7 +50,5 @@ class User extends Authenticatable
     ];
 
     
-    public function roles(){
-        return $this-> belongsToMany('App\Models\Role')->withTimesTamps();
-    }
+    
 }

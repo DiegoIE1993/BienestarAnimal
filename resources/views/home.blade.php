@@ -1,4 +1,5 @@
-@extends('adminlte::page')
+@extends('layouts.app')
+
 
 @section('title', 'Dashboard')
 
@@ -7,7 +8,7 @@
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
+    <p>Bienvenido al panel principal.</p>
 @stop
 
 @section('css')

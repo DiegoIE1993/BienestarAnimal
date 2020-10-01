@@ -1,13 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
-use Spatie\Permission\Models\Role;
-use Spatie\Permission\Models\Permission;
 
 use Illuminate\Http\Request;
+use App\Models\User;
+use Spatie\Permission\Models\Role;
 
-
-class AdminUsersController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,8 @@ class AdminUsersController extends Controller
      */
     public function index()
     {
-        return view('admin.users.index');
+        $users = User::all();
+        return view('usuarios.index', compact('users'));
     }
 
     /**
@@ -26,7 +26,9 @@ class AdminUsersController extends Controller
      */
     public function create()
     {
-        //
+        $roles = Role::all()->pluck('name', 'id');
+
+        return view('usuarios.create', compact('roles'));
     }
 
     /**
@@ -37,7 +39,17 @@ class AdminUsersController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
+        $usuario = new User;
+        $usuario->name = $request->name;
+        $usuario->email = $request->email;
+        $usuario->password = bcrypt($request->password);
+
+        if ($usuario->save()){
+
+            $usuario->assignRole($request->rol);
+            return redirect('/usuarios');
+        }
     }
 
     /**
@@ -59,7 +71,11 @@ class AdminUsersController extends Controller
      */
     public function edit($id)
     {
-        //
+        $usuario = User::findOrFail($id);
+
+        $roles = Role::all()->pluck('name', 'id');
+
+        return view('usuarios.edit', compact('usuario', 'roles'));
     }
 
     /**
@@ -71,7 +87,23 @@ class AdminUsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $usuario = User::findOrFail($id);
+        $usuario->name =$request->name;
+        $usuario->email =$request->email;
+        
+        
+        if ($request->password != null){
+
+            $usuario->password = bcrypt($request->password);
+        }
+
+        $usuario->syncRoles($request->rol);
+
+        $usuario->save();
+
+        return redirect('/usuarios');
+
+
     }
 
     /**

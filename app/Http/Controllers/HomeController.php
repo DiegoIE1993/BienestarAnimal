@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,33 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $user = Auth::user();
+
+        $rol = $user->roles->implode('name',', ');
+
+        switch ($rol) {
+
+            case 'superAdmin':
+                $saludo = 'Bienvenido a super admin';
+                return view('home', compact('$saludo'));
+                break;
+
+            case 'moderador':
+                $saludo = 'Bienvenido moderador';
+                return view('home', compact('$saludo'));
+                break;
+            
+            case 'editor':
+                $saludo = 'Bienvenido editor';
+                return view('home', compact('$saludo'));
+                break;
+
+
+            default:
+                # code...
+                break;
+        }
+        
         return view('home');
     }
 }
