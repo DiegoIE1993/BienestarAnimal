@@ -28,29 +28,7 @@ class HomeController extends Controller
 
         $rol = $user->roles->implode('name',', ');
 
-        switch ($rol) {
-
-            case 'superAdmin':
-                $saludo = 'Bienvenido a super admin';
-                return view('home', compact('$saludo'));
-                break;
-
-            case 'moderador':
-                $saludo = 'Bienvenido moderador';
-                return view('home', compact('$saludo'));
-                break;
-            
-            case 'editor':
-                $saludo = 'Bienvenido editor';
-                return view('home', compact('$saludo'));
-                break;
-
-
-            default:
-                # code...
-                break;
-        }
-        
+               
         return view('home');
     }
 }

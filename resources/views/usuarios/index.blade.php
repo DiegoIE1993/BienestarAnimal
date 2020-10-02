@@ -26,7 +26,7 @@
                                         <td>{{$usuario->roles->implode('name',', ')}}</td>
                                         <td>
                                             <a href="{{ url('/usuarios/'.$usuario->id.'/edit')}}" class="btn btn-primary">Editar</a>
-                                            <a href="#" class="btn btn-danger">Eliminar</a>
+                                            @include('usuarios.delete', ['usuario' => $usuario])
                                             
                                         </td>
                                     </tr>
