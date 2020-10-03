@@ -1,9 +1,11 @@
 <?php
 
-use App\Http\Controllers\AdminUsersController;
+
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\NosotrosController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,3 +29,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Auth::routes();
 
 Route::resource('usuarios', UserController::class);
+
+Auth::routes();
+
+Route::resource('nosotros', NosotrosController::class);
