@@ -9,9 +9,7 @@ class Nosotros extends Model
 {
     use HasFactory;
 
-    
-    
     protected $fillable = [
-        'titulo', 'mision', 'vision', 'horarios'
+        'titulo', 'mision', 'vision', 'horario'
     ];
 }

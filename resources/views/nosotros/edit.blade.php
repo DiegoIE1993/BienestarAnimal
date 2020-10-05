@@ -9,6 +9,7 @@
                         Editar Informacion
                     </div>
                     <div class="card-body">
+                        
                         <form action="{{ route('nosotros.update', $nosotros->id)}}" method="post">
                             @csrf
                             @method('PUT')

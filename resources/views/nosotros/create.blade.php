@@ -10,7 +10,7 @@
                     </div>
                     <div class="card-body">
                         
-                        <form action="{{ url('nosotros')}}" method="post">
+                        <form action="{{ route('nosotros.store')}}" method="post" novalidate>
                             @csrf
                             <div class="form-group">
                                 <label for="titulo">Titulo</label>

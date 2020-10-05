@@ -16,8 +16,8 @@ class CreateNosotrosTable extends Migration
         Schema::create('nosotros', function (Blueprint $table) {
             $table->id();
             $table->string('titulo');
-            $table->longText('mision');
-            $table->longText('vision');
+            $table->Text('mision');
+            $table->Text('vision');
             $table->string('horario');
             $table->timestamps();
         });

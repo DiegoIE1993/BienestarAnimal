@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Nosotros;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Symfony\Contracts\Service\Attribute\Required;
 
 class NosotrosController extends Controller
 {
@@ -16,7 +17,7 @@ class NosotrosController extends Controller
     public function index()
     {
         $info = Nosotros::all();
-        return view('nosotros.index', compact('info'));
+        return view('nosotros.index') ->compact('nosotros');
     }
 
     /**
@@ -37,7 +38,12 @@ class NosotrosController extends Controller
      */
     public function store(Request $request)
     {
-        $data = request();
+        $data = request()->validate([
+            'titulo'=> 'Required',
+            'mision' => 'Required',
+            'vision' => 'Required',
+            'horario' => 'required'
+        ]);
 
         DB::table('nosotros')->insert([
             'titulo' => $data['titulo'],
@@ -46,7 +52,7 @@ class NosotrosController extends Controller
             'horario' => $data['horario'],
         ]);
 
-        return view('nosotros.index');
+        return view('/nosotros');
         
     }
 
