@@ -33,3 +33,7 @@ Route::resource('usuarios', UserController::class);
 Auth::routes();
 
 Route::resource('nosotros', NosotrosController::class);
+
+Auth::routes();
+
+Route::resource('registro_mascota', RegistrarMascotaController::class);

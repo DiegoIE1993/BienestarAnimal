@@ -17,7 +17,7 @@ class NosotrosController extends Controller
     public function index()
     {
         $info = Nosotros::all();
-        return view('nosotros.index') ->compact('nosotros');
+        return view('nosotros.index', compact('info'));
     }
 
     /**
@@ -52,7 +52,7 @@ class NosotrosController extends Controller
             'horario' => $data['horario'],
         ]);
 
-        return view('/nosotros');
+        return redirect('/nosotros');
         
     }
 
