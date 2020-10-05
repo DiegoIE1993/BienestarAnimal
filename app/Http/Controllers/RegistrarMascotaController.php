@@ -14,7 +14,8 @@ class RegistrarMascotaController extends Controller
      */
     public function index()
     {
-        //
+        $registro = RegistrarMascota::all();
+        return view('registrarmascota.index', compact('registrar'));
     }
 
     /**
@@ -24,7 +25,7 @@ class RegistrarMascotaController extends Controller
      */
     public function create()
     {
-        //
+        return view('registrarmascota.create');
     }
 
     /**

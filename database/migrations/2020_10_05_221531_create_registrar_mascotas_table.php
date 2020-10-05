@@ -13,7 +13,7 @@ class CreateRegistrarMascotasTable extends Migration
      */
     public function up()
     {
-        Schema::create('registrar_mascotas', function (Blueprint $table) {
+        Schema::create('registrarmascota', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateRegistrarMascotasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('registrar_mascotas');
+        Schema::dropIfExists('registrarmascota');
     }
 }

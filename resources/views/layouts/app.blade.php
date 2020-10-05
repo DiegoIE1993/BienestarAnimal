@@ -56,7 +56,7 @@
                             <a href="{{ url('nosotros') }}" class="nav-link">Nosotros</a>
                         </li>
                         <li>
-                            <a href="{{ url('registrar_mascota') }}" class="nav-link">Registrar Mascota</a>
+                            <a href="{{ url('registrarmascota') }}" class="nav-link">Registrar Mascota</a>
                         </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
