@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\NosotrosController;
+use App\Http\Controllers\RegistrarMascotaController;
 
 /*
 |--------------------------------------------------------------------------
