@@ -6,6 +6,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\NosotrosController;
+use App\Http\Controllers\RegistrarMascotaController;
+use App\Http\Controllers\EspeciesController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,3 +39,8 @@ Route::resource('nosotros', NosotrosController::class);
 Auth::routes();
 
 Route::resource('registrarmascota', RegistrarMascotaController::class);
+
+Auth::routes();
+
+Route::resource('especies', EspeciesController::class);
+
