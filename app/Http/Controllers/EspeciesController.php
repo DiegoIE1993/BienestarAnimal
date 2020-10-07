@@ -16,7 +16,8 @@ class EspeciesController extends Controller
     {
         $species = Especies::all();
         return view ('especies.index', compact('species'));
-    }
+        //return view('especies.')
+     }
 
     /**
      * Show the form for creating a new resource.
