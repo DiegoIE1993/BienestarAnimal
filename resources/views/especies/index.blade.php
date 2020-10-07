@@ -1,9 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-    <h2>Hola</h2>
-</body>
-</html>
+@extends('layouts.app')
+
+@section('content')
+
+<h1>Hola</h1>
+
+@endsection

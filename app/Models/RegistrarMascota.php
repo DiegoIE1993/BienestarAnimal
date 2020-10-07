@@ -8,8 +8,4 @@ use Illuminate\Database\Eloquent\Model;
 class RegistrarMascota extends Model
 {
     use HasFactory;
-
-    protected $fillable = [
-       'id'
-    ];
 }
