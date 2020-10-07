@@ -35,6 +35,3 @@ Auth::routes();
 
 Route::resource('nosotros', NosotrosController::class);
 
-Auth::routes();
-
-Route::resource('registrarmascota', RegistrarMascotaController::class);
