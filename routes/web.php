@@ -7,7 +7,10 @@ use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\NosotrosController;
 use App\Http\Controllers\RegistrarMascotaController;
+<<<<<<< HEAD
 use App\Http\Controllers\EspeciesController;
+=======
+>>>>>>> 1d0a4da2a177630a9f7938f9e9164e90a1bdfbf6
 
 /*
 |--------------------------------------------------------------------------
