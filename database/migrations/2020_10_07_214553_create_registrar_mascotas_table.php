@@ -35,8 +35,6 @@ class CreateRegistrarMascotasTable extends Migration
             $table->string('actitud_general');
             $table->string('motivo_ingreso_anamnesis');
 
-
-
         });
     }
 

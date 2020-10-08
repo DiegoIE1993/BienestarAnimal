@@ -25,7 +25,7 @@ class RegistrarMascotaController extends Controller
      */
     public function create()
     {
-        //
+        return view('registrarmascota.create');
     }
 
     /**
