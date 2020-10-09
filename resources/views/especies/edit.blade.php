@@ -10,14 +10,13 @@
                     </div>
                     <div class="card-body">
                         
-                        <form action="{{ route('especies.update', $especies->id)}}" method="post">
+                        <form action="{{ route('especies.update', $especie->id)}}" method="post">
                             @csrf
                             @method('PUT')
                             <div class="form-group">
                                 <label for="nombre">Nombre Especie</label>
-                                <input type="text" name="nombre" require class="form-control" value="{{$especies->nombre}}">
+                                <input type="text" name="nombre" require class="form-control" value="{{$especie->nombre}}">
                             </div>
-                            
                             <div class="justify-content-end">
                                 <input type="submit" value="Enviar" class="btn btn-success">
 

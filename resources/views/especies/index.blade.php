@@ -23,7 +23,7 @@
                                                 <td> {{$especie->nombre}}</td>
                                                
                                                 <td>
-                                                    <a href="{{ url('/$especies/'.$especie->id.'/edit')}}" class="btn btn-primary">Editar</a>
+                                                    <a href="{{ url('/especies/'.$especie->id.'/edit')}}" class="btn btn-primary">Editar</a>
                                                     @include('especies.delete', ['especie' => $especie])  
                                                 </td>
                                             </tr>

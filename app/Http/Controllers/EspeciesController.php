@@ -69,9 +69,9 @@ class EspeciesController extends Controller
      */
     public function edit($id)
     {
-        $especies = Especies::findOrFail($id);
+        $especie = Especies::findOrFail($id);
 
-        return view('especies.edit', compact('especies'));
+        return view('especies.edit', compact('especie'));
     }
 
     /**
@@ -83,11 +83,11 @@ class EspeciesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $especies = Especies::findOrFail($id);
+        $especie = Especies::findOrFail($id);
        
-        $especies->nombre =$request->nombre;
+        $especie->nombre =$request->nombre;
         
-        $especies->save();
+        $especie->save();
 
         return redirect('/especies');
     }
