@@ -58,13 +58,9 @@
                         <li>
                             <a href="{{ url('registrarmascota') }}" class="nav-link">Registrar Mascota</a>
                         </li>
-<<<<<<< HEAD
                         <li>
                             <a href="{{ url('especies') }}" class="nav-link">Especies</a>
                         </li>
-=======
-                        
->>>>>>> 1d0a4da2a177630a9f7938f9e9164e90a1bdfbf6
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}

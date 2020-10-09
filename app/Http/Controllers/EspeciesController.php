@@ -26,7 +26,8 @@ class EspeciesController extends Controller
      */
     public function create()
     {
-        //
+        $species = Especies::all();
+        return view ('especies.create', compact('species'));
     }
 
     /**
