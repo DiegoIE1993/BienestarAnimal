@@ -9,15 +9,17 @@
                         Nueva Especie
                     </div>
                     <div class="card-body">
-                        <form action="{{ url('especies')}}" method="post">
-                            @csrf
+                        <form action="{{ route('especies.store')}}" method="post">
+                            @csrf 
+                            
                             <div class="form-group">
-                                <label for="name">Nombre</label>
-                                <input type="text" name="name" require class="form-control">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" name="nombre
+                                " require class="form-control">
                             </div>
                           
                             <div class="justify-content-end">
-                                <input type="submit" value="Enviar" class="btn btn-success">
+                                <input type="submit" value="Guardar" class="btn btn-success">
 
                             </div>
 

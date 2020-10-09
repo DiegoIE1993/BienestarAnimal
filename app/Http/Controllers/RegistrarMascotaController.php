@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\RegistrarMascota;
 use Illuminate\Http\Request;
 
-class registrarMascota extends Controller
+class RegistrarMascotaController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,7 +14,8 @@ class registrarMascota extends Controller
      */
     public function index()
     {
-        return "prueba";
+        $registro = RegistrarMascota::all();
+        return view('registrarmascota.index', compact('registro'));
     }
 
     /**
@@ -23,7 +25,7 @@ class registrarMascota extends Controller
      */
     public function create()
     {
-        //
+        return view('registrarmascota.create');
     }
 
     /**
@@ -40,10 +42,10 @@ class registrarMascota extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\RegistrarMascota  $registrarMascota
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(RegistrarMascota $registrarMascota)
     {
         //
     }
@@ -51,10 +53,10 @@ class registrarMascota extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param  \App\Models\RegistrarMascota  $registrarMascota
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(RegistrarMascota $registrarMascota)
     {
         //
     }
@@ -63,10 +65,10 @@ class registrarMascota extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  \App\Models\RegistrarMascota  $registrarMascota
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, RegistrarMascota $registrarMascota)
     {
         //
     }
@@ -74,10 +76,10 @@ class registrarMascota extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param  \App\Models\RegistrarMascota  $registrarMascota
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(RegistrarMascota $registrarMascota)
     {
         //
     }

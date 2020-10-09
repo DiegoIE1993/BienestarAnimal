@@ -86,6 +86,9 @@
 
         <main class="py-4">
             @yield('content')
+            @yield('datos_ciudadano')
+            @yield('datos_ejemplar')
+
         </main>
     </div>
 </body>

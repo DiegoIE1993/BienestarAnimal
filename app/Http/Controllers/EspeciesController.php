@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Especies;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EspeciesController extends Controller
 {
@@ -14,7 +15,7 @@ class EspeciesController extends Controller
      */
     public function index()
     {
-        $species = Especies::all();
+        $species = Especies::all(); // species variable que va a ser igual al controller Especies
         return view ('especies.index', compact('species'));
         //return view('especies.')
      }
@@ -26,8 +27,7 @@ class EspeciesController extends Controller
      */
     public function create()
     {
-        $species = Especies::all();
-        return view ('especies.create', compact('species'));
+        return view ('especies.create');
     }
 
     /**
@@ -38,7 +38,16 @@ class EspeciesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = request()->validate([
+            'nombre'=> 'Required',            
+        ]);
+
+        DB::table('especies')->insert([
+            'nombre' => $data['nombre'],
+           
+        ]);
+
+        return redirect('/especies');
     }
 
     /**
