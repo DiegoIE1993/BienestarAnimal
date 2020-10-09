@@ -13,7 +13,7 @@
                             </div>
                             <table class="table">
                                 <thead>
-                                    <th >Nombre</th>
+                                    <th >Nombre Especie</th>
                                     <th >Acciones</th>
                                 </thead>
 
