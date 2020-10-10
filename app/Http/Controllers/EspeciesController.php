@@ -98,8 +98,19 @@ class EspeciesController extends Controller
      * @param  \App\Models\Especies  $especies
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Especies $especies)
+    public function destroy($id)
     {
-        //
+        $especie = Especies::findOrFail($id);
+
+        //Eliminar Especie
+        if ($especie->delete()){
+            return redirect('/especies');
+        }
+        else
+        {
+            return response() ->json([
+                'mensaje' => 'Error al eliminar especie'
+            ]);
+        }
     }
 }

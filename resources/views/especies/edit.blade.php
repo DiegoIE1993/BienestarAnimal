@@ -18,7 +18,7 @@
                                 <input type="text" name="nombre" require class="form-control" value="{{$especie->nombre}}">
                             </div>
                             <div class="justify-content-end">
-                                <input type="submit" value="Enviar" class="btn btn-success">
+                                <input type="submit" value="Guardar" class="btn btn-success">
 
                             </div>
 
