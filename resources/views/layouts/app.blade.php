@@ -49,22 +49,6 @@
                                 </li>
                             @endif
                         @else
-                        <li>
-                            <a href="{{ url('usuarios') }}" class="nav-link">Usuarios</a>
-                        </li>
-                        <li>
-                            <a href="{{ url('nosotros') }}" class="nav-link">Nosotros</a>
-                        </li>
-                        <li>
-                            <a href="{{ url('razas') }}" class="nav-link">Razas</a>
-                        </li>
-                        <li>
-                            <a href="{{ url('registrarmascota') }}" class="nav-link">Registrar Mascota</a>
-                        </li>
-                       
-                        <li>
-                            <a href="{{ url('especies') }}" class="nav-link">Especies</a>
-                        </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }}
@@ -90,9 +74,6 @@
 
         <main class="py-4">
             @yield('content')
-            @yield('datos_ciudadano')
-            @yield('datos_ejemplar')
-
         </main>
     </div>
 </body>
