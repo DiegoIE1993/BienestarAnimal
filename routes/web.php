@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\NosotrosController;
 use App\Http\Controllers\RegistrarMascotaController;
 use App\Http\Controllers\EspeciesController;
+use App\Http\Controllers\RazaController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -43,5 +45,9 @@ Route::resource('registrarmascota', RegistrarMascotaController::class);
 Auth::routes();
 
 Route::resource('especies', EspeciesController::class);
+
+Auth::routes();
+
+Route::resource('razas', RazaController::class);
 
 

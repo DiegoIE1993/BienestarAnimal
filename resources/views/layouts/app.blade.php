@@ -56,8 +56,12 @@
                             <a href="{{ url('nosotros') }}" class="nav-link">Nosotros</a>
                         </li>
                         <li>
+                            <a href="{{ url('razas') }}" class="nav-link">Razas</a>
+                        </li>
+                        <li>
                             <a href="{{ url('registrarmascota') }}" class="nav-link">Registrar Mascota</a>
                         </li>
+                       
                         <li>
                             <a href="{{ url('especies') }}" class="nav-link">Especies</a>
                         </li>
