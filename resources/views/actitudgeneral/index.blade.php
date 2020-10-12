@@ -5,10 +5,6 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-<<<<<<< HEAD
-=======
-
->>>>>>> 9af00a7dc944408ba359bd15af1456f0a3f6d90f
                     <div class="card-header">Lista de Actitud General</div>
 
                         <div class="card-body">
@@ -18,10 +14,6 @@
                             <table class="table">
                                 <thead>
                                     <th >Nombre Actitud General</th>
-<<<<<<< HEAD
-=======
-
->>>>>>> 9af00a7dc944408ba359bd15af1456f0a3f6d90f
                                     <th >Acciones</th>
                                 </thead>
 
