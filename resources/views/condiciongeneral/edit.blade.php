@@ -6,16 +6,16 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        Editar Raza
+                        Editar Condicion General
                     </div>
                     <div class="card-body">
                         
-                        <form action="{{ route('razas.update', $races->id)}}" method="post">
+                        <form action="{{ route('condiciongeneral.update', $condicion->id)}}" method="post">
                             @csrf
                             @method('PUT')
                             <div class="form-group">
-                                <label for="nombre">Nombre Raza</label>
-                                <input type="text" name="nombre" require class="form-control" value="{{$races->nombre}}">
+                                <label for="nombre">Nombre Condicion General</label>
+                                <input type="text" name="nombre" require class="form-control" value="{{$condicion->nombre}}">
                             </div>
                             <div class="justify-content-end">
                                 <input type="submit" value="Guardar" class="btn btn-success">

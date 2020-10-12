@@ -284,6 +284,10 @@ return [
                     'text' => 'Tipo Entrada',
                     'url'  => 'tipoentrada',
                 ],
+                [
+                    'text' => 'Condicion General',
+                    'url'  => 'condiciongeneral',
+                ],
             ],
         ],
         ['header' => 'labels'],

@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class CondicionGeneral extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'nombre'
+    ];
 }
