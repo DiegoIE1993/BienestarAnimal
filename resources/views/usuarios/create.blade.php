@@ -31,10 +31,11 @@
                                     @endforeach
                                 </select>
                             </div>
-                            <div class="justify-content-end">
-                                <input type="submit" value="Enviar" class="btn btn-success">
-
+                            <div class="justify-content-center">
+                                <a href="/usuarios" class="btn btn-primary">Atras</a>
+                                <input type="submit" value="Enviar" class="btn btn-success ">
                             </div>
+                            
 
                         </form>
 

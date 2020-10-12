@@ -242,7 +242,7 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'Usuarios',
+            'text'        => 'Usuario',
             'url'         => 'usuarios',
             'icon'        => 'far fa-fw fa-file',
             'label_color' => 'success',
@@ -290,22 +290,7 @@ return [
                 ],
             ],
         ],
-        ['header' => 'labels'],
-        [
-            'text'       => 'important',
-            'icon_color' => 'red',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'warning',
-            'icon_color' => 'yellow',
-            'url'        => '#',
-        ],
-        [
-            'text'       => 'information',
-            'icon_color' => 'cyan',
-            'url'        => '#',
-        ],
+        
     ],
 
     /*

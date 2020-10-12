@@ -17,7 +17,7 @@ class EspeciesController extends Controller
     {
         $species = Especies::all(); // species variable que va a ser igual al controller Especies
         return view ('especies.index', compact('species'));
-        //return view('especies.')
+        
      }
 
     /**
