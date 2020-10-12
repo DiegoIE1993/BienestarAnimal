@@ -280,6 +280,10 @@ return [
                     'text' => 'Raza',
                     'url'  => 'razas',
                 ],
+                [
+                    'text' => 'Tipo Entrada',
+                    'url'  => 'tipoentrada',
+                ],
             ],
         ],
         ['header' => 'labels'],

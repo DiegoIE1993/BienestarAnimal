@@ -9,6 +9,7 @@ use App\Http\Controllers\NosotrosController;
 use App\Http\Controllers\RegistrarMascotaController;
 use App\Http\Controllers\EspeciesController;
 use App\Http\Controllers\RazaController;
+use App\Http\Controllers\TipoEntradaController;
 
 
 /*
@@ -49,6 +50,10 @@ Route::resource('especies', EspeciesController::class);
 Auth::routes();
 
 Route::resource('razas', RazaController::class);
+
+Auth::routes();
+
+Route::resource('tipoentrada', TipoEntradaController::class);
 
 
 
