@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-<<<<<<< HEAD
+
                         Crear Actitud General
                     </div>
                     <div class="card-body">
@@ -15,16 +15,6 @@
                             @csrf
                             <div class="form-group">
                                 <label for="nombre">Nombre Actitud General</label>
-=======
-                        Crear Condicion General
-                    </div>
-                    <div class="card-body">
-                        
-                        <form action="{{ route('condiciongeneral.store')}}" method="post" novalidate>
-                            @csrf
-                            <div class="form-group">
-                                <label for="nombre">Nombre Condicion General</label>
->>>>>>> 6e448d118c64fef02186af20882c328975d1edbf
 
                                 <input type="text" name="nombre" class="form-control @error('nombre') is-invalid @enderror" value={{ old('nombre') }}>
 
