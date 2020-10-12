@@ -6,6 +6,10 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
+<<<<<<< HEAD
+=======
+
+>>>>>>> 9af00a7dc944408ba359bd15af1456f0a3f6d90f
                         Crear Actitud General
                     </div>
                     <div class="card-body">

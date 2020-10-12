@@ -24,7 +24,9 @@ class CreateRegistrarMascotasTable extends Migration
 
             $table->unsignedBigInteger('especie_id');
             $table->foreign('especie_id')->references('id')->on('especies');
-
+            // $table->unsignedBigInteger('raza_id');
+            // $table->foreign('raza_id')->references('id')->on('razas');
+            // $table->dropForeign('regitrar_mascota_raza_id_foreign');
             $table->string('genero');
             $table->string('color');
             $table->string('talla');
