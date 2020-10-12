@@ -15,6 +15,7 @@ class CreateActitudGeneralsTable extends Migration
     {
         Schema::create('actitud_generals', function (Blueprint $table) {
             $table->id();
+            $table->string('nombre');
             $table->timestamps();
         });
     }

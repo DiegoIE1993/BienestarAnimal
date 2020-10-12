@@ -11,6 +11,7 @@ use App\Http\Controllers\EspeciesController;
 use App\Http\Controllers\RazaController;
 use App\Http\Controllers\TipoEntradaController;
 use App\Http\Controllers\CondicionGeneralController;
+use App\Http\Controllers\ActitudGeneralController;
 
 
 /*
@@ -59,6 +60,10 @@ Route::resource('tipoentrada', TipoEntradaController::class);
 Auth::routes();
 
 Route::resource('condiciongeneral', CondicionGeneralController::class);
+
+Auth::routes();
+
+Route::resource('actitudgeneral', ActitudGeneralController::class);
 
 
 

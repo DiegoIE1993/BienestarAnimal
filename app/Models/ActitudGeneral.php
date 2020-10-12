@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ActitudGeneral extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'nombre'
+    ];
 }

@@ -288,6 +288,11 @@ return [
                     'text' => 'Condicion General',
                     'url'  => 'condiciongeneral',
                 ],
+
+                [
+                    'text' => 'Actitud General',
+                    'url'  => 'actitudgeneral',
+                ],
             ],
         ],
         

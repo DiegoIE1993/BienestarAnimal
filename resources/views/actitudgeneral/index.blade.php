@@ -5,26 +5,26 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Lista de Condicion General</div>
+                    <div class="card-header">Lista de Actitud General</div>
 
                         <div class="card-body">
                             <div class="row justify-content-end pb-2">
-                            <a href="{{url('/condiciongeneral/create')}}" class="btn btn-success">Nuevo Registro</a>
+                            <a href="{{url('/actitudgeneral/create')}}" class="btn btn-success">Nuevo Registro</a>
                         </div>
                             <table class="table">
                                 <thead>
-                                    <th >Nombre Condicion General</th>
+                                    <th >Nombre Actitud General</th>
                                     <th >Acciones</th>
                                 </thead>
 
                                 <tbody>
-                                    @foreach ($condicion as $con)
+                                    @foreach ($actitud as $act)
                                             <tr>
-                                                <td> {{$con->nombre}}</td>
+                                                <td> {{$act->nombre}}</td>
                                                
                                                 <td>
-                                                    <a href="{{ url('/condiciongeneral/'.$con->id.'/edit')}}" class="btn btn-primary">Editar</a>
-                                                    @include('condiciongeneral.delete', ['con' => $con])  
+                                                    <a href="{{ url('/actitudgeneral/'.$act->id.'/edit')}}" class="btn btn-primary">Editar</a>
+                                                    @include('actitudgeneral.delete', ['act' => $act])  
                                                 </td>
                                             </tr>
                                         @endforeach
