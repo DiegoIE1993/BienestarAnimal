@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Especies;
+use App\Models\Raza;
 use App\Models\RegistrarMascota;
 use Illuminate\Http\Request;
 
@@ -25,7 +26,9 @@ class RegistrarMascotaController extends Controller
      */
     public function create()
     {
-        return view('registrarmascota.create');
+        $specie = Especies::all();
+        
+        return view('registrarmascota.create', compact('specie'));
     }
 
     /**

@@ -32,21 +32,20 @@
                                 <th>Motivo Ingreso Anamnesis</th>
 
                             </thead>
-                            <tbody>
-                                {{-- @foreach ($users as $usuario)
+                           <tbody>
+                                @foreach ($registro as $item)
                                     <tr>
-                                        <td>{{$usuario->name }}</td>
-                                        <td>{{$usuario->email }}</td>
-                                        <td>{{$usuario->roles->implode('name',', ')}}</td>
-                                        <td>
+                                        <td>{{$item->nombres }}</td>
+                                        
+                                      <td>
                                             <a href="{{ url('/usuarios/'.$usuario->id.'/edit')}}" class="btn btn-primary">Editar</a>
                                             @include('usuarios.delete', ['usuario' => $usuario])
                                             
                                         </td>
                                     </tr>
-                                @endforeach --}}
+                                @endforeach
                                 
-                            </tbody>
+                            </tbody> 
                         </table>
 
                     </div>
