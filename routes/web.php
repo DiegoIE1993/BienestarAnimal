@@ -12,6 +12,7 @@ use App\Http\Controllers\RazaController;
 use App\Http\Controllers\TipoEntradaController;
 use App\Http\Controllers\CondicionGeneralController;
 use App\Http\Controllers\ActitudGeneralController;
+use App\Http\Controllers\PielNormalController;
 
 
 /*
@@ -64,6 +65,10 @@ Route::resource('condiciongeneral', CondicionGeneralController::class);
 Auth::routes();
 
 Route::resource('actitudgeneral', ActitudGeneralController::class);
+
+Auth::routes();
+
+Route::resource('pielnormal', PielNormalController::class);
 
 
 

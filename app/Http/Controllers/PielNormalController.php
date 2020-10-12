@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ActitudGeneral;
+use App\Models\PielNormal;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class ActitudGeneralController extends Controller
+class PielNormalController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,8 @@ class ActitudGeneralController extends Controller
      */
     public function index()
     {
-        $actitud = ActitudGeneral::all(); // actitud variable que va a ser igual al controller Razas
-        return view ('actitudgeneral.index', compact('actitud'));
+        $piel = PielNormal::all(); // piel variable que va a ser igual al controller TipoEntrada
+        return view ('pielnormal.index', compact('piel'));
     }
 
     /**
@@ -26,7 +26,7 @@ class ActitudGeneralController extends Controller
      */
     public function create()
     {
-        return view ('actitudgeneral.create');
+        return view ('pielnormal.create');
     }
 
     /**
@@ -41,20 +41,20 @@ class ActitudGeneralController extends Controller
             'nombre'=> 'Required',            
         ]);
 
-        DB::table('actitud_generals')->insert([
+        DB::table('piel_normals')->insert([
             'nombre' => $data['nombre'],
         ]);
 
-        return redirect('/actitudgeneral');
+        return redirect('/pielnormal');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\ActitudGeneral  $actitudGeneral
+     * @param  \App\Models\PielNormal  $pielNormal
      * @return \Illuminate\Http\Response
      */
-    public function show(ActitudGeneral $actitudGeneral)
+    public function show(PielNormal $pielNormal)
     {
         //
     }
@@ -62,51 +62,52 @@ class ActitudGeneralController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\ActitudGeneral  $actitudGeneral
+     * @param  \App\Models\PielNormal  $pielNormal
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $actitud = ActitudGeneral::findOrFail($id);
+        $piel = PielNormal::findOrFail($id);
 
-        return view('actitudgeneral.edit', compact('actitud'));
+        return view('pielnormal.edit', compact('piel'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ActitudGeneral  $actitudGeneral
+     * @param  \App\Models\PielNormal  $pielNormal
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $actitud = ActitudGeneral::findOrFail($id);
+        $piel = PielNormal::findOrFail($id);
        
-        $actitud->nombre =$request->nombre;
+        $piel->nombre =$request->nombre;
         
-        $actitud->save();
+        $piel->save();
 
-        return redirect('/actitudgeneral');
+        return redirect('/pielnormal');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\ActitudGeneral  $actitudGeneral
+     * @param  \App\Models\PielNormal  $pielNormal
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $actitud = ActitudGeneral::findOrFail($id);
-        //Eliminar Actitud General
-        if ($actitud->delete()){
-            return redirect('/actitudgeneral');
+        $piel = PielNormal::findOrFail($id);
+
+        //Eliminar Tipo Entrada
+        if ($piel->delete()){
+            return redirect('/pielnormal');
         }
         else
         {
             return response() ->json([
-                'mensaje' => 'Error al eliminar actitud general'
+                'mensaje' => 'Error al eliminar tipo de piel'
             ]);
         }
     }

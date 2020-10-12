@@ -6,14 +6,14 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        Crear Actitud General
+                        Crear Piel Normal
                     </div>
                     <div class="card-body">
                         
-                        <form action="{{ route('actitudgeneral.store')}}" method="post" novalidate>
+                        <form action="{{ route('pielnormal.store')}}" method="post" novalidate>
                             @csrf
                             <div class="form-group">
-                                <label for="nombre">Nombre Actitud General</label>
+                                <label for="nombre">Nombre Piel</label>
 
                                 <input type="text" name="nombre" class="form-control @error('nombre') is-invalid @enderror" value={{ old('nombre') }}>
 
