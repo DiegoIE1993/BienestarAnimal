@@ -58,7 +58,7 @@ Route::resource('tipoentrada', TipoEntradaController::class);
 
 Auth::routes();
 
-Route::resource('tipoentrada', CondicionGeneralController::class);
+Route::resource('condiciongeneral', CondicionGeneralController::class);
 
 
 
@@ -66,10 +66,4 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
