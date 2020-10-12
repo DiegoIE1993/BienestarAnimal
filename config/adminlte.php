@@ -242,7 +242,7 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'Usuarios',
+            'text'        => 'Usuario',
             'url'         => 'usuarios',
             'icon'        => 'fa fa-users',
             'label_color' => 'success',
@@ -266,7 +266,7 @@ return [
         // ],
         [
             'text'    => 'Mantenimiento',
-            'icon'    => 'fas fa-fw fa-share',
+            'icon'    => 'fa fa-wrench',
             'submenu' => [
                 [
                     'text' => 'Nosotros',
