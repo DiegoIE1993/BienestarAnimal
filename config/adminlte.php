@@ -242,15 +242,15 @@ return [
             'can'  => 'manage-blog',
         ],
         [
-            'text'        => 'Usuario',
+            'text'        => 'Usuarios',
             'url'         => 'usuarios',
-            'icon'        => 'far fa-fw fa-file',
+            'icon'        => 'fa fa-users',
             'label_color' => 'success',
         ],
         [
             'text'        => 'Registrar Mascotas',
             'url'         => 'registrarmascota',
-            'icon'        => 'far fa-fw fa-file',
+            'icon'        => 'fa fa-paw',
             'label_color' => 'success',
         ],
         // ['header' => 'account_settings'],
@@ -266,7 +266,7 @@ return [
         // ],
         [
             'text'    => 'Mantenimiento',
-            'icon'    => 'fas fa-fw fa-share',
+            'icon'    => 'fa fa-wrench',
             'submenu' => [
                 [
                     'text' => 'Nosotros',

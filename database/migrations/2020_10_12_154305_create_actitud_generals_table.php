@@ -15,7 +15,10 @@ class CreateActitudGeneralsTable extends Migration
     {
         Schema::create('actitud_generals', function (Blueprint $table) {
             $table->id();
+<<<<<<< HEAD
             $table->string('nombre');
+=======
+>>>>>>> 6e448d118c64fef02186af20882c328975d1edbf
             $table->timestamps();
         });
     }
