@@ -1,9 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\ActitudGeneral;
+use App\Models\CondicionGeneral;
 use App\Models\Especies;
 use App\Models\Raza;
 use App\Models\RegistrarMascota;
+use App\Models\TipoEntrada;
 use Illuminate\Http\Request;
 
 class RegistrarMascotaController extends Controller
@@ -27,8 +31,11 @@ class RegistrarMascotaController extends Controller
     public function create()
     {
         $specie = Especies::all();
-        
-        return view('registrarmascota.create', compact('specie'));
+        $races = Raza::all();
+        $condicions = CondicionGeneral::all();
+        $entradas = TipoEntrada::all();
+        $actitudes = ActitudGeneral::all();
+        return view('registrarmascota.create', compact('specie','races','condicions','entradas','actitudes'));
     }
 
     /**

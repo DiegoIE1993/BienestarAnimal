@@ -12,9 +12,14 @@
                         <div class="card-body">
                             <form action="{{ url('registrarmascota')}}" method="post">
                                 @csrf
-                                <div class="form-group">
-                                    <label for="name">Tipo de Entrada</label>
-                                    <input type="text" name="name" require class="form-control">
+                                <div class="form-group" style="display:inline-block; width: 226px;">
+                                    <label for="entrada">Tipo de Entrada</label>
+                                    <select name="entrada_id" id="input" class="form-control">
+                                        @foreach ($entradas as $entrada)
+                                    <option value="{{$entrada->id}}">{{$entrada->nombre}}</option>
+                                            
+                                        @endforeach
+                                    </select>   
                                 </div>
                             </form>  
                         </div>
@@ -76,11 +81,11 @@
                             <form action="{{ url('registrarmascota')}}" method="post">
                                 @csrf
                                 <form action="{{ url('registrarmascota')}}" method="post">
-                                    <div class="form-group" style="display:inline-block; width: 226px;">
+                                    <div class="form-group" style="display:inline-block; width: 230px;">
                                         <label for="nombre">Nombres</label>
                                         <input type="text" name="nombre" require class="form-control">
                                     </div>
-                                    <div class="form-group" style="display:inline-block; width: 226px;">
+                                    <div class="form-group" style="display:inline-block; width: 230px;">
                                         <label for="especies">Especie</label>
                                         <select name="especie_id" id="input" class="form-control">
                                             @foreach ($specie as $especie)
@@ -89,39 +94,54 @@
                                             @endforeach
                                         </select>   
                                     </div>
-                                    <div class="form-group" style="display:inline-block; width: 226px;">
-                                        <label for="raza">Raza</label>
-                                        <input type="text" name="Raza" require class="form-control">
+                                    <div class="form-group" style="display:inline-block; width: 229px;">
+                                        <label for="razas">Raza</label>
+                                        <select name="raza_id" id="input" class="form-control">
+                                            @foreach ($races as $raza)
+                                        <option value="{{$raza->id}}">{{$raza->nombre}}</option>
+                                                
+                                            @endforeach
+                                        </select>   
                                     </div>
-                                    <div class="form-group" style="display:inline-block; width: 226px;">
+                                    <div class="form-group" style="display:inline-block; width: 229px;">
                                         <label for="genero">Genero</label>
                                         <input type="text" name="genero" require class="form-control">
                                     </div>
-                                    <div class="form-group" style="display:inline-block; width: 226px;">
+                                    <div class="form-group" style="display:inline-block; width: 229px;">
                                         <label for="color">Color</label>
                                         <input type="text" name="color" require class="form-control">
                                     </div>
-                                    <div class="form-group" style="display:inline-block; width: 226px;">
+                                    <div class="form-group" style="display:inline-block; width: 229px;">
                                         <label for="talla">Talla</label>
                                         <input type="text" name="talla" require class="form-control">
                                     </div>
-                                    <div class="form-group" style="display:inline-block; width: 226px;">
+                                    <div class="form-group" style="display:inline-block; width: 229px;">
                                         <label for="peso">Peso</label>
                                         <input type="text" name="peso" require class="form-control">
                                     </div>
-                                    <div class="form-group" style="display:inline-block; width: 226px;">
+                                    <div class="form-group" style="display:inline-block; width: 229px;">
                                         <label for="edad">Edad</label>
                                         <input type="text" name="edad" require class="form-control">
                                     </div>
-                                    <div class="form-group" style="display:inline-block; width: 452px;">
-                                        <label for="condicion_general">Condicion General</label>
-                                        <input type="text" name="condicion_general" require class="form-control">
+                                    <div class="form-group" style="display:inline-block; width: 307px;">
+                                        <label for="razas">Condicion General</label>
+                                        <select name="raza_id" id="input" class="form-control">
+                                            @foreach ($condicions as $condicion)
+                                        <option value="{{$condicion->id}}">{{$condicion->nombre}}</option>
+                                                
+                                            @endforeach
+                                        </select>   
                                     </div>
-                                    <div class="form-group" style="display:inline-block; width: 452px;">
+                                    <div class="form-group" style="display:inline-block; width: 307px;">
                                         <label for="actitud_general">Actitud General</label>
-                                        <input type="text" name="actitud_general" require class="form-control">
+                                        <select name="actitud_general" id="input" class="form-control">
+                                            @foreach ($actitudes as $actitud)
+                                        <option value="{{$actitud->id}}">{{$actitud->nombre}}</option>
+                                                
+                                            @endforeach
+                                        </select>   
                                     </div>
-                                    <div class="form-group" style="display:inline-block; width: 340px;">
+                                    <div class="form-group" style="display:inline-block; width: 307px;">
                                         <label for="estado_ingreso">Estado de Ingreso</label>
                                         <input type="text" name="estado_ingreso" require class="form-control">
                                     </div>
