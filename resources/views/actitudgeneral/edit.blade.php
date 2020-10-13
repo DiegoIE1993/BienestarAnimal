@@ -18,6 +18,7 @@
                                 <input type="text" name="nombre" require class="form-control" value="{{$actitud->nombre}}">
                             </div>
                             <div class="justify-content-end">
+                                <a href="/actitudgeneral" class="btn btn-primary">Atras</a>
                                 <input type="submit" value="Guardar" class="btn btn-success">
 
                             </div>

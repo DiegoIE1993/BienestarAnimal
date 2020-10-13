@@ -29,6 +29,7 @@
                                 <input type="text" name="horario" require class="form-control">
                             </div>
                             <div class="justify-content-end">
+                                <a href="/nosotros" class="btn btn-primary">Atras</a>
                                 <input type="submit" value="Enviar" class="btn btn-success">
 
                             </div>

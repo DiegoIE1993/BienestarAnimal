@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
                         Crear Tipo Entrada
@@ -26,6 +26,7 @@
                           
                             
                             <div class="justify-content-end">
+                                <a href="/tipoentrada" class="btn btn-primary">Atras</a>
                                 <input type="submit" value="Guardar" class="btn btn-success">
 
                             </div>

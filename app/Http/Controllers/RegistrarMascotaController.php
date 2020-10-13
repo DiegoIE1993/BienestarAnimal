@@ -2,13 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ActitudGeneral;
-use App\Models\CondicionGeneral;
-use App\Models\Especies;
 use App\Models\Raza;
-use App\Models\RegistrarMascota;
+use App\Models\Especies;
 use App\Models\TipoEntrada;
 use Illuminate\Http\Request;
+use App\Models\ActitudGeneral;
+use App\Models\CondicionGeneral;
+use App\Models\RegistrarMascota;
+use Illuminate\Support\Facades\DB;
 
 class RegistrarMascotaController extends Controller
 {
@@ -46,7 +47,41 @@ class RegistrarMascotaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = request()->validate([
+            'nombres'=> 'Required',
+            'direccion' => 'Required',
+            'cedula' => 'Required',
+            'telefono' => 'required',
+            'correo' => 'required',
+            'genero' => 'required',
+            'telefono' => 'required',
+            'telefono' => 'required',
+            'telefono' => 'required',
+            'telefono' => 'required',
+            'telefono' => 'required',
+            'telefono' => 'required',
+            'telefono' => 'required',
+            'telefono' => 'required',
+        ]);
+
+        DB::table('nosotros')->insert([
+            'nombres' => $data['nombres'],
+            'direccion' => $data['direccion'],
+            'cedula' => $data['cedula'],
+            'correo' => $data['correo'],
+            'genero' => $data['genero'],
+            'telefono' => $data['telefono'],
+            'telefono' => $data['telefono'],
+            'telefono' => $data['telefono'],
+            'telefono' => $data['telefono'],
+            'telefono' => $data['telefono'],
+            'telefono' => $data['telefono'],
+            'telefono' => $data['telefono'],
+            'telefono' => $data['telefono'],
+        ]);
+
+        return redirect('/registarmascota');
+        
     }
 
     /**

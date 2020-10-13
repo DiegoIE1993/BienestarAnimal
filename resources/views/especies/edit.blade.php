@@ -18,6 +18,7 @@
                                 <input type="text" name="nombre" require class="form-control" value="{{$especie->nombre}}">
                             </div>
                             <div class="justify-content-end">
+                                <a href="/especies" class="btn btn-primary">Atras</a>
                                 <input type="submit" value="Guardar" class="btn btn-success">
 
                             </div>

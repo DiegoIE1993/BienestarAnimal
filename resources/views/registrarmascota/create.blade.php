@@ -108,6 +108,8 @@
                                         <label for="genero">Genero</label>
                                         <input type="text" name="genero" require class="form-control">
                                     </div>
+
+
                                     <div class="form-group" style="display:inline-block; width: 229px;">
                                         <label for="color">Color</label>
                                         <input type="text" name="color" require class="form-control">
@@ -164,6 +166,21 @@
                 </div>
             </div>
         </div>
+    </fieldset>
+    <fieldset>
+        <div class="form-group">
+            <h2>Checkboxes</h2>
+            @foreach($races as $raza)
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" value="{{$raza->id}}">
+                    {{$raza->nombre}}
+                </label>
+            </div>
+            @endforeach
+        </div>
+       
+
     </fieldset>
     
 @endsection

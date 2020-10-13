@@ -294,10 +294,7 @@ return [
                     'url'  => 'actitudgeneral',
                 ],
 
-                [
-                    'text' => 'Piel Normal',
-                    'url'  => 'pielnormal',
-                ],
+                
             ],
         ],
         
