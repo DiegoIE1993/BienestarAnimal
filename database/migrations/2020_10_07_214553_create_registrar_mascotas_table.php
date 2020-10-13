@@ -21,10 +21,6 @@ class CreateRegistrarMascotasTable extends Migration
             $table->string('cedula');
             $table->string('telefono');
             $table->string('correo');
-
-            $table->unsignedBigInteger('especie_id');
-            $table->foreign('especie_id')->references('id')->on('especies')->onDelete('cascade');
-            
             $table->string('genero');
             $table->string('color');
             $table->string('talla');
@@ -36,7 +32,12 @@ class CreateRegistrarMascotasTable extends Migration
             $table->string('actitud_general');
             $table->string('motivo_ingreso_anamnesis');
             $table->timestamps();
-
+            
+            $table->unsignedBigInteger('especie_id');
+            $table->foreign('especie_id')->references('id')->on('especies')->onDelete('cascade');
+            
+            $table->unsignedBigInteger('raza_id');
+            $table->foreign('raza_id')->references('id')->on('razas')->onDelete('cascade');
             
         });
     }
