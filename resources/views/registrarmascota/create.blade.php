@@ -103,6 +103,7 @@
                                             @endforeach
                                         </select>   
                                     </div>
+                                    
                                     <div class="form-group" style="display:inline-block; width: 229px;">
                                         <label for="genero">Genero</label>
                                         <input type="text" name="genero" require class="form-control">

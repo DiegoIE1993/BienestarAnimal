@@ -15,7 +15,6 @@ class CreateRegistrarMascotasTable extends Migration
     {
         Schema::create('registrar_mascotas', function (Blueprint $table) {
             $table->id();
-            $table->string('tipo_entrada');
             $table->string('nombres');
             $table->string('direccion');
             $table->string('cedula');
@@ -27,9 +26,6 @@ class CreateRegistrarMascotasTable extends Migration
             $table->string('peso');
             $table->string('edad');
             $table->string('señales_particulares');
-            $table->string('estado_ingreso');
-            $table->string('condicion_general');
-            $table->string('actitud_general');
             $table->string('motivo_ingreso_anamnesis');
             $table->timestamps();
             
@@ -39,6 +35,15 @@ class CreateRegistrarMascotasTable extends Migration
             $table->unsignedBigInteger('raza_id');
             $table->foreign('raza_id')->references('id')->on('razas')->onDelete('cascade');
             
+            $table->unsignedBigInteger('tipo_entrada_id');
+            $table->foreign('tipo_entrada_id')->references('id')->on('tipo_entradas')->onDelete('cascade');
+            
+            $table->unsignedBigInteger('condicion_id');
+            $table->foreign('condicion_id')->references('id')->on('condicion_generals')->onDelete('cascade');
+
+            $table->unsignedBigInteger('actitud_id');
+            $table->foreign('actitud_id')->references('id')->on('actitud_generals')->onDelete('cascade');
+
         });
     }
 
