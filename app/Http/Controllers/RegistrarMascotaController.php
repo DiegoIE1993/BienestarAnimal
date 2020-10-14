@@ -31,12 +31,14 @@ class RegistrarMascotaController extends Controller
      */
     public function create()
     {
+        
+        $registro = RegistrarMascota::all();
+        $entradas = TipoEntrada::all();
         $specie = Especies::all();
         $races = Raza::all();
         $condicions = CondicionGeneral::all();
-        $entradas = TipoEntrada::all();
         $actitudes = ActitudGeneral::all();
-        return view('registrarmascota.create', compact('specie','races','condicions','entradas','actitudes'));
+        return view('registrarmascota.create', compact('registro','entradas','specie','races','condicions','actitudes'));
     }
 
     /**
@@ -48,39 +50,54 @@ class RegistrarMascotaController extends Controller
     public function store(Request $request)
     {
         $data = request()->validate([
-            'nombres'=> 'Required',
-            'direccion' => 'Required',
-            'cedula' => 'Required',
-            'telefono' => 'required',
-            'correo' => 'required',
-            'genero' => 'required',
-            'telefono' => 'required',
-            'telefono' => 'required',
-            'telefono' => 'required',
-            'telefono' => 'required',
-            'telefono' => 'required',
-            'telefono' => 'required',
-            'telefono' => 'required',
-            'telefono' => 'required',
-        ]);
+        'tipo_entrada_id' => 'Required',
+        'nombre_ciudadano'=> 'Required',
+        'direccion' => 'Required',
+        'cedula' => 'Required',
+        'telefono' => 'Required',
+        'correo' => 'Required',
+        'nombre_ejemplar' => 'Required',
+        'genero' => 'Required',
+        'especie_id' => 'Required',
+        'raza_id' => 'Required',
+        'color' => 'Required',
+        'talla' => 'Required',
+        'peso' => 'Required',
+        'edad' => 'Required',
+        'condicion_id' => 'Required',
+        'actitud_id' => 'Required',
+        'estado' => 'Required',
+        'señales_particulares' => 'Required',
+        'motivo_ingreso_anamnesis' => 'Required',
+        'timeStamp'
+        
+        
 
-        DB::table('nosotros')->insert([
-            'nombres' => $data['nombres'],
+         ]);
+            DB::table('registrar_mascotas')->insert([
+            'tipo_entrada_id' => $data['tipo_entrada_id'],
+            'nombre_ciudadano' => $data['nombre_ciudadano'],
             'direccion' => $data['direccion'],
             'cedula' => $data['cedula'],
+            'telefono' => $data['telefono'],
             'correo' => $data['correo'],
+            'nombre_ejemplar' => $data['nombre_ejemplar'],
             'genero' => $data['genero'],
-            'telefono' => $data['telefono'],
-            'telefono' => $data['telefono'],
-            'telefono' => $data['telefono'],
-            'telefono' => $data['telefono'],
-            'telefono' => $data['telefono'],
-            'telefono' => $data['telefono'],
-            'telefono' => $data['telefono'],
-            'telefono' => $data['telefono'],
+            'especie_id' => $data['especie_id'],
+            'raza_id' => $data['raza_id'],
+            'color' => $data['color'],
+            'talla' => $data['talla'],
+            'peso' => $data['peso'],
+            'edad' => $data['edad'],
+            'condicion_id' => $data['condicion_id'],
+            'actitud_id' => $data['actitud_id'],
+            'estado' => $data['estado'],
+            'señales_particulares' => $data['señales_particulares'],
+            'motivo_ingreso_anamnesis' => $data['motivo_ingreso_anamnesis'],
+            
         ]);
 
-        return redirect('/registarmascota');
+        return redirect('/registrarmascota');
         
     }
 

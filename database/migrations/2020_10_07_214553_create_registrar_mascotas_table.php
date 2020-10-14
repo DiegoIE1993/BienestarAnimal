@@ -15,16 +15,18 @@ class CreateRegistrarMascotasTable extends Migration
     {
         Schema::create('registrar_mascotas', function (Blueprint $table) {
             $table->id();
-            $table->string('nombres');
+            $table->string('nombre_ciudadano');
             $table->string('direccion');
             $table->string('cedula');
             $table->string('telefono');
             $table->string('correo');
+            $table->string('nombre_ejemplar');
             $table->string('genero');
             $table->string('color');
             $table->string('talla');
             $table->string('peso');
             $table->string('edad');
+            $table->string('estado');
             $table->string('señales_particulares');
             $table->string('motivo_ingreso_anamnesis');
             $table->timestamps();

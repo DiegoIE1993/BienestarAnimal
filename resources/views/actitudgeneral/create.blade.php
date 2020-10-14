@@ -23,6 +23,7 @@
                                     </span>
                                 @enderror
                             </div>
+                            
                             <div class="justify-content-end">
                                 <a href="/actitudgeneral" class="btn btn-primary">Atras</a>
                                 <input type="submit" value="Guardar" class="btn btn-success">
