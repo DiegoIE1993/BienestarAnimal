@@ -55,6 +55,7 @@ class RegistrarMascotaController extends Controller
     public function store(Request $request)
     {
         $data = request()->validate([
+        'codigo_animal' => 'Requiered',
         'tipo_entrada_id' => 'Required',
         'nombre_ciudadano'=> 'Required',
         'direccion' => 'Required',
@@ -80,6 +81,7 @@ class RegistrarMascotaController extends Controller
 
          ]);
             DB::table('registrar_mascotas')->insert([
+            'codigo_animal' => $data['codigo_animal'],    
             'tipo_entrada_id' => $data['tipo_entrada_id'],
             'nombre_ciudadano' => $data['nombre_ciudadano'],
             'direccion' => $data['direccion'],
