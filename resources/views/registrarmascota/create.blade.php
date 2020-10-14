@@ -15,7 +15,6 @@
                                 <div class="row justify-content-center">
                                     <div class="col-md-12">
                                         <div class="card">
-
                                             <div class="form-group" style="display:inline-block; width: 226px;">
                                                 <label for="entrada">Tipo de Entrada</label>
                                                 <select name="tipo_entrada_id" id="input" class="form-control">
@@ -23,42 +22,44 @@
                                                 <option value="{{$entrada->id}}">{{$entrada->nombre}}</option>
                                                     
                                                     @endforeach
-                                                </select>   
+                                                </select>  
+                                                <div class="form-group" style="display:inline-block; width: 226px;">
+                                                    <label for="telefono">Nº Identificacion</label>
+                                                    <input type="text" name="telefono" require class="form-control">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>            
                             </fieldset>
                             <fieldset>
-                                <div class="container">
-                                    <div class="row justify-content-center">
-                                        <div class="col-md-12">
-                                            <div class="card">
-                                                <div class="card-header">
-                                                    DATOS PRINCIPALES DEL CIUDADANO
+                                <div class="row justify-content-center">
+                                    <div class="col-md-12">
+                                        <div class="card">
+                                            <div class="card-header">
+                                                DATOS PRINCIPALES DEL CIUDADANO
+                                            </div>
+                                            <div class="card-body">
+                                                <div class="form-group">
+                                                    <label for="nombre_ciudadano">Nombres Completos</label>
+                                                    <input type="text" name="nombre_ciudadano" require class="form-control">
                                                 </div>
-                                                <div class="card-body">
-                                                    <div class="form-group">
-                                                        <label for="nombre_ciudadano">Nombres Completos</label>
-                                                        <input type="text" name="nombre_ciudadano" require class="form-control">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="direccion">Direccion</label>
-                                                        <input type="text" name="direccion" require class="form-control">
-                                                    </div>
-                                                    <div class="form-group" style="display:inline-block; width: 435px;">
-                                                        <label for="cedula">Cedula</label>
-                                                        <input type="text" name="cedula" require class="form-control">
-                                                    </div>
-                                                    <div class="form-group" style="display:inline-block; width: 434px;">
-                                                        <label for="telefono">Telefono</label>
-                                                        <input type="text" name="telefono" require class="form-control">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label for="email">Correo</label>
-                                                        <input type="email" name="correo" require class="form-control">
-                                                    </div>  
+                                                <div class="form-group">
+                                                    <label for="direccion">Direccion</label>
+                                                    <input type="text" name="direccion" require class="form-control">
                                                 </div>
+                                                <div class="form-group" style="display:inline-block; width: 435px;">
+                                                    <label for="cedula">Cedula</label>
+                                                    <input type="text" name="cedula" require class="form-control">
+                                                </div>
+                                                <div class="form-group" style="display:inline-block; width: 434px;">
+                                                    <label for="telefono">Telefono</label>
+                                                    <input type="text" name="telefono" require class="form-control">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="email">Correo</label>
+                                                    <input type="email" name="correo" require class="form-control">
+                                                </div>  
                                             </div>
                                         </div>
                                     </div>
@@ -142,11 +143,11 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="señales_particulares">Señales Particulares</label>
-                                                        <input type="text" name="señales_particulares" require class="form-control">
+                                                        <textarea class="form-control" id="señales_particulares" rows="3"></textarea>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="motivo_ingreso_anamnesis">Motivo de Ingreso Anamnesis</label>
-                                                        <input type="text" name="motivo_ingreso_anamnesis" require class="form-control">
+                                                        <textarea class="form-control" id="motivo_ingreso_anamnesis" rows="3"></textarea>
                                                     </div>
                                                     
                                                 </div>

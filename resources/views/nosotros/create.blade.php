@@ -18,11 +18,11 @@
                             </div>
                             <div class="form-group">
                                 <label for="mision">Mision</label>
-                                <input type="text " name="mision" require class="form-control">
+                                <textarea class="form-control" id="mision" rows="3"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="vision">Vision</label>
-                                <input type="text " name="vision" require class="form-control">
+                                <textarea class="form-control" id="vision" rows="3"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="horario">Horarios de Atencion</label>

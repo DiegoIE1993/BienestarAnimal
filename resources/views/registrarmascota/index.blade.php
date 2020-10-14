@@ -19,9 +19,9 @@
                                     <thead>
                                         <th>Tipo de Entrada</th>
                                         <th>Nombres Ciudadano</th>
-                                        <th>Direccione</th>
+                                        <th>Dirección</th>
                                         <th>Cedula</th>
-                                        <th>Telefono</th>
+                                        <th>Teléfono</th>
                                         <th>Correo</th>
                                         <th>Nombre del Ejemplar</th>
                                         <th>Genero</th>

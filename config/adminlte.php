@@ -250,6 +250,12 @@ return [
         [
             'text'        => 'Registrar Mascotas',
             'url'         => 'registrarmascota',
+            'icon'        => 'fa fa-plus',
+            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Animales para Adopcion',
+            'url'         => 'animalesadopcion',
             'icon'        => 'fa fa-paw',
             'label_color' => 'success',
         ],
