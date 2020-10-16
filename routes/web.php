@@ -70,10 +70,6 @@ Route::resource('actitudgeneral', ActitudGeneralController::class);
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-Auth::routes();
-
 Route::resource('eventos', EventosController::class);
 
 Auth::routes();

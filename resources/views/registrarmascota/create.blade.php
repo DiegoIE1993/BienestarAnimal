@@ -157,8 +157,13 @@
                                         </div>
                                     </div>
                                 </div>
+<<<<<<< HEAD
+                            </fieldset>
+                            <!-- <fieldset>
+=======
                             </fieldset> 
                             {{-- <fieldset>
+>>>>>>> 414792628fff0f89663cc32642cc2cbee6a964ff
                                 <div class="container">
                                     <div class="row justify-content-center">
                                         <div class="col-md-12">
@@ -185,7 +190,11 @@
                                         </div>
                                     </div>
                                 </div>
+<<<<<<< HEAD
+                            </fieldset>                       -->
+=======
                             </fieldset>                       --}}
+>>>>>>> 414792628fff0f89663cc32642cc2cbee6a964ff
                             <div class="justify-content-end">
                                 <input type="submit" value="Enviar" class="btn btn-success">
                             </div> 
