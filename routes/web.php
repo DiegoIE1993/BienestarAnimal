@@ -1,18 +1,19 @@
 <?php
 
 
-use App\Http\Controllers\HomeController;
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
-use App\Http\Controllers\NosotrosController;
-use App\Http\Controllers\RegistrarMascotaController;
-use App\Http\Controllers\EspeciesController;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RazaController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\EventosController;
+use App\Http\Controllers\EspeciesController;
+use App\Http\Controllers\NosotrosController;
 use App\Http\Controllers\TipoEntradaController;
-use App\Http\Controllers\CondicionGeneralController;
 use App\Http\Controllers\ActitudGeneralController;
-use App\Http\Controllers\PielNormalController;
+use App\Http\Controllers\CondicionGeneralController;
+use App\Http\Controllers\RegistrarMascotaController;
+
 
 
 /*
@@ -68,12 +69,8 @@ Route::resource('actitudgeneral', ActitudGeneralController::class);
 
 Auth::routes();
 
-Route::resource('pielnormal', PielNormalController::class);
-
-
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
-
+Route::resource('eventos', EventosController::class);

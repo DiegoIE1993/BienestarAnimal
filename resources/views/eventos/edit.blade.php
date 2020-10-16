@@ -6,31 +6,27 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        Editar Informacion
+                        Editar Eventos
                     </div>
                     <div class="card-body">
                         
-                        <form action="{{ route('nosotros.update', $nosotros->id)}}" method="post">
+                        <form action="{{ route('eventos.update', $events->id)}}" method="post">
                             @csrf
                             @method('PUT')
                             <div class="form-group">
                                 <label for="titulo">Titulo</label>
-                                <input type="text" name="titulo" require class="form-control" value="{{$nosotros->titulo}}">
+                                <input type="text" name="titulo" require class="form-control" value="{{$events->titulo}}">
                             </div>
                             <div class="form-group">
-                                <label for="mision">Mision</label>
-                                <input type="text" name="mision" require class="form-control" value="{{$nosotros->mision}}">
+                                <label for="descripcion">Descripcion</label>
+                                <textarea class="form-control" name="descripcion" require class="form-control">{{$events->descripcion}}</textarea>
                             </div>
                             <div class="form-group">
-                                <label for="vision">Vision</label>
-                                <input type="text" name="vision" require class="form-control" value="{{$nosotros->vision}}">
-                            </div>
-                            <div class="form-group">
-                                <label for="horario">Horarios de Atencion</label>
-                                <input type="text" name="horario" require class="form-control" value="{{$nosotros->horario}}">
+                                <label for="fecha">Fecha</label>
+                                <input type="date" class="form-control" name="fecha"value="{{$events->fecha}}">
                             </div>
                             <div class="justify-content-end">
-                                <a href="/nosotros" class="btn btn-primary">Atras</a>
+                                <a href="/eventos" class="btn btn-primary">Atras</a>
                                 <input type="submit" value="Guardar" class="btn btn-success">
 
                             </div>

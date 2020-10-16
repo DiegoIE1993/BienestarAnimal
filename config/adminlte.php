@@ -259,6 +259,12 @@ return [
             'icon'        => 'fa fa-paw',
             'label_color' => 'success',
         ],
+        [
+            'text'        => 'Eventos',
+            'url'         => 'eventos',
+            'icon'        => 'fa fa-calendar',
+            'label_color' => 'success',
+        ],
         // ['header' => 'account_settings'],
         // [
         //     'text' => 'profile',
