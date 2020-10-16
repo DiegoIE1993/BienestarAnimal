@@ -16,6 +16,10 @@ class CreateAnimalesAdopcionTable extends Migration
         Schema::create('animales_adopcion', function (Blueprint $table) {
             $table->id();
             
+            // $table->unsignedBigInteger('codigo_animal_registro');
+            // $table->foreign('codigo_animal_registro')->references('codigo_animal')->on('regitrar_mascotas')->onDelete('cascade');
+            
+            
             $table->timestamps();
         });
     }

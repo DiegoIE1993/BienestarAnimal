@@ -54,9 +54,11 @@ class RegistrarMascotaController extends Controller
      */
     public function store(Request $request)
     {
+        
         $data = request()->validate([
-        'codigo_animal' => 'Requiered',
+          
         'tipo_entrada_id' => 'Required',
+        'codigo_animal' => 'Required',
         'nombre_ciudadano'=> 'Required',
         'direccion' => 'Required',
         'cedula' => 'Required',
@@ -75,14 +77,15 @@ class RegistrarMascotaController extends Controller
         'estado' => 'Required',
         'señales_particulares' => 'Required',
         'motivo_ingreso_anamnesis' => 'Required',
-        'timeStamp'
+        
         
         
 
          ]);
             DB::table('registrar_mascotas')->insert([
-            'codigo_animal' => $data['codigo_animal'],    
+  
             'tipo_entrada_id' => $data['tipo_entrada_id'],
+            'codigo_animal' => $data['codigo_animal'], 
             'nombre_ciudadano' => $data['nombre_ciudadano'],
             'direccion' => $data['direccion'],
             'cedula' => $data['cedula'],

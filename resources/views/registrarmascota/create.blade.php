@@ -27,7 +27,7 @@
                                                     </div>
                                                     <div class="form-group" style="display:inline-block; width: 226px;">
                                                         <label for="codigo">Nº Identificacion</label>
-                                                        <input type="text" name="codigo_animal" require class="form-control"placeholder="Numero Asignado" aling="righ">
+                                                        <input type="text" name="codigo_animal" require class="form-control">
                                                     </div>
                                                 </div>
                                             <div>    
@@ -35,7 +35,7 @@
                                     </div>
                                 </div>            
                             </fieldset>
-                            <fieldset>
+                             <fieldset>
                                 <div class="row justify-content-center">
                                     <div class="col-md-12">
                                         <div class="card">
@@ -82,18 +82,10 @@
                                                         <input type="text" name="nombre_ejemplar" require class="form-control">
                                                     </div>
                                                     <div class="form-group" style="display:inline-block; width: 280px;">
-                                                        <label for="especie">Especies</label>
+                                                        <label for="especie">Especie</label>
                                                         <select name="especie_id" id="input" class="form-control">
                                                             @foreach ($specie as $especies )
                                                         <option value="{{$especies->id}}">{{$especies->nombre}}</option>   
-                                                            @endforeach
-                                                        </select>   
-                                                    </div>
-                                                    <div class="form-group" style="display:inline-block; width: 285px;">
-                                                        <label for="razas">Raza</label>
-                                                        <select name="raza_id" id="input" class="form-control">
-                                                            @foreach ($races as $raza)
-                                                        <option value="{{$raza->id}}">{{$raza->nombre}}</option>    
                                                             @endforeach
                                                         </select>   
                                                     </div>
@@ -103,6 +95,14 @@
                                                         <option value="Macho">Macho</option>
                                                         <option value="Hembra">Hembra</option>
                                                         </select>
+                                                    </div>
+                                                    <div class="form-group" style="display:inline-block; width: 285px;">
+                                                        <label for="razas">Raza</label>
+                                                        <select name="raza_id" id="input" class="form-control">
+                                                            @foreach ($races as $raza)
+                                                        <option value="{{$raza->id}}">{{$raza->nombre}}</option>    
+                                                            @endforeach
+                                                        </select>   
                                                     </div>
                                                     <div class="form-group" style="display:inline-block; width: 280px;">
                                                         <label for="color">Color</label>
@@ -119,7 +119,7 @@
                                                     <div class="form-group" style="display:inline-block; width: 200px;">
                                                         <label for="edad">Edad</label>
                                                         <input type="text" name="edad" require class="form-control">
-                                                    </div>
+                                                    </div>                                                    
                                                     <div class="form-group" style="display:inline-block; width: 460px;">
                                                         <label for="condicion">Condicion General</label>
                                                         <select name="condicion_id" id="input" class="form-control">
@@ -143,22 +143,21 @@
                                                         <option value="Regular">Regular</option>
                                                         <option value="Malo">Malo</option>
                                                         </select>
-                                                    </div>
+                                                    </div>                                                    
                                                     <div class="form-group">
                                                         <label for="señales_particulares">Señales Particulares</label>
-                                                        <textarea class="form-control" id="señales_particulares" rows="3"></textarea>
+                                                        <textarea class="form-control" name="señales_particulares"></textarea>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="motivo_ingreso_anamnesis">Motivo de Ingreso Anamnesis</label>
-                                                        <textarea class="form-control" id="motivo_ingreso_anamnesis" rows="3"></textarea>
-                                                    </div>
-                                                    
+                                                        <textarea class="form-control" name="motivo_ingreso_anamnesis"></textarea>
+                                                    </div>                                                    
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                            </fieldset>
+                            </fieldset> 
                             {{-- <fieldset>
                                 <div class="container">
                                     <div class="row justify-content-center">
