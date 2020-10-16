@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\ActitudGeneral;
 use App\Models\CondicionGeneral;
 use App\Models\RegistrarMascota;
+use Carbon\Traits\Timestamp;
 use Illuminate\Support\Facades\DB;
 
 class RegistrarMascotaController extends Controller
@@ -83,7 +84,7 @@ class RegistrarMascotaController extends Controller
 
          ]);
             DB::table('registrar_mascotas')->insert([
-  
+
             'tipo_entrada_id' => $data['tipo_entrada_id'],
             'codigo_animal' => $data['codigo_animal'], 
             'nombre_ciudadano' => $data['nombre_ciudadano'],

@@ -12,9 +12,7 @@
             {{-- <div class="row justify-content-center">
                 <div class="col-md">
                     <div class="card"> --}}
-                        
-    
-                        
+                           
                             <table class="table table-hover">
                                     <thead>
                                         <th>Fecha</th>
@@ -44,7 +42,7 @@
                                 <tbody>
                                         @foreach ($registro as $item)
                                             <tr>
-                                                <td>{{$item->created_at}}</td>
+                                                <td>{{$item->fecha}}</td>
                                                 <td>{{$item->tipo_entrada->nombre}}</td>
                                                 <td>{{$item->codigo_animal}}</td>
                                                 <td>{{$item->nombre_ciudadano}}</td>
