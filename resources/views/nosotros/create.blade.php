@@ -18,15 +18,19 @@
                             </div>
                             <div class="form-group">
                                 <label for="mision">Mision</label>
-                                <textarea class="form-control" name="mision"></textarea>
+                                <textarea class="form-control" name="mision" rows="4"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="vision">Vision</label>
-                                <textarea class="form-control" name="vision"></textarea>
+                                <textarea class="form-control" name="vision" rows="4"></textarea>
                             </div>
                             <div class="form-group">
                                 <label for="horario">Horarios de Atencion</label>
                                 <input type="text" name="horario" require class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <label for="contacto">Contacto</label>
+                                <input type="text" name="contacto" require class="form-control">
                             </div>
                             <div class="justify-content-end">
                                 <a href="/nosotros" class="btn btn-primary">Atras</a>

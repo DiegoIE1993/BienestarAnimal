@@ -9,6 +9,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\EventosController;
 use App\Http\Controllers\EspeciesController;
 use App\Http\Controllers\NosotrosController;
+use App\Http\Controllers\RequisitosController;
 use App\Http\Controllers\TipoEntradaController;
 use App\Http\Controllers\ActitudGeneralController;
 use App\Http\Controllers\CondicionGeneralController;
@@ -74,3 +75,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Auth::routes();
 
 Route::resource('eventos', EventosController::class);
+
+Auth::routes();
+
+Route::resource('requisitos', RequisitosController::class);

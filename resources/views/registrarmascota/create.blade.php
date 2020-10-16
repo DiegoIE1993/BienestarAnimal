@@ -146,7 +146,7 @@
                                                     </div>                                                    
                                                     <div class="form-group">
                                                         <label for="señales_particulares">Señales Particulares</label>
-                                                        <textarea class="form-control" name="señales_particulares"></textarea>
+                                                        <textarea class="form-control" name="señales_particulares" rows="10"></textarea>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="motivo_ingreso_anamnesis">Motivo de Ingreso Anamnesis</label>
