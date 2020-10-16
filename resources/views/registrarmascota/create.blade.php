@@ -155,7 +155,7 @@
                                     </div>
                                 </div>
                             </fieldset>
-                            <fieldset>
+                            <!-- <fieldset>
                                 <div class="container">
                                     <div class="row justify-content-center">
                                         <div class="col-md-12">
@@ -182,7 +182,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </fieldset>                      
+                            </fieldset>                       -->
                             <div class="justify-content-end">
                                 <input type="submit" value="Enviar" class="btn btn-success">
                             </div> 

@@ -13,6 +13,7 @@ use App\Http\Controllers\TipoEntradaController;
 use App\Http\Controllers\CondicionGeneralController;
 use App\Http\Controllers\ActitudGeneralController;
 use App\Http\Controllers\PielNormalController;
+use App\Http\Controllers\PeloNormalController;
 
 
 /*
@@ -70,7 +71,9 @@ Auth::routes();
 
 Route::resource('pielnormal', PielNormalController::class);
 
+Auth::routes();
 
+Route::resource('pelonormal', PeloNormalController::class);
 
 Auth::routes();
 
