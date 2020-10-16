@@ -13,6 +13,11 @@ class TipoEntradaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $entradas = TipoEntrada::all(); // entradas variable que va a ser igual al controller TipoEntrada

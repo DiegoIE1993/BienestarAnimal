@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ActitudGeneral;
+use App\Models\Requisitos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class ActitudGeneralController extends Controller
+class RequisitosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,11 +17,11 @@ class ActitudGeneralController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function index()
     {
-        $actitud = ActitudGeneral::all(); // actitud variable que va a ser igual al controller Razas
-        return view ('actitudgeneral.index', compact('actitud'));
+        $req = Requisitos::all(); 
+        return view ('requisitos.index', compact('req'));
     }
 
     /**
@@ -31,7 +31,7 @@ class ActitudGeneralController extends Controller
      */
     public function create()
     {
-        return view ('actitudgeneral.create');
+        return view ('requisitos.create');
     }
 
     /**
@@ -43,23 +43,23 @@ class ActitudGeneralController extends Controller
     public function store(Request $request)
     {
         $data = request()->validate([
-            'nombre'=> 'Required',            
+            'descripcion'=> 'Required',            
         ]);
 
-        DB::table('actitud_generals')->insert([
-            'nombre' => $data['nombre'],
+        DB::table('requisitos')->insert([
+            'descripcion' => $data['descripcion'],
         ]);
 
-        return redirect('/actitudgeneral');
+        return redirect('/requisitos');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\ActitudGeneral  $actitudGeneral
+     * @param  \App\Models\TipoEntrada  $tipoEntrada
      * @return \Illuminate\Http\Response
      */
-    public function show(ActitudGeneral $actitudGeneral)
+    public function show(requisitos $requisitos)
     {
         //
     }
@@ -67,51 +67,52 @@ class ActitudGeneralController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\ActitudGeneral  $actitudGeneral
+     * @param  \App\Models\TipoEntrada  $tipoEntrada
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $actitud = ActitudGeneral::findOrFail($id);
+        $req = Requisitos::findOrFail($id);
 
-        return view('actitudgeneral.edit', compact('actitud'));
+        return view('requisitos.edit', compact('req'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ActitudGeneral  $actitudGeneral
+     * @param  \App\Models\TipoEntrada  $tipoEntrada
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $actitud = ActitudGeneral::findOrFail($id);
+        $req = Requisitos::findOrFail($id);
        
-        $actitud->nombre =$request->nombre;
+        $req->descripcion =$request->descripcion;
         
-        $actitud->save();
+        $req->save();
 
-        return redirect('/actitudgeneral');
+        return redirect('/requisitos');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\ActitudGeneral  $actitudGeneral
+     * @param  \App\Models\TipoEntrada  $tipoEntrada
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $actitud = ActitudGeneral::findOrFail($id);
-        //Eliminar Actitud General
-        if ($actitud->delete()){
-            return redirect('/actitudgeneral');
+        $req = Requisitos::findOrFail($id);
+
+        //Eliminar Tipo Entrada
+        if ($req->delete()){
+            return redirect('/requisitos');
         }
         else
         {
             return response() ->json([
-                'mensaje' => 'Error al eliminar actitud general'
+                'mensaje' => 'Error al eliminar tipo de entrada'
             ]);
         }
     }

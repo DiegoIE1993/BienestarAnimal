@@ -12,16 +12,16 @@
             {{-- <div class="row justify-content-center">
                 <div class="col-md">
                     <div class="card"> --}}
-                        
-    
-                        
+                           
                             <table class="table table-hover">
                                     <thead>
+                                        <th>Fecha</th>
                                         <th>Tipo de Entrada</th>
+                                        <th>Identificacion del Animal</th>
                                         <th>Nombres Ciudadano</th>
-                                        <th>Direccione</th>
+                                        <th>Dirección</th>
                                         <th>Cedula</th>
-                                        <th>Telefono</th>
+                                        <th>Teléfono</th>
                                         <th>Correo</th>
                                         <th>Nombre del Ejemplar</th>
                                         <th>Genero</th>
@@ -29,7 +29,7 @@
                                         <th>Raza</th>
                                         <th>Color</th>
                                         <th>Talla</th>
-                                        <th>Peso</th>
+                                        <th>Peso (Kg)</th>
                                         <th>Edad</th>
                                         <th>Condicion General</th>
                                         <th>Actitud General</th>
@@ -42,7 +42,9 @@
                                 <tbody>
                                         @foreach ($registro as $item)
                                             <tr>
+                                                <td>{{$item->fecha}}</td>
                                                 <td>{{$item->tipo_entrada->nombre}}</td>
+                                                <td>{{$item->codigo_animal}}</td>
                                                 <td>{{$item->nombre_ciudadano}}</td>
                                                 <td>{{$item->direccion}}</td>
                                                 <td>{{$item->cedula}}</td>
@@ -62,10 +64,8 @@
                                                 <td>{{$item->señales_particulares}}</td>
                                                 <td>{{$item->motivo_ingreso_anamnesis}}</td>
 
-
-
                                                 <td>
-                                                    <a href="{{ url('/registrarmascota/'.$item->id.'/edit')}}" class="btn btn-primary">Editar</a>        
+                                                    <a href="{{ url('/registrarmascota/'.$item->codigo_animal.'/edit')}}" class="btn btn-primary">Editar</a>        
                                                 </td>
                                             </tr>
                                         @endforeach

@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use App\Models\ActitudGeneral;
 use App\Models\CondicionGeneral;
 use App\Models\RegistrarMascota;
+use Carbon\Traits\Timestamp;
 use Illuminate\Support\Facades\DB;
 
 class RegistrarMascotaController extends Controller
@@ -18,6 +19,11 @@ class RegistrarMascotaController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $registro = RegistrarMascota::all();
@@ -49,8 +55,11 @@ class RegistrarMascotaController extends Controller
      */
     public function store(Request $request)
     {
+        
         $data = request()->validate([
+          
         'tipo_entrada_id' => 'Required',
+        'codigo_animal' => 'Required',
         'nombre_ciudadano'=> 'Required',
         'direccion' => 'Required',
         'cedula' => 'Required',
@@ -69,13 +78,15 @@ class RegistrarMascotaController extends Controller
         'estado' => 'Required',
         'señales_particulares' => 'Required',
         'motivo_ingreso_anamnesis' => 'Required',
-        'timeStamp'
+        
         
         
 
          ]);
             DB::table('registrar_mascotas')->insert([
+
             'tipo_entrada_id' => $data['tipo_entrada_id'],
+            'codigo_animal' => $data['codigo_animal'], 
             'nombre_ciudadano' => $data['nombre_ciudadano'],
             'direccion' => $data['direccion'],
             'cedula' => $data['cedula'],

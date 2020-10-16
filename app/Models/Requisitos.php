@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Nosotros extends Model
+class Requisitos extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'titulo', 'mision', 'vision', 'horario','contacto'
+        'descripcion'
     ];
 }

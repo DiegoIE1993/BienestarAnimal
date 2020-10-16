@@ -250,7 +250,19 @@ return [
         [
             'text'        => 'Registrar Mascotas',
             'url'         => 'registrarmascota',
+            'icon'        => 'fa fa-plus',
+            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Animales para Adopcion',
+            'url'         => 'animalesadopcion',
             'icon'        => 'fa fa-paw',
+            'label_color' => 'success',
+        ],
+        [
+            'text'        => 'Eventos',
+            'url'         => 'eventos',
+            'icon'        => 'fa fa-calendar',
             'label_color' => 'success',
         ],
         // ['header' => 'account_settings'],
@@ -292,6 +304,10 @@ return [
                 [
                     'text' => 'Actitud General',
                     'url'  => 'actitudgeneral',
+                ],
+                [
+                    'text' => 'Requisitos Adopcion',
+                    'url'  => 'requisitos',
                 ],
 
                 

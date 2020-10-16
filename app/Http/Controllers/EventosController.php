@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\ActitudGeneral;
+use App\Models\Eventos;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
-class ActitudGeneralController extends Controller
+class EventosController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,11 +17,11 @@ class ActitudGeneralController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function index()
     {
-        $actitud = ActitudGeneral::all(); // actitud variable que va a ser igual al controller Razas
-        return view ('actitudgeneral.index', compact('actitud'));
+         $events = Eventos::all();
+        return view('eventos.index', compact('events'));
     }
 
     /**
@@ -31,7 +31,7 @@ class ActitudGeneralController extends Controller
      */
     public function create()
     {
-        return view ('actitudgeneral.create');
+      return view('eventos.create');
     }
 
     /**
@@ -43,23 +43,28 @@ class ActitudGeneralController extends Controller
     public function store(Request $request)
     {
         $data = request()->validate([
-            'nombre'=> 'Required',            
-        ]);
+        'titulo'=> 'Required',
+        'descripcion' => 'Required',
+        'fecha' => 'Required',
+    ]);
 
-        DB::table('actitud_generals')->insert([
-            'nombre' => $data['nombre'],
-        ]);
+    DB::table('eventos')->insert([
+        'titulo' => $data['titulo'],
+        'descripcion' => $data['descripcion'],
+        'fecha' => $data['fecha'],
+        
+    ]);
 
-        return redirect('/actitudgeneral');
+    return redirect('/eventos');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\ActitudGeneral  $actitudGeneral
+     * @param  \App\Models\Eventos  $eventos
      * @return \Illuminate\Http\Response
      */
-    public function show(ActitudGeneral $actitudGeneral)
+    public function show(Eventos $eventos)
     {
         //
     }
@@ -67,52 +72,54 @@ class ActitudGeneralController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\ActitudGeneral  $actitudGeneral
+     * @param  \App\Models\Eventos  $eventos
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        $actitud = ActitudGeneral::findOrFail($id);
+        $events = Eventos::findOrFail($id);
 
-        return view('actitudgeneral.edit', compact('actitud'));
+        return view('eventos.edit', compact('events'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\ActitudGeneral  $actitudGeneral
+     * @param  \App\Models\Eventos  $eventos
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $actitud = ActitudGeneral::findOrFail($id);
-       
-        $actitud->nombre =$request->nombre;
-        
-        $actitud->save();
+      $eventos = Eventos::findOrFail($id);
+      $eventos->titulo =$request->titulo;
+      $eventos->descripcion =$request->descripcion;
+      $eventos->fecha =$request->fecha;
+      
+      $eventos->save();
 
-        return redirect('/actitudgeneral');
+      return redirect('/eventos');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\ActitudGeneral  $actitudGeneral
+     * @param  \App\Models\Eventos  $eventos
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $actitud = ActitudGeneral::findOrFail($id);
-        //Eliminar Actitud General
-        if ($actitud->delete()){
-            return redirect('/actitudgeneral');
-        }
-        else
-        {
-            return response() ->json([
-                'mensaje' => 'Error al eliminar actitud general'
-            ]);
-        }
+      $eventos = Eventos::findOrFail($id);
+
+      //Eliminar el usuario
+      if ($eventos->delete($id)){
+          return redirect('/eventos');
+      }
+      else
+      {
+          return response() ->json([
+              'mensaje' => 'Error al eliminar la informacion'
+          ]);
+      }
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateNosotrosTable extends Migration
+class CreateRequisitosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,9 @@ class CreateNosotrosTable extends Migration
      */
     public function up()
     {
-        Schema::create('nosotros', function (Blueprint $table) {
+        Schema::create('requisitos', function (Blueprint $table) {
             $table->id();
-            $table->string('titulo');
-            $table->Text('mision');
-            $table->Text('vision');
-            $table->string('horario');
-            $table->string('contacto');
+            $table->string('descripcion');
             $table->timestamps();
         });
     }
@@ -31,6 +27,6 @@ class CreateNosotrosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('nosotros');
+        Schema::dropIfExists('requisitos');
     }
 }

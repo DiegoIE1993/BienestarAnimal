@@ -14,6 +14,11 @@ class NosotrosController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+    
     public function index()
     {
         $info = Nosotros::all();
@@ -42,7 +47,8 @@ class NosotrosController extends Controller
             'titulo'=> 'Required',
             'mision' => 'Required',
             'vision' => 'Required',
-            'horario' => 'required'
+            'horario' => 'Required',
+            'contacto' => 'Required'
         ]);
 
         DB::table('nosotros')->insert([
@@ -50,6 +56,7 @@ class NosotrosController extends Controller
             'mision' => $data['mision'],
             'vision' => $data['vision'],
             'horario' => $data['horario'],
+            'contacto' => $data['contacto']
         ]);
 
         return redirect('/nosotros');
@@ -94,6 +101,7 @@ class NosotrosController extends Controller
         $nosotros->mision =$request->mision;
         $nosotros->vision =$request->vision;
         $nosotros->horario =$request->horario;
+        $nosotros->contacto =$request->contacto;
         
         $nosotros->save();
 

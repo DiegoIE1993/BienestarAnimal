@@ -9,7 +9,9 @@
 
                     <div class="card-body">
                         <div class="row justify-content-end pb-2">
-                            <a href="{{url('/nosotros/create')}}" class="btn btn-success">Agregar Informacion</a>
+                            @if(count($info) == 0 )
+                             <a href="{{url('/nosotros/create')}}" class="btn btn-success">Agregar Informacion</a>
+                             @endif
                         </div>
                             <table class="table">
                                 <thead>
@@ -17,6 +19,7 @@
                                     <th>Mision</th>
                                     <th>Vision</th>
                                     <th>Horarios de Atencion</th>
+                                    <th>Contacto</th>
                                     <th>Acciones</th>
                                 </thead>
                         
@@ -27,6 +30,7 @@
                                             <td> {{$nosotros->mision}}</td>
                                             <td> {{$nosotros->vision}}</td>
                                             <td> {{$nosotros->horario}}</td>
+                                            <td> {{$nosotros->contacto}}</td>
                                             <td>
                                                 <a href="{{ url('/nosotros/'.$nosotros->id.'/edit')}}" class="btn btn-primary">Editar</a>
                                                 @include('nosotros.delete', ['nosotros' => $nosotros])  

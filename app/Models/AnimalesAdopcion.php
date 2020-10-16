@@ -5,10 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class PielNormal extends Model
+class AnimalesAdopcion extends Model
 {
     use HasFactory;
-    protected $fillable = [
-        'nombre'
-    ];
 }
