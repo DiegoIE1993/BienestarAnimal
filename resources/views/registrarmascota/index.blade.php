@@ -15,7 +15,7 @@
                            
                             <table class="table table-hover">
                                     <thead>
-                                        <th>Fecha</th>
+                                        
                                         <th>Tipo de Entrada</th>
                                         <th>Identificacion del Animal</th>
                                         <th>Nombres Ciudadano</th>
@@ -42,7 +42,6 @@
                                 <tbody>
                                         @foreach ($registro as $item)
                                             <tr>
-                                                <td>{{$item->fecha}}</td>
                                                 <td>{{$item->tipo_entrada->nombre}}</td>
                                                 <td>{{$item->codigo_animal}}</td>
                                                 <td>{{$item->nombre_ciudadano}}</td>
