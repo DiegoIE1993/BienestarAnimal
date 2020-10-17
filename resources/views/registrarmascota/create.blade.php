@@ -77,11 +77,11 @@
                                                     DATOS PRINCIPALES DEL EJEMPLAR
                                                 </div>
                                                 <div class="card-body">
-                                                    <div class="form-group" style="display:inline-block; width: 300px;">
+                                                    <div class="form-group" style="display:inline-block; width: 430px;">
                                                         <label for="nombre_ejemplar">Nombres</label>
                                                         <input type="text" name="nombre_ejemplar" require class="form-control">
                                                     </div>
-                                                    <div class="form-group" style="display:inline-block; width: 280px;">
+                                                    <div class="form-group" style="display:inline-block; width: 430px;">
                                                         <label for="especie">Especie</label>
                                                         <select name="especie_id" id="input" class="form-control">
                                                             @foreach ($specie as $especies )
@@ -146,24 +146,19 @@
                                                     </div>                                                    
                                                     <div class="form-group">
                                                         <label for="señales_particulares">Señales Particulares</label>
-                                                        <textarea class="form-control" name="señales_particulares" rows="10"></textarea>
+                                                        <textarea class="form-control" name="señales_particulares" rows="3"></textarea>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="motivo_ingreso_anamnesis">Motivo de Ingreso Anamnesis</label>
-                                                        <textarea class="form-control" name="motivo_ingreso_anamnesis"></textarea>
+                                                        <textarea class="form-control" name="motivo_ingreso_anamnesis" rows="3"></textarea>
                                                     </div>                                                    
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-<<<<<<< HEAD
                             </fieldset>
                             <!-- <fieldset>
-=======
-                            </fieldset> 
-                            {{-- <fieldset>
->>>>>>> 414792628fff0f89663cc32642cc2cbee6a964ff
                                 <div class="container">
                                     <div class="row justify-content-center">
                                         <div class="col-md-12">
@@ -190,11 +185,7 @@
                                         </div>
                                     </div>
                                 </div>
-<<<<<<< HEAD
                             </fieldset>                       -->
-=======
-                            </fieldset>                       --}}
->>>>>>> 414792628fff0f89663cc32642cc2cbee6a964ff
                             <div class="justify-content-end">
                                 <input type="submit" value="Enviar" class="btn btn-success">
                             </div> 

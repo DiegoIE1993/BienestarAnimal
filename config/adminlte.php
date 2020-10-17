@@ -231,11 +231,7 @@ return [
     */
 
     'menu' => [
-        [
-            'text' => 'search',
-            'search' => true,
-            'topnav' => true,
-        ],
+        
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
@@ -262,20 +258,15 @@ return [
         [
             'text'        => 'Eventos',
             'url'         => 'eventos',
-            'icon'        => 'fa fa-calendar',
+            'icon'        => 'fa fa-calendar-times',
             'label_color' => 'success',
         ],
-        // ['header' => 'account_settings'],
-        // [
-        //     'text' => 'profile',
-        //     'url'  => 'admin/settings',
-        //     'icon' => 'fas fa-fw fa-user',
-        // ],
-        // [
-        //     'text' => 'change_password',
-        //     'url'  => 'admin/settings',
-        //     'icon' => 'fas fa-fw fa-lock',
-        // ],
+        [
+            'text'        => 'Educacion',
+            'url'         => 'educacion',
+            'icon'        => 'fa fa-film',
+            'label_color' => 'success',
+        ],
         [
             'text'    => 'Mantenimiento',
             'icon'    => 'fa fa-wrench',

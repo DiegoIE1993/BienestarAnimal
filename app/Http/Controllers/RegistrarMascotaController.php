@@ -118,9 +118,11 @@ class RegistrarMascotaController extends Controller
      * @param  \App\Models\RegistrarMascota  $registrarMascota
      * @return \Illuminate\Http\Response
      */
-    public function show(RegistrarMascota $registrarMascota)
+    public function show($codigo_animal)
     {
-        //
+        $item = RegistrarMascota::findOrFail($codigo_animal);
+
+        return view('registrarmascota.show', compact('item'));
     }
 
     /**

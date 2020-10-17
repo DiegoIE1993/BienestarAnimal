@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RazaController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\EducacionController;
 use App\Http\Controllers\EventosController;
 use App\Http\Controllers\EspeciesController;
 use App\Http\Controllers\NosotrosController;
@@ -75,3 +76,7 @@ Route::resource('eventos', EventosController::class);
 Auth::routes();
 
 Route::resource('requisitos', RequisitosController::class);
+
+Auth::routes();
+
+Route::resource('educacion', EducacionController::class);
