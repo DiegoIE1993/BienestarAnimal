@@ -33,7 +33,7 @@
                                         <td>
                                             <a href="/registrarmascota/{{$item->codigo_animal}}" class="fa fa-eyedropper"></a> 
                                             <a href="{{ url('/registrarmascota/'.$item->codigo_animal.'/edit')}}" class="fa fa-trash"></a> 
-                                            
+                                            @include('registrarmascota.delete', ['item' => $item])  
                                             
                                             
                                         </td>

@@ -31,6 +31,7 @@ class CreateRegistrarMascotasTable extends Migration
             $table->string('estado');
             $table->string('señales_particulares');
             $table->string('motivo_ingreso_anamnesis');
+            $table->string('imagen');
             $table->timestamps();
             
             $table->unsignedBigInteger('especie_id');

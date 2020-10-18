@@ -11,7 +11,7 @@ class RegistrarMascota extends Model
     use HasFactory;
     protected $primaryKey = 'codigo_animal';
     protected $fillable = [
-        'tipo_entrada_id','codigo_animal','nombre_ciudadano','direccion','cedula','telefono','correo','nombre_ejemplar','genero','especie_id','raza_id','color','talla','peso','edad','condicion_id','actitud_id','estado','señales_paticulares','motivo_ingreso_anamnesis',
+        'tipo_entrada_id','codigo_animal','nombre_ciudadano','direccion','cedula','telefono','correo','nombre_ejemplar','genero','especie_id','raza_id','color','talla','peso','edad','condicion_id','actitud_id','estado','señales_paticulares','motivo_ingreso_anamnesis','imagen',
         
     ];
     

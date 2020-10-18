@@ -8,7 +8,7 @@
                     <div class="card-header">
                         REGISTRO HISTORIA CLINICA ANIMAL
                     </div>
-                        <form action="{{ route('registrarmascota.store')}}" method="post">
+                        <form action="{{ route('registrarmascota.store')}}" enctype="multipart/form-data" method="post">
                             @csrf
                             <div class="card-body">
                             <fieldset>
@@ -151,7 +151,11 @@
                                                     <div class="form-group">
                                                         <label for="motivo_ingreso_anamnesis">Motivo de Ingreso Anamnesis</label>
                                                         <textarea class="form-control" name="motivo_ingreso_anamnesis" rows="3"></textarea>
-                                                    </div>                                                    
+                                                    </div> 
+                                                    <div class="form-group">
+                                                        <label for="imagen">Elige la imagen</label>
+                                                        <input type="file" name="imagen" require class="form-control">
+                                                    </div>                                                 
                                                 </div>
                                             </div>
                                         </div>
