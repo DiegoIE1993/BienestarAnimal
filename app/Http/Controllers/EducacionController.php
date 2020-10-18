@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Educacion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class EducacionController extends Controller
 {
@@ -12,15 +13,10 @@ class EducacionController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
-        $education = Educacion::all();
-        return view ('educacion.index', compact('education'));
+        $educations = Educacion::all();
+        return view('educacion.index', compact('educations'));
     }
 
     /**
@@ -30,7 +26,7 @@ class EducacionController extends Controller
      */
     public function create()
     {
-        //
+        return view('educacion.create');
     }
 
     /**
@@ -41,7 +37,19 @@ class EducacionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = request()->validate([
+            'titulo'=> 'Required',
+            'video' => 'Required',
+
+        ]);
+    
+        DB::table('educacions')->insert([
+            'titulo' => $data['titulo'],
+            'video' => $data['video'],
+            
+        ]);
+
+        return redirect('/educacion');
     }
 
     /**
@@ -50,9 +58,11 @@ class EducacionController extends Controller
      * @param  \App\Models\Educacion  $educacion
      * @return \Illuminate\Http\Response
      */
-    public function show(Educacion $educacion)
+    public function show($id)
     {
-        //
+        $educations = Educacion::findOrFail($id);
+
+        return view('educacion.show', compact('educations'));
     }
 
     /**
