@@ -60,7 +60,7 @@ class EducacionController extends Controller
      */
     public function show($id)
     {
-        $educations = Educacion::findOrFail($id);
+        $educations = Educacion::All();
 
         return view('educacion.show', compact('educations'));
     }
