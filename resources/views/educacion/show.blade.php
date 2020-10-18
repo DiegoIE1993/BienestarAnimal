@@ -1,6 +1,6 @@
-@extends('adminlte::page')
+{{-- @extends('adminlte::page')
 
-@section('content')
+@section('content') --}}
 <!DOCTYPE html>
 <html>
    <head>
@@ -19,26 +19,36 @@
       <a href="/educacion" class="btn btn-primary">Atras</a>
    </body> --}}
    <body>
-      <div>
-         <table>
+      <div class="container videos-educativos">
+         <div class="row">
+         
             @foreach ($educations as $edu)
-            <td>               
-               <h1> {{$edu->titulo}} </h1>
+                         
+               <div class="col-md-4">
+                  <div class="card">
+                     <div class="card-body">
+                        <h1> {{$edu->titulo}} </h1>
+                     
+                     
+                        <iframe width="280" height="315" src="{{$edu->video}}"
+                           frameborder="0" allow="autoply; encrypted-media" allowfullscreen>
+                       </iframe>
+                     </div>
+                  </div>
                   
-            </td>
-            <td>
-               <div>
-                  <iframe width="560" height="315" src="{{$edu->video}}"
-                     frameborder="0" allow="autoply; encrypted-media" allowfullscreen>
-                 </iframe>
+          
+               
+                  
+
                </div>
-            </td>
+               
             
                 
             @endforeach
-         </table>
+       
          
+      </div>
       </div>
    </body>
 </html>
-@endsection 
+{{-- @endsection  --}}
