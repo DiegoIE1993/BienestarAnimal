@@ -8,7 +8,7 @@
                     <div class="card-header">
                         REGISTRO HISTORIA CLINICA ANIMAL
                     </div>
-                        <form action="{{ route('registrarmascota.store')}}" method="post">
+                        <form action="{{ route('registrarmascota.store')}}" enctype="multipart/form-data" method="post">
                             @csrf
                             <div class="card-body">
                             <fieldset>
@@ -77,11 +77,11 @@
                                                     DATOS PRINCIPALES DEL EJEMPLAR
                                                 </div>
                                                 <div class="card-body">
-                                                    <div class="form-group" style="display:inline-block; width: 300px;">
+                                                    <div class="form-group" style="display:inline-block; width: 430px;">
                                                         <label for="nombre_ejemplar">Nombres</label>
                                                         <input type="text" name="nombre_ejemplar" require class="form-control">
                                                     </div>
-                                                    <div class="form-group" style="display:inline-block; width: 280px;">
+                                                    <div class="form-group" style="display:inline-block; width: 430px;">
                                                         <label for="especie">Especie</label>
                                                         <select name="especie_id" id="input" class="form-control">
                                                             @foreach ($specie as $especies )
@@ -146,12 +146,16 @@
                                                     </div>                                                    
                                                     <div class="form-group">
                                                         <label for="señales_particulares">Señales Particulares</label>
-                                                        <textarea class="form-control" name="señales_particulares" rows="10"></textarea>
+                                                        <textarea class="form-control" name="señales_particulares" rows="3"></textarea>
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="motivo_ingreso_anamnesis">Motivo de Ingreso Anamnesis</label>
-                                                        <textarea class="form-control" name="motivo_ingreso_anamnesis"></textarea>
-                                                    </div>                                                    
+                                                        <textarea class="form-control" name="motivo_ingreso_anamnesis" rows="3"></textarea>
+                                                    </div> 
+                                                    <div class="form-group">
+                                                        <label for="imagen">Elige la imagen</label>
+                                                        <input type="file" name="imagen" require class="form-control">
+                                                    </div>                                                 
                                                 </div>
                                             </div>
                                         </div>

@@ -20,7 +20,7 @@ class RazaController extends Controller
     
     public function index()
     {
-        $races = Raza::all(); // races variable que va a ser igual al controller Razas
+        $races = Raza::all();
         return view ('razas.index', compact('races'));
     }
 

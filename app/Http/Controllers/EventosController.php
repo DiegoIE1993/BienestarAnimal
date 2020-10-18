@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Eventos;
+use Illuminate\Console\Scheduling\Event;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -64,9 +65,11 @@ class EventosController extends Controller
      * @param  \App\Models\Eventos  $eventos
      * @return \Illuminate\Http\Response
      */
-    public function show(Eventos $eventos)
-    {
-        //
+    public function show($id)
+    { 
+        $events = Eventos::findOrFail($id);
+
+        return view('eventos.show', compact('events'));
     }
 
     /**

@@ -14,6 +14,7 @@ use App\Http\Controllers\TipoEntradaController;
 use App\Http\Controllers\ActitudGeneralController;
 use App\Http\Controllers\CondicionGeneralController;
 use App\Http\Controllers\RegistrarMascotaController;
+use App\Http\Controllers\EducacionController;
 
 
 
@@ -75,3 +76,7 @@ Route::resource('eventos', EventosController::class);
 Auth::routes();
 
 Route::resource('requisitos', RequisitosController::class);
+
+Auth::routes();
+
+Route::resource('educacion', EducacionController::class);

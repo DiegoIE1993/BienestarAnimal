@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use App\Models\Raza;
 use App\Models\Especies;
 use App\Models\TipoEntrada;
+use Carbon\Traits\Timestamp;
 use Illuminate\Http\Request;
 use App\Models\ActitudGeneral;
 use App\Models\CondicionGeneral;
 use App\Models\RegistrarMascota;
-use Carbon\Traits\Timestamp;
 use Illuminate\Support\Facades\DB;
+use Intervention\Image\Facades\Image;
 
 class RegistrarMascotaController extends Controller
 {
@@ -78,33 +79,36 @@ class RegistrarMascotaController extends Controller
         'estado' => 'Required',
         'señales_particulares' => 'Required',
         'motivo_ingreso_anamnesis' => 'Required',
-        
-        
-        
-
+        'imagen' => 'Required|image',
          ]);
-            DB::table('registrar_mascotas')->insert([
+        //obtener la ruta de imagen
+         $ruta_imagen = $request['imagen']->store('upload-animales', 'public');
+         $img  = Image::make( public_path("storage/{$ruta_imagen}"))->fit(500, 600);
+         $img->save();
+         
 
-            'tipo_entrada_id' => $data['tipo_entrada_id'],
-            'codigo_animal' => $data['codigo_animal'], 
-            'nombre_ciudadano' => $data['nombre_ciudadano'],
-            'direccion' => $data['direccion'],
-            'cedula' => $data['cedula'],
-            'telefono' => $data['telefono'],
-            'correo' => $data['correo'],
-            'nombre_ejemplar' => $data['nombre_ejemplar'],
-            'genero' => $data['genero'],
-            'especie_id' => $data['especie_id'],
-            'raza_id' => $data['raza_id'],
-            'color' => $data['color'],
-            'talla' => $data['talla'],
-            'peso' => $data['peso'],
-            'edad' => $data['edad'],
-            'condicion_id' => $data['condicion_id'],
-            'actitud_id' => $data['actitud_id'],
-            'estado' => $data['estado'],
-            'señales_particulares' => $data['señales_particulares'],
-            'motivo_ingreso_anamnesis' => $data['motivo_ingreso_anamnesis'],
+        DB::table('registrar_mascotas')->insert([
+        'tipo_entrada_id' => $data['tipo_entrada_id'],
+        'codigo_animal' => $data['codigo_animal'], 
+        'nombre_ciudadano' => $data['nombre_ciudadano'],
+        'direccion' => $data['direccion'],
+        'cedula' => $data['cedula'],
+        'telefono' => $data['telefono'],
+        'correo' => $data['correo'],
+        'nombre_ejemplar' => $data['nombre_ejemplar'],
+        'genero' => $data['genero'],
+        'especie_id' => $data['especie_id'],
+        'raza_id' => $data['raza_id'],
+        'color' => $data['color'],
+        'talla' => $data['talla'],
+        'peso' => $data['peso'],
+        'edad' => $data['edad'],
+        'condicion_id' => $data['condicion_id'],
+        'actitud_id' => $data['actitud_id'],
+        'estado' => $data['estado'],
+        'señales_particulares' => $data['señales_particulares'],
+        'motivo_ingreso_anamnesis' => $data['motivo_ingreso_anamnesis'],
+        'imagen' => $ruta_imagen,
             
         ]);
 
@@ -118,9 +122,11 @@ class RegistrarMascotaController extends Controller
      * @param  \App\Models\RegistrarMascota  $registrarMascota
      * @return \Illuminate\Http\Response
      */
-    public function show(RegistrarMascota $registrarMascota)
+    public function show($codigo_animal)
     {
-        //
+        $item = RegistrarMascota::findOrFail($codigo_animal);
+
+        return view('registrarmascota.show', compact('item'));
     }
 
     /**
@@ -152,8 +158,19 @@ class RegistrarMascotaController extends Controller
      * @param  \App\Models\RegistrarMascota  $registrarMascota
      * @return \Illuminate\Http\Response
      */
-    public function destroy(RegistrarMascota $registrarMascota)
+    public function destroy($codigo_animal)
     {
-        //
+        $item = RegistrarMascota::findOrFail($codigo_animal);
+
+        //Eliminar el usuario
+        if ($item->delete()){
+            return redirect('/registrarmascota');
+        }
+        else
+        {
+            return response() ->json([
+                'mensaje' => 'Error al eliminar la informacion'
+            ]);
+        }
     }
 }

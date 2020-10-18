@@ -19,22 +19,18 @@
 
                                 <tbody>
                                     @foreach ($races as $raza)
-                                            <tr>
-                                                <td> {{$raza->nombre}}</td>
-                                               
-                                                <td>
-                                                    <a href="{{ url('/razas/'.$raza->id.'/edit')}}" class="btn btn-primary">Editar</a>
-                                                    @include('razas.delete', ['raza' => $raza])  
-                                                </td>
-                                            </tr>
-                                        @endforeach
+                                        <tr>
+                                            <td> {{$raza->nombre}}</td>
+                                            <td>
+                                                <a href="{{ url('/razas/'.$raza->id.'/edit')}}" class="btn btn-primary">Editar</a>
+                                                @include('razas.delete', ['raza' => $raza])  
+                                            </td>
+                                        </tr>
+                                    @endforeach
                                 </tbody>
-                           
                             </table>
                         </div>
                     </div>
-                        
-
                 </div>
 
             </div>
