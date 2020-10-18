@@ -60,11 +60,7 @@ class EducacionController extends Controller
      */
     public function show($id)
     {
-<<<<<<< HEAD
         $educations = Educacion::all();
-=======
-        $educations = Educacion::All();
->>>>>>> 65a3bed3c6a434089aa3fe987575e4febb2cde8e
 
         return view('educacion.show', compact('educations'));
     }

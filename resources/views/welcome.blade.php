@@ -32,7 +32,6 @@
                     <a class="nav-link" href="{{route('educacion.show')}}">Educacion</a>
                     <a class="nav-link" href="#">Contacto</a>
                     <a class="nav-link" href="#"></a>
-                   
                 </div>
             </div>
         </nav>
