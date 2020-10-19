@@ -69,9 +69,11 @@ class NosotrosController extends Controller
      * @param  \App\Models\Nosotros  $nosotros
      * @return \Illuminate\Http\Response
      */
-    public function show(Nosotros $nosotros)
+    public function show()
     {
-        //
+        $info = Nosotros::all();
+
+        return view('nosotros.show', compact('info'));
     }
 
     /**

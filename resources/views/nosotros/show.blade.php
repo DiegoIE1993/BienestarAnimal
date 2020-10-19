@@ -82,8 +82,40 @@
                     </a>
                 </div>
         </section>
-    
-       
+              
+        <section class="nosotros">   
+          <div id='nosotros' class="container-nosotros">
+            <div class="container nosotros">
+                    @foreach ($info ?? '' as $nosotros)           
+                        <div class="col-md-16">
+                           <div class="card">
+                              <div class="card-body">
+                                 <div>
+                                    <h1> {{$nosotros->titulo}} </h1>
+                                 </div>
+                                 <div>
+                                    <h2>Misión</h2>
+                                    <p>{{$nosotros->mision}}</p> 
+                                 </div>       
+                                 <div>
+                                    <h1>Visión</h1>
+                                    <p>{{$nosotros->vision}}</p>
+                                 </div>
+                                 <div>
+                                    <h2>Horarios</h2>
+                                    <p>{{$nosotros->horario}}</p>
+                                 </div>       
+                                 <div>
+                                    <h2>Contactos</h2>
+                                    <p>{{$nosotros->contacto}}</p>
+                                 </div>      
+                              </div>
+                           </div>
+                        </div>  
+                    @endforeach   
+             </div>
+          </div>
+        </section> 
         <footer>
 
         </footer>
@@ -93,3 +125,4 @@
 </body>
 
 </html>
+

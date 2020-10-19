@@ -28,9 +28,9 @@ use App\Http\Controllers\WelcomeController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('/',[WelcomeController::class,'get_welcome']);
 
