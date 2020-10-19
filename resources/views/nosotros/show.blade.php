@@ -108,11 +108,15 @@
                                  <div>
                                     <h2>Contactos</h2>
                                     <p>{{$nosotros->contacto}}</p>
+                                 </div> 
+                                 <div>
+                                    <h2>Nuestros Aliados</h2> 
                                  </div>      
                               </div>
                            </div>
                         </div>  
-                    @endforeach   
+                    @endforeach 
+                     
              </div>
           </div>
         </section> 
