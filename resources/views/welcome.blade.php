@@ -7,15 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Laravel</title>
-
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <script src="{{ asset('js/custom.js')}}"></script>
+    
 </head>
 
 <body>
+<div class="container">
+
 
     <header>
+
 
         <!-- Just an image -->
         <nav class="navbar navbar-light bg-light navbar-expand-md sticky-top">
@@ -29,14 +36,13 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                 <div class="navbar-nav ml-auto text-center">
                     <a class="nav-link active" href="#">Inicio <span class="sr-only">(current)</span></a>
-                    <a class="nav-link" href="{{route('educacion.show')}}">Educacion</a>
+                    <a class="nav-link" href="{{url('educacion.show')}}">Educacion</a>
                     <a class="nav-link" href="#">Contacto</a>
                     <a class="nav-link" href="#"></a>
                 </div>
             </div>
         </nav>
     </header>
-
     <div class="row-fluid">
         <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -76,18 +82,35 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
-        <div class="content">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus nisi non sed quidem enim aut iste, eaque sequi repellat? Corrupti, aperiam inventore quasi facilis adipisci ducimus ea tenetur optio necessitatibus.</p>
+        <div id='educacion' class="container" hidden>
+            <div class="container videos-educativos">
+                <div class="row">
+                   @foreach ($educations as $edu)           
+                      <div class="col-md-4">
+                         <div class="card">
+                            <div class="card-body">
+                               <h1> {{$edu->titulo}} </h1>        
+                               <iframe width="280" height="315" src="{{$edu->video}}"
+                                  frameborder="0" allow="autoply; encrypted-media" allowfullscreen>
+                              </iframe>
+                            </div>
+                         </div>
+                      </div>  
+                   @endforeach
+             </div>
         </div>
+
+        </div>
+
+    
 
 
 
         <footer>
 
         </footer>
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+        
+    </div>
 </body>
 
 </html>

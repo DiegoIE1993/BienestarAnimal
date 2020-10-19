@@ -42,10 +42,14 @@ class EducacionController extends Controller
             'video' => 'Required',
 
         ]);
+
+        $cadena=$data['video'];
+        $cadena= explode("v=",$cadena);
+        $cadena= "https://www.youtube.com/embed/".$cadena[1];
     
         DB::table('educacions')->insert([
             'titulo' => $data['titulo'],
-            'video' => $data['video'],
+            'video' => $cadena,
             
         ]);
 
@@ -58,7 +62,7 @@ class EducacionController extends Controller
      * @param  \App\Models\Educacion  $educacion
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
         $educations = Educacion::all();
 

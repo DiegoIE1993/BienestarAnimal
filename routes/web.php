@@ -15,8 +15,7 @@ use App\Http\Controllers\ActitudGeneralController;
 use App\Http\Controllers\CondicionGeneralController;
 use App\Http\Controllers\RegistrarMascotaController;
 use App\Http\Controllers\EducacionController;
-
-
+use App\Http\Controllers\WelcomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,9 +28,11 @@ use App\Http\Controllers\EducacionController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/',[WelcomeController::class,'get_welcome']);
 
 Auth::routes();
 
