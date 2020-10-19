@@ -83,7 +83,7 @@
                 </div>
         </section>
     
-        <section class="contenedor seccion">
+        <section class="contenedor seccion id=educativos">
             <h2 class="fw-300 centrar-texto">Videos Educativos</h2>
             <div class="container-educacion">
                 <div class="row row-cols-3">
