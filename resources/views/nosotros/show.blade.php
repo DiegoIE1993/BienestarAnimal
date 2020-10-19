@@ -82,64 +82,44 @@
                     </a>
                 </div>
         </section>
-    
-<<<<<<< HEAD
-        <section class="contenedor seccion id=educativos">
-            <h2 class="fw-300 centrar-texto">Videos Educativos</h2>
-            <div class="container-educacion">
-                <div class="row row-cols-3">
-                    @foreach ($educations as $edu) 
-                    <div class="edu">
-                        <h2> {{$edu->titulo}} </h2>  
-                        <iframe width="280" height="315" src="{{$edu->video}}"
-                            frameborder="0" allow="autoply; encrypted-media" allowfullscreen>
-                        </iframe>
-                    </div>  
-                @endforeach 
-                </div>       
-            </div>
-        </section>
               
         <section class="nosotros">   
-        <div id='nosotros' class="container-nosotros">
+          <div id='nosotros' class="container-nosotros">
             <div class="container nosotros">
-                
                     @foreach ($info ?? '' as $nosotros)           
-                        <div class="col-md-4">
-                            <div class="card">
-                            <div class="card-body">
-                                <div>
+                        <div class="col-md-16">
+                           <div class="card">
+                              <div class="card-body">
+                                 <div>
                                     <h1> {{$nosotros->titulo}} </h1>
-                                </div>
-                                <div>
-                                    <h1>Mision</h1>
+                                 </div>
+                                 <div>
+                                    <h2>Misión</h2>
                                     <p>{{$nosotros->mision}}</p> 
-                                </div>       
-                                <div>
-                                    <h1>Vision</h1>
+                                 </div>       
+                                 <div>
+                                    <h1>Visión</h1>
                                     <p>{{$nosotros->vision}}</p>
-                                </div>
-                                <div>
+                                 </div>
+                                 <div>
                                     <h2>Horarios</h2>
                                     <p>{{$nosotros->horario}}</p>
-                                </div>       
-                                <div>
+                                 </div>       
+                                 <div>
                                     <h2>Contactos</h2>
                                     <p>{{$nosotros->contacto}}</p>
-                                </div>      
-                                
-                            </div>
-                            </div>
+                                 </div> 
+                                 <div>
+                                    <h2>Nuestros Aliados</h2> 
+                                 </div>      
+                              </div>
+                           </div>
                         </div>  
-                    @endforeach
-                
-            </div>
-        </div>
-    
-        </section>
-=======
-       
->>>>>>> 50f816cd65a64702bdeb150ab8c48f3d5973a586
+                    @endforeach 
+                     
+             </div>
+          </div>
+        </section> 
         <footer>
 
         </footer>
@@ -149,3 +129,4 @@
 </body>
 
 </html>
+

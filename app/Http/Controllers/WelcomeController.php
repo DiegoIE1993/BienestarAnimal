@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 class WelcomeController extends Controller
 {
     public function get_welcome(){
+        
         $educations = Educacion::latest()->take(3)->get();
         $info = Nosotros::all();
 

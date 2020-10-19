@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Especies extends Model
 {
     use HasFactory;
+    const CREATED_AT = 'created_at';
+    const UPDATED_AT = 'updated_at';
+
     protected $fillable = [
         'nombre'
     ];
