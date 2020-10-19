@@ -18,99 +18,130 @@
 </head>
 
 <body>
-<div class="container">
+    <div class="container">
 
-
-    <header>
-
-
-        <!-- Just an image -->
-        <nav class="navbar navbar-light bg-light navbar-expand-md sticky-top">
-            <a class="navbar-brand" href="#">
-                <img src="{{asset('Imagenes/logo.png')}}" alt="">
-            </a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                <div class="navbar-nav ml-auto text-center">
-                    <a class="nav-link active" href="#">Inicio <span class="sr-only">(current)</span></a>
-                    <a class="nav-link" href="{{url('educacion.show')}}">Educacion</a>
-                    <a class="nav-link" href="#">Contacto</a>
-                    <a class="nav-link" href="#"></a>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="row-fluid">
-        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="{{asset('slides/uno.jpg')}}" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="{{asset('slides/2.jpg')}}" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="{{asset('slides/3.jpg')}}" class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-        <div id='educacion' class="container" hidden>
-            <div class="container videos-educativos">
-                <div class="row">
-                   @foreach ($educations as $edu)           
-                      <div class="col-md-4">
-                         <div class="card">
-                            <div class="card-body">
-                               <h1> {{$edu->titulo}} </h1>        
-                               <iframe width="280" height="315" src="{{$edu->video}}"
-                                  frameborder="0" allow="autoply; encrypted-media" allowfullscreen>
-                              </iframe>
-                            </div>
-                         </div>
-                      </div>  
-                   @endforeach
-             </div>
-        </div>
-
-        </div>
-
+        <header>
+            <!-- Just an image -->
+            <nav class="navbar navbar-light bg-light navbar-expand-md sticky-top">
+                <a class="navbar-brand" href="#">
+                    <img src="{{asset('Imagenes/logo.png')}}" alt="">
+                </a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
     
-
-
-
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                    <div class="navbar-nav ml-auto text-center">
+                        <a class="nav-link active" href="#">Inicio <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" id="edu" href="{{url('educacion.show')}}">Educacion</a>
+                        <a class="nav-link" href="#">Contacto</a>
+                        <a class="nav-link" href="#"></a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        
+        <section class="fw-300 centrar-texto">
+            <div class="row-fluid">
+                <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{{asset('slides/uno.jpg')}}" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>First slide label</h5>
+                                <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{asset('slides/2.jpg')}}" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Second slide label</h5>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{asset('slides/3.jpg')}}" class="d-block w-100" alt="...">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5>Third slide label</h5>
+                                <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+        </section>
+    
+        <section class="contenedor seccion">
+            <h2 class="fw-300 centrar-texto">Videos Educativos</h2>
+            <div class="container-educacion">
+                <div class="row row-cols-3">
+                    @foreach ($educations as $edu) 
+                    <div class="edu">
+                        <h2> {{$edu->titulo}} </h2>  
+                        <iframe width="280" height="315" src="{{$edu->video}}"
+                            frameborder="0" allow="autoply; encrypted-media" allowfullscreen>
+                        </iframe>
+                    </div>  
+                @endforeach 
+                </div>       
+            </div>
+        </section>
+              
+        <section class="nosotros">   
+        <div id='nosotros' class="container-nosotros">
+            <div class="container nosotros">
+                
+                    @foreach ($info ?? '' as $nosotros)           
+                        <div class="col-md-4">
+                            <div class="card">
+                            <div class="card-body">
+                                <div>
+                                    <h1> {{$nosotros->titulo}} </h1>
+                                </div>
+                                <div>
+                                    <h1>Mision</h1>
+                                    <p>{{$nosotros->mision}}</p> 
+                                </div>       
+                                <div>
+                                    <h1>Vision</h1>
+                                    <p>{{$nosotros->vision}}</p>
+                                </div>
+                                <div>
+                                    <h2>Horarios</h2>
+                                    <p>{{$nosotros->horario}}</p>
+                                </div>       
+                                <div>
+                                    <h2>Contactos</h2>
+                                    <p>{{$nosotros->contacto}}</p>
+                                </div>      
+                                
+                            </div>
+                            </div>
+                        </div>  
+                    @endforeach
+                
+            </div>
+        </div>
+    
+        </section>
         <footer>
 
         </footer>
+    </div>   
         
-    </div>
+ 
 </body>
 
 </html>

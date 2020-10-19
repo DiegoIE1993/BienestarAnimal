@@ -1,3 +1,5 @@
 $(document).ready(function() {
-    // alert('prueba');
+    $('#edu').click(function(){
+        alert('haz presionado')
+    })
 });
