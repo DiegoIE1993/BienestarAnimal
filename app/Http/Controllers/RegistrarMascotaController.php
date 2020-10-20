@@ -13,6 +13,7 @@ use App\Models\RegistrarMascota;
 use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
 
+
 class RegistrarMascotaController extends Controller
 {
     /**
@@ -80,6 +81,7 @@ class RegistrarMascotaController extends Controller
         'señales_particulares' => 'Required',
         'motivo_ingreso_anamnesis' => 'Required',
         'imagen' => 'Required|image',
+        'disponibilidad' => 'Required',
          ]);
         //obtener la ruta de imagen
          $ruta_imagen = $request['imagen']->store('upload-animales', 'public');
@@ -109,7 +111,7 @@ class RegistrarMascotaController extends Controller
         'señales_particulares' => $data['señales_particulares'],
         'motivo_ingreso_anamnesis' => $data['motivo_ingreso_anamnesis'],
         'imagen' => $ruta_imagen,
-            
+        'disponibilidad' => $data['disponibilidad'],    
         ]);
 
         return redirect('/registrarmascota');
