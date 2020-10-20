@@ -35,6 +35,7 @@
                         <a class="nav-link active" href="#">Inicio <span class="sr-only">(current)</span></a>
                         <a class="nav-link" href="{{url('educacion/show')}}">Educacion</a>
                         <a class="nav-link" href="{{url('nosotros/show')}}">Nosotros</a>
+                        <a class="nav-link" href="{{url('eventos/show')}}">Eventos</a>
                         <a class="nav-link" href="#"></a>
                     </div>
                 </div>
@@ -115,7 +116,7 @@
                               </div>
                            </div>
                         </div>  
-                        
+
                     @endforeach 
                      
              </div>
