@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class AnimalesAdopcion extends Model
 {
     use HasFactory;
+    protected $primaryKey = 'codigo_animal';
 }

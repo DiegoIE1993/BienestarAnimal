@@ -16,6 +16,7 @@ use App\Http\Controllers\CondicionGeneralController;
 use App\Http\Controllers\RegistrarMascotaController;
 use App\Http\Controllers\EducacionController;
 use App\Http\Controllers\WelcomeController;
+use App\Http\Controllers\AnimalesAdopcionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -81,3 +82,7 @@ Route::resource('requisitos', RequisitosController::class);
 Auth::routes();
 
 Route::resource('educacion', EducacionController::class);
+
+Auth::routes();
+
+Route::resource('animalesadopcion', AnimalesAdopcionController::class);

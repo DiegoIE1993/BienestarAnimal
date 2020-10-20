@@ -152,6 +152,13 @@
                                                         <label for="motivo_ingreso_anamnesis">Motivo de Ingreso Anamnesis</label>
                                                         <textarea class="form-control" name="motivo_ingreso_anamnesis" rows="3"></textarea>
                                                     </div> 
+                                                    <div class="form-group" style="display:inline-block; width: 300px;">
+                                                        <label for="disponibilidad">En Adopcion</label>
+                                                        <select  name="disponibilidad" class="form-control">
+                                                        <option value="Disponible">Disponible</option>
+                                                        <option value="No_Disponible">No Disponible</option>
+                                                        </select>
+                                                    </div>
                                                     <div class="form-group">
                                                         <label for="imagen">Elige la imagen</label>
                                                         <input type="file" name="imagen" require class="form-control">

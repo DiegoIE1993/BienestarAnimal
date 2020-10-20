@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\AnimalesAdopcion;
+use App\Models\RegistrarMascota;
 use Illuminate\Http\Request;
 
 class AnimalesAdopcionController extends Controller
@@ -18,7 +19,14 @@ class AnimalesAdopcionController extends Controller
      */
     public function index()
     {
-        //
+        
+        $registro = RegistrarMascota::where('disponibilidad', 'Disponible')->get();
+        return view('animalesadopcion.index', compact('registro'));
+    }
+
+    public function ver($codigo_animal)
+    {
+       
     }
 
     /**
@@ -48,9 +56,10 @@ class AnimalesAdopcionController extends Controller
      * @param  \App\Models\AnimalesAdopcion  $animalesAdopcion
      * @return \Illuminate\Http\Response
      */
-    public function show(AnimalesAdopcion $animalesAdopcion)
+    public function show($codigo_animal)
     {
-        //
+        $adopcion = RegistrarMascota::findOrFail($codigo_animal); 
+        return view('animalesadopcion.show', compact('adopcion'));
     }
 
     /**

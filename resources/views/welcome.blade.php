@@ -83,7 +83,6 @@
                 </div>
         </section>
     
-<<<<<<< HEAD
         <section class="contenedor seccion id=educativos">
             <h2 class="fw-300 centrar-texto">Videos Educativos</h2>
             <div class="container-educacion">
@@ -137,9 +136,6 @@
         </div>
     
         </section>
-=======
-       
->>>>>>> 50f816cd65a64702bdeb150ab8c48f3d5973a586
         <footer>
 
         </footer>
