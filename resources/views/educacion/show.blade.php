@@ -14,13 +14,11 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     {{-- <script src="{{ asset('js/custom.js')}}"></script> --}}
-    <link rel="stylesheet" href="css/stilos.css">
+    <link rel="stylesheet" href="{!! asset('css/estilos.css') !!}">
     
 </head>
 
 <body>
-    <div class="container">
-
         <header class="site-header inicio">
             <!-- Just an image -->
             <nav class="navbar navbar-light bg-light navbar-expand-md sticky-top">
@@ -33,11 +31,11 @@
     
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                     <div class="navbar-nav ml-auto text-center">
-                        <a class="nav-link active" href="#">Inicio <span class="sr-only">(current)</span></a>
+                        <a class="nav-link active" href="/">Inicio <span class="sr-only">(current)</span></a>
                         <a class="nav-link" href="{{url('educacion/show')}}">Educacion</a>
                         <a class="nav-link" href="{{url('nosotros/show')}}">Nosotros</a>
                         <a class="nav-link" href="{{url('eventos/show')}}">Eventos</a>
-                        <a class="nav-link" href="#"></a>
+                        <a class="nav-link" href="{{url('/')}}"></a>
                     </div>
                 </div>
             </nav>
@@ -85,28 +83,31 @@
                 </div>
         </section>
     
-        <section class="contenedor seccion">
-            <h2 class="fw-300 centrar-texto">Videos Educativos</h2>
-            <div class="container-educacion">
-                <div class="row row-cols-3">
-                    @foreach ($educations as $edu) 
-                    <div class="edu">
-                        <h2> {{$edu->titulo}} </h2>  
-                        <iframe width="280" height="315" src="{{$edu->video}}"
-                            frameborder="0" allow="autoply; encrypted-media" allowfullscreen>
-                        </iframe>
-                    </div>  
-                @endforeach 
-                </div>       
+        <section>
+            <div class="img">
+                <div class="container">
+                        <div class="container educacion">
+                            <h2 align='center'>Videos Educativos</h2>
+                            <div class="row row-cols-3" align='center'>
+                                @foreach ($educations as $edu) 
+                                <div class="edu">
+                                    <h5> {{$edu->titulo}} </h5>  
+                                    <iframe width="280" height="315" src="{{$edu->video}}" 
+                                        frameborder="0" allow="controls autoplay; encrypted-media" allowfullscreen>
+                                    </iframe>
+                                </div>  
+                            @endforeach 
+                            </div>       
+                        </div>
+                </div>
             </div>
         </section>
       
-        <footer>
-
-        </footer>
-    </div>   
+        <footer align='center'>
+            <p>Copyright &copy; Unidad de Proteccion Animal, todos los derechos reservados.</p>
+        </footer> 
         
- 
+        
 </body>
 
 </html>

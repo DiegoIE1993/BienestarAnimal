@@ -18,7 +18,6 @@
 </head>
 
 <body>
-    <div class="container">
 
         <header class="site-header inicio">
             <!-- Just an image -->
@@ -32,7 +31,7 @@
     
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                     <div class="navbar-nav ml-auto text-center">
-                        <a class="nav-link active" href="#">Inicio <span class="sr-only">(current)</span></a>
+                        <a class="nav-link active" href="/">Inicio <span class="sr-only">(current)</span></a>
                         <a class="nav-link" href="{{url('educacion/show')}}">Educacion</a>
                         <a class="nav-link" href="{{url('nosotros/show')}}">Nosotros</a>
                         <a class="nav-link" href="{{url('eventos/show')}}">Eventos</a>
@@ -41,8 +40,8 @@
                 </div>
             </nav>
         </header>
-        
-        <section class="fw-300 centrar-texto">
+     <div>
+        <section>
             <div class="row-fluid">
                 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
@@ -83,64 +82,28 @@
                     </a>
                 </div>
         </section>
-    
-        <section class="contenedor seccion id=educativos">
-            <h2 class="fw-300 centrar-texto">Videos Educativos</h2>
-            <div class="container-educacion">
-                <div class="row row-cols-3">
-                    @foreach ($educations as $edu) 
-                    <div class="edu">
-                        <h2> {{$edu->titulo}} </h2>  
-                        <iframe width="280" height="315" src="{{$edu->video}}"
-                            frameborder="0" allow="autoply; encrypted-media" allowfullscreen>
-                        </iframe>
-                    </div>  
-                @endforeach 
-                </div>       
-            </div>
-        </section>
-              
-        <section class="nosotros">   
-        <div id='nosotros' class="container-nosotros">
-            <div class="container nosotros">
+            
+        <section>
+            <div class="container">
+                <div class="container">
+                    <div id="ubicacion">
+                        <div>
+                            <img src="{{asset('Imagenes/ubicacion.png')}}" alt="">
+                        </div>
+                        <div>
+                            <img src="{{asset('Imagenes/gara.png')}}" alt="" >
+                        </div>
+                    </div>
+                </div>
                 
-                    @foreach ($info ?? '' as $nosotros)           
-                        <div class="col-md-4">
-                            <div class="card">
-                            <div class="card-body">
-                                <div>
-                                    <h1> {{$nosotros->titulo}} </h1>
-                                </div>
-                                <div>
-                                    <h1>Mision</h1>
-                                    <p>{{$nosotros->mision}}</p> 
-                                </div>       
-                                <div>
-                                    <h1>Vision</h1>
-                                    <p>{{$nosotros->vision}}</p>
-                                </div>
-                                <div>
-                                    <h2>Horarios</h2>
-                                    <p>{{$nosotros->horario}}</p>
-                                </div>       
-                                <div>
-                                    <h2>Contactos</h2>
-                                    <p>{{$nosotros->contacto}}</p>
-                                </div>      
-                                
-                            </div>
-                            </div>
-                        </div>  
-                    @endforeach
                 
             </div>
-        </div>
-    
         </section>
-        <footer>
+        
 
-        </footer>
-    </div>   
+        <footer align='center'>
+            <p>Copyright &copy; Unidad de Proteccion Animal, todos los derechos reservados.</p>
+        </footer> 
         
  
 </body>

@@ -1,4 +1,21 @@
-.seccion {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+.container {
+  border-width:1px;
+  
+  border-color: black;
+  background-color: rgb(97, 224, 135);
+  padding:20px;  
+  background-size: cover; 
+}
+/* ubicacion de la imagen del albergue  */
+.ubicacion {
+  
+}
+
+.img {
+  background-image: url('/Imagenes/fondo.png');
+  
+}
+
+.educacion{
+  background-color: white;
 }

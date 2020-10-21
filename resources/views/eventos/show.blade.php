@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     {{-- <script src="{{ asset('js/custom.js')}}"></script> --}}
+    <link rel="stylesheet" href="{!! asset('css/estilos.css') !!}">
     
 </head>
 
@@ -32,11 +33,11 @@
     
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                     <div class="navbar-nav ml-auto text-center">
-                        <a class="nav-link active" href="#">Inicio <span class="sr-only">(current)</span></a>
+                        <a class="nav-link active" href="welcome">Inicio <span class="sr-only">(current)</span></a>
                         <a class="nav-link" href="{{url('educacion/show')}}">Educacion</a>
                         <a class="nav-link" href="{{url('nosotros/show')}}">Nosotros</a>
                         <a class="nav-link" href="{{url('eventos/show')}}">Eventos</a>
-                        <a class="nav-link" href="#"></a>
+                        <a class="nav-link" href="{{url('welcome')}}"></a>
                     </div>
                 </div>
             </nav>
@@ -83,30 +84,26 @@
                     </a>
                 </div>
         </section>
-              
-        <section class="nosotros">   
-          <div id='nosotros' class="container-nosotros">
-            <div class="container nosotros">
-                    @foreach ($info ?? '' as $nosotros)           
-                        <div class="col-md-16">
-                           <div class="card">
-                              <div class="card-body">
-                                 <div>
-                                    <h1> {{ $events->titulo }} </h1>
-                                 </div>
-                                 <h1> {{ $events->titulo }} </h1>
-                                 
-                                          {{ $events->descripcion }}
-                                       {{ $events->fecha }} 
-                              </div>
-                           </div>
-                        </div>  
-                        
-                    @endforeach 
-                     
-             </div>
-          </div>
-        </section> 
+    
+        <section class="contenedor seccion">
+            <h2 class="fw-300 centrar-texto">Eventos</h2>
+            <div class="container-educacion">
+                <div class="row row-cols-3">
+                    @foreach ($events as $evento) 
+                    <div class="eventos">
+                        <h2> {{$evento->titulo}} </h2>  
+                    </div>
+                    <div>
+                        <h1>{{$evento->descripcion}}</h1>    
+                    </div>  
+                    <div>
+                        <h1>{{$evento->fecha}}</h1>    
+                    </div> 
+                @endforeach 
+                </div>       
+            </div>
+        </section>
+      
         <footer>
 
         </footer>
@@ -116,34 +113,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-@section('content')
-<!DOCTYPE html>
-<html>
- <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    
- </head>
- <body>
-    <h1> {{ $events->titulo }} </h1>
-    <ul>
-       <li> Nombre del ciudadano: {{ $events->descripcion }} </li>
-       <li> Direccion: {{ $events->fecha }} </li>
-    
-       
-    </ul>
-    <a href="/eventos" class="btn btn-primary">Atras</a>
-    
- </body>
-</html>
-@endsection 

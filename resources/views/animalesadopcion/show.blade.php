@@ -31,8 +31,11 @@
       </td>
          
       </table>
-    <a href="/animaladopcion" class="btn btn-primary">Atras</a>
+      <div>
+         <a href="/animalesadopcion" class="btn btn-primary">Atras</a>
+      </div>
     
  </body>
+ 
 </html>
 @endsection 

@@ -65,9 +65,9 @@ class EventosController extends Controller
      * @param  \App\Models\Eventos  $eventos
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     { 
-        $events = Eventos::findOrFail($id);
+        $events = Eventos::all();
 
         return view('eventos.show', compact('events'));
     }

@@ -14,11 +14,11 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     {{-- <script src="{{ asset('js/custom.js')}}"></script> --}}
+    <link rel="stylesheet" href="{!! asset('css/estilos.css') !!}">
     
 </head>
 
 <body>
-    <div class="container">
 
         <header class="site-header inicio">
             <!-- Just an image -->
@@ -36,7 +36,7 @@
                         <a class="nav-link" href="{{url('educacion/show')}}">Educacion</a>
                         <a class="nav-link" href="{{url('nosotros/show')}}">Nosotros</a>
                         <a class="nav-link" href="{{url('eventos/show')}}">Eventos</a>
-                        <a class="nav-link" href="#"></a>
+                        <a class="nav-link" href="{{url('welcome')}}"></a>
                     </div>
                 </div>
             </nav>
@@ -84,14 +84,14 @@
                 </div>
         </section>
               
-        <section class="nosotros">   
-          <div id='nosotros' class="container-nosotros">
-            <div class="container nosotros">
+        <section>   
+          <div class="img">
+            <div class="container">
                     @foreach ($info ?? '' as $nosotros)           
                         <div class="col-md-16">
                            <div class="card">
                               <div class="card-body">
-                                 <div>
+                                 <div align='center'>
                                     <h1> {{$nosotros->titulo}} </h1>
                                  </div>
                                  <div>
@@ -99,7 +99,7 @@
                                     <p>{{$nosotros->mision}}</p> 
                                  </div>       
                                  <div>
-                                    <h1>Visión</h1>
+                                    <h2>Visión</h2>
                                     <p>{{$nosotros->vision}}</p>
                                  </div>
                                  <div>
@@ -110,24 +110,23 @@
                                     <h2>Contactos</h2>
                                     <p>{{$nosotros->contacto}}</p>
                                  </div> 
-                                 <div>
+                                 <div align='center'>
                                     <h2>Nuestros Aliados</h2> 
-                                 </div>      
+                                 </div> 
+                                 <div align='center'>
+                                    <img src="{{asset('Imagenes/gara.png')}}" alt="">
+                                </div>     
                               </div>
                            </div>
                         </div>  
-
-                    @endforeach 
-                     
+                    @endforeach   
              </div>
-          </div>
+            </div>
+            
         </section> 
-        <footer>
-
+        <footer align='center'>
+            <p>Copyright &copy; Unidad de Proteccion Animal, todos los derechos reservados.</p>
         </footer>
-    </div>   
-        
- 
 </body>
 
 </html>
