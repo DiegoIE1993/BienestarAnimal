@@ -74,19 +74,50 @@
         <section>
             <div class="img">
                 <div class="container">
-                        <div class="container educacion">
-                            <h2 align='center'>Videos Educativos</h2>
-                            <div class="row row-cols-3" align='center'>
-                                @foreach ($educations as $edu) 
-                                <div class="edu">
-                                    <h5> {{$edu->titulo}} </h5>  
-                                    <iframe width="280" height="315" src="{{$edu->video}}" 
-                                        frameborder="0" allow="controls autoplay; encrypted-media" allowfullscreen>
+                    <div class="container fondo">
+                        <h2 align='center'>Videos Educativos</h2>
+                        @foreach ($educations as $edu) 
+                            <div class="delimitador">
+                                <h5 align='center'> {{$edu->titulo}} </h5> 
+                                <div class="contenedor"> 
+                                    <iframe src="{{$edu->video}}" frameborder="0" allow="controls autoplay; encrypted-media" allowfullscreen>
                                     </iframe>
-                                </div>  
-                            @endforeach 
-                            </div>       
+                                </div>
+                            </div>  
+                        @endforeach     
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>   
+            <div class="img">
+                <div class="container">
+                    <div class="container fondo">
+                        <div class="col">
+                            <div>
+                                <h1>Contáctanos</h1>
+                            </div>
+                            <div>
+                                <h5>Vía a la Linda, contiguo al hospital geriátrico San Isidro Manizales</h5>
+                            </div>
+                            <div>
+                                <h3>Teléfono Unidad de Protección Animal:</h3> 
+                                <h5> 318 358 6247 – 8703150</h5>                                   
+                            </div>
+                            <div>
+                                <h3>Grupo de Atención y Rescate Animal:</h3> 
+                                <h5>3104020002</h5>                                   
+                            </div>
+                            <div>
+                                <h3>Nuestros Aliados</h3>
+                                <img src="{{asset('Imagenes/gara.png')}}" alt="" >
+                            </div>
+
+                            <div class="imagen-ubicacion">
+                                <img width="450" height="450" src="{{asset('Imagenes/ubicacion.png')}}" alt="">
+                            </div> 
                         </div>
+                    </div>   
                 </div>
             </div>
         </section>

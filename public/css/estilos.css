@@ -1,19 +1,51 @@
 .container {
   border-width:1px;
-  
-  border-color: black;
   background-color: rgb(144, 144, 144);
   padding:7px;  
-  background-size: cover; 
+  
 }
-/* ubicacion de la imagen del albergue  */
-
 
 .img {
   background-image: url('/Imagenes/fondo.png');
-  
+  background-color: rgba(255, 255, 255, 0.056);
 }
 
-.educacion{
-  background-color: white;
+.fondo{
+  background-color: rgba(255, 255, 255, 0.782);
+} 
+
+/* Podemos eliminar este estilo si no queremos que se adapte al ancho máximo */
+.delimitador{
+  width:560px;    /* Ancho máximo */
+  margin:auto;    /* Centramos el vídeo */
+}
+/* El contenedor con el padding-top crea el tamaño del vídeo */
+.contenedor{
+  height:0px;
+  width:100%;
+  padding-top:56.25%; /* Relación: 16/9 = 56.25% */
+  position:relative;
+}
+/* El iframe se adapta al tamaño del contenedor */
+.contenedor iframe{
+  position:absolute;
+  height:100%;
+  width:100%;
+  top:0px;
+  left:0px;
+  padding:30px;
+}
+
+.col{
+  column-count:2;
+  column-gap: 3em;
+  column-rule: 1px solid #bbb;
+  column-width: 140px;
+}
+.eventos{
+  text-align: center;
+  column-count:1;
+  column-gap: 2em;
+  column-rule: 1px solid #bbb;
+  column-width: 140px;
 }

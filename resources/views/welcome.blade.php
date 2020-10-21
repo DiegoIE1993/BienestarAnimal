@@ -14,6 +14,7 @@
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     {{-- <script src="{{ asset('js/custom.js')}}"></script> --}}
+    <link rel="stylesheet" href="{!! asset('css/estilos.css') !!}">
     
 </head>
 
@@ -22,7 +23,7 @@
         <header class="site-header inicio">
             <!-- Just an image -->
             <nav class="navbar navbar-light bg-light navbar-expand-md sticky-top">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="/">
                     <img src="{{asset('Imagenes/logo.png')}}" alt="">
                 </a>
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
@@ -74,23 +75,39 @@
                 </div>
         </section>
             
-        <section>
-            <div class="container">
+        <section>   
+            <div class="img">
                 <div class="container">
-                    <div id="ubicacion">
-                        <div>
-                            <img src="{{asset('Imagenes/ubicacion.png')}}" alt="">
+                    <div class="container fondo">
+                        <div class="col">
+                            <div>
+                                <h1>Contáctanos</h1>
+                            </div>
+                            <div>
+                                <h5>Vía a la Linda, contiguo al hospital geriátrico San Isidro Manizales</h5>
+                            </div>
+                            <div>
+                                <h3>Teléfono Unidad de Protección Animal:</h3> 
+                                <h5> 318 358 6247 – 8703150</h5>                                   
+                            </div>
+                            <div>
+                                <h3>Grupo de Atención y Rescate Animal:</h3> 
+                                <h5>3104020002</h5>                                   
+                            </div>
+                            <div>
+                                <h3>Nuestros Aliados</h3>
+                                <img src="{{asset('Imagenes/gara.png')}}" alt="" >
+                            </div>
+
+                            <div class="imagen-ubicacion">
+                                <img width="450" height="450" src="{{asset('Imagenes/ubicacion.png')}}" alt="">
+                            </div> 
                         </div>
-                        <div>
-                            <img src="{{asset('Imagenes/gara.png')}}" alt="" >
-                        </div>
-                    </div>
+                    </div>   
                 </div>
-                
-                
             </div>
         </section>
-        
+          
 
         <footer align='center'>
             <p>Copyright &copy; Unidad de Proteccion Animal, todos los derechos reservados.</p>

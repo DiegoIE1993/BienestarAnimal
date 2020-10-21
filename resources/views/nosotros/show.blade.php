@@ -32,17 +32,16 @@
     
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                     <div class="navbar-nav ml-auto text-center">
-                        <a class="nav-link active" href="#">Inicio <span class="sr-only">(current)</span></a>
+                        <a class="nav-link active" href="/">Inicio <span class="sr-only">(current)</span></a>
                         <a class="nav-link" href="{{url('educacion/show')}}">Educacion</a>
                         <a class="nav-link" href="{{url('nosotros/show')}}">Nosotros</a>
                         <a class="nav-link" href="{{url('eventos/show')}}">Eventos</a>
-                        <a class="nav-link" href="{{url('welcome')}}"></a>
+                        <a class="nav-link" href="{{url('#')}}"></a>
                     </div>
                 </div>
             </nav>
         </header>
         
-        <section class="fw-300 centrar-texto">
             <div class="row-fluid">
                 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
                     <ol class="carousel-indicators">
@@ -69,16 +68,17 @@
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
-                </div>
+                </div> 
+            </div>       
         </section>
               
         <section>   
-          <div class="img">
-            <div class="container">
+            <div class="img">
+                <div class="container">
                     @foreach ($info ?? '' as $nosotros)           
                         <div class="col-md-16">
                            <div class="card">
-                              <div class="card-body">
+                                <div class="card-body">
                                  <div align='center'>
                                     <h1> {{$nosotros->titulo}} </h1>
                                  </div>
@@ -93,25 +93,47 @@
                                  <div>
                                     <h2>Horarios</h2>
                                     <p>{{$nosotros->horario}}</p>
-                                 </div>       
-                                 <div>
-                                    <h2>Contactos</h2>
-                                    <p>{{$nosotros->contacto}}</p>
-                                 </div> 
-                                 <div align='center'>
-                                    <h2>Nuestros Aliados</h2> 
-                                 </div> 
-                                 <div align='center'>
-                                    <img src="{{asset('Imagenes/gara.png')}}" alt="">
-                                </div>     
+                                </div>          
                               </div>
-                           </div>
+                            </div>
                         </div>  
                     @endforeach   
-             </div>
-            </div>
-            
+                </div>
+            </div>   
         </section> 
+        <section>   
+            <div class="img">
+                <div class="container">
+                    <div class="container fondo">
+                        <div class="col">
+                            <div>
+                                <h1>Contáctanos</h1>
+                            </div>
+                            <div>
+                                <h5>Vía a la Linda, contiguo al hospital geriátrico San Isidro Manizales</h5>
+                            </div>
+                            <div>
+                                <h3>Teléfono Unidad de Protección Animal:</h3> 
+                                <h5> 318 358 6247 – 8703150</h5>                                   
+                            </div>
+                            <div>
+                                <h3>Grupo de Atención y Rescate Animal:</h3> 
+                                <h5>3104020002</h5>                                   
+                            </div>
+                            <div>
+                                <h3>Nuestros Aliados</h3>
+                                <img src="{{asset('Imagenes/gara.png')}}" alt="" >
+                            </div>
+
+                            <div class="imagen-ubicacion">
+                                <img width="450" height="450" src="{{asset('Imagenes/ubicacion.png')}}" alt="">
+                            </div> 
+                        </div>
+                    </div>   
+                </div>
+            </div>
+        </section>
+        
         <footer align='center'>
             <p>Copyright &copy; Unidad de Proteccion Animal, todos los derechos reservados.</p>
         </footer>

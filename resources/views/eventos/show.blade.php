@@ -19,85 +19,116 @@
 </head>
 
 <body>
-    <div class="container">
 
-        <header class="site-header inicio">
-            <!-- Just an image -->
-            <nav class="navbar navbar-light bg-light navbar-expand-md sticky-top">
-                <a class="navbar-brand" href="#">
-                    <img src="{{asset('Imagenes/logo.png')}}" alt="">
-                </a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-    
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <div class="navbar-nav ml-auto text-center">
-                        <a class="nav-link active" href="welcome">Inicio <span class="sr-only">(current)</span></a>
-                        <a class="nav-link" href="{{url('educacion/show')}}">Educacion</a>
-                        <a class="nav-link" href="{{url('nosotros/show')}}">Nosotros</a>
-                        <a class="nav-link" href="{{url('eventos/show')}}">Eventos</a>
-                        <a class="nav-link" href="{{url('welcome')}}"></a>
-                    </div>
+    <header class="site-header inicio">
+        <!-- Just an image -->
+        <nav class="navbar navbar-light bg-light navbar-expand-md sticky-top">
+            <a class="navbar-brand" href="#">
+                <img src="{{asset('Imagenes/logo.png')}}" alt="">
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <div class="navbar-nav ml-auto text-center">
+                    <a class="nav-link active" href="/">Inicio <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{url('educacion/show')}}">Educacion</a>
+                    <a class="nav-link" href="{{url('nosotros/show')}}">Nosotros</a>
+                    <a class="nav-link" href="{{url('eventos/show')}}">Eventos</a>
+                    <a class="nav-link" href="{{url('welcome')}}"></a>
                 </div>
-            </nav>
-        </header>
-        
-        <section class="fw-300 centrar-texto">
-            <div class="row-fluid">
-                <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                        <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                        <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="{{asset('slides/uno.jpg')}}" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{{asset('slides/2.jpg')}}" class="d-block w-100" alt="...">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="{{asset('slides/3.jpg')}}" class="d-block w-100" alt="...">
-                        </div>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-        </section>
-    
-        <section class="contenedor seccion">
-            <h2 class="fw-300 centrar-texto">Eventos</h2>
-            <div class="container-educacion">
-                <div class="row row-cols-3">
-                    @foreach ($events as $evento) 
-                    <div class="eventos">
-                        <h2> {{$evento->titulo}} </h2>  
-                    </div>
-                    <div>
-                        <h1>{{$evento->descripcion}}</h1>    
-                    </div>  
-                    <div>
-                        <h1>{{$evento->fecha}}</h1>    
-                    </div> 
-                @endforeach 
-                </div>       
             </div>
-        </section>
-      
-        <footer>
-
-        </footer>
-    </div>   
+        </nav>
+    </header>
         
+    <section class="fw-300 centrar-texto">
+        <div class="row-fluid">
+            <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="{{asset('slides/uno.jpg')}}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{asset('slides/2.jpg')}}" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="{{asset('slides/3.jpg')}}" class="d-block w-100" alt="...">
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+    </section>
+    
+    <section>   
+        <div class="img">
+            <div class="container">
+                @foreach ($events as $eventos)     
+                    <div class="eventos">
+                        <div class="card">
+                            <div>
+                                <h1> {{$eventos->titulo}} </h1>
+                            </div>
+                            <div>
+                                <p>{{$eventos->descripcion}}</p> 
+                            </div>       
+                            <div>
+                                <p>{{$eventos->fecha}}</p>
+                            </div> 
+                        </div>   
+                    </div>  
+                @endforeach   
+            </div>
+        </div>
+    </section> 
+    <section>   
+        <div class="img">
+            <div class="container">
+                <div class="container fondo">
+                    <div class="col">
+                        <div>
+                            <h1>Contáctanos</h1>
+                        </div>
+                        <div>
+                            <h5>Vía a la Linda, contiguo al hospital geriátrico San Isidro Manizales</h5>
+                        </div>
+                        <div>
+                            <h3>Teléfono Unidad de Protección Animal:</h3> 
+                            <h5> 318 358 6247 – 8703150</h5>                                   
+                        </div>
+                        <div>
+                            <h3>Grupo de Atención y Rescate Animal:</h3> 
+                            <h5>3104020002</h5>                                   
+                        </div>
+                        <div>
+                            <h3>Nuestros Aliados</h3>
+                            <img src="{{asset('Imagenes/gara.png')}}" alt="" >
+                        </div>
+
+                        <div class="imagen-ubicacion">
+                            <img width="450" height="450" src="{{asset('Imagenes/ubicacion.png')}}" alt="">
+                        </div> 
+                    </div>
+                </div>   
+            </div>
+        </div>
+    </section>
+
+    <footer align='center'>
+        <p>Copyright &copy; Unidad de Proteccion Animal, todos los derechos reservados.</p>
+    </footer>    
  
 </body>
-
 </html>
