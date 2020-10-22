@@ -32,12 +32,14 @@
     
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                     <div class="navbar-nav ml-auto text-center">
-                        <a class="nav-link active" href="/">Inicio <span class="sr-only">(current)</span></a>
+                     <div class="navbar-nav ml-auto text-center">
+                        <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
                         <a class="nav-link" href="{{url('animalesadopcion/show')}}">Adopción</a>
                         <a class="nav-link" href="{{url('educacion/show')}}">Educacion</a>
                         <a class="nav-link" href="{{url('nosotros/show')}}">Nosotros</a>
                         <a class="nav-link" href="{{url('eventos/show')}}">Eventos</a>
                         <a class="nav-link" href="#"></a>
+                    </div>
                     </div>
                 </div>
             </nav>
@@ -96,7 +98,37 @@
              </div>
          </div>   
      </section>
-          
+     <section>   
+      <div class="img">
+          <div class="container">
+              <div class="container fondo">
+                  <div class="col">
+                      <div>
+                          <h1>Contáctanos</h1>
+                      </div>
+                      <div>
+                          <h5>Vía a la Linda, contiguo al hospital geriátrico San Isidro Manizales</h5>
+                      </div>
+                      <div>
+                          <h3>Teléfono Unidad de Protección Animal:</h3> 
+                          <h5> 318 358 6247 – 8703150</h5>                                   
+                      </div>
+                      <div>
+                          <h3>Grupo de Atención y Rescate Animal:</h3> 
+                          <h5>3104020002</h5>                                   
+                      </div>
+                      <div>
+                          <h3>Nuestros Aliados</h3>
+                          <img src="{{asset('Imagenes/gara.png')}}" alt="" >
+                      </div>
+                      <div>
+                          <img width="450" height="350" src="{{asset('Imagenes/ubicacion.png')}}" alt="">
+                      </div> 
+                  </div>
+              </div>   
+          </div>
+      </div>
+  </section>    
      
 
         <footer align='center'>

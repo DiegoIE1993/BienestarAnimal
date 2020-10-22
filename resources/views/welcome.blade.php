@@ -99,15 +99,15 @@
                                 <h3>Nuestros Aliados</h3>
                                 <img src="{{asset('Imagenes/gara.png')}}" alt="" >
                             </div>
-
-                            <div class="imagen-ubicacion">
-                                <img width="450" height="450" src="{{asset('Imagenes/ubicacion.png')}}" alt="">
+      
+                            <div>
+                                <img width="450" height="350" src="{{asset('Imagenes/ubicacion.png')}}" alt="">
                             </div> 
                         </div>
                     </div>   
                 </div>
             </div>
-        </section>
+        </section>   
           
 
         <footer align='center'>

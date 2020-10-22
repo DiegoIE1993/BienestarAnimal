@@ -32,10 +32,11 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                     <div class="navbar-nav ml-auto text-center">
                         <a class="nav-link active" href="/">Inicio <span class="sr-only">(current)</span></a>
-                        <a class="nav-link" href="{{url('#')}}">Adopción</a>
+                        <a class="nav-link" href="{{url('animalesadopcion/show')}}">Adopción</a>
                         <a class="nav-link" href="{{url('educacion/show')}}">Educacion</a>
                         <a class="nav-link" href="{{url('nosotros/show')}}">Nosotros</a>
                         <a class="nav-link" href="{{url('eventos/show')}}">Eventos</a>
+                        <a class="nav-link" href="#"></a>
                     </div>
                 </div>
             </nav>
@@ -112,15 +113,15 @@
                                 <h3>Nuestros Aliados</h3>
                                 <img src="{{asset('Imagenes/gara.png')}}" alt="" >
                             </div>
-
-                            <div class="imagen-ubicacion">
-                                <img width="450" height="450" src="{{asset('Imagenes/ubicacion.png')}}" alt="">
+      
+                            <div>
+                                <img width="450" height="350" src="{{asset('Imagenes/ubicacion.png')}}" alt="">
                             </div> 
                         </div>
                     </div>   
                 </div>
             </div>
-        </section>
+        </section>   
       
         <footer align='center'>
             <p>Copyright &copy; Unidad de Proteccion Animal, todos los derechos reservados.</p>

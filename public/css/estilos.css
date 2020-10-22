@@ -12,6 +12,7 @@
 
 .fondo{
   background-color: rgba(255, 255, 255, 0.529);
+  
 } 
 
 /* Podemos eliminar este estilo si no queremos que se adapte al ancho máximo */
@@ -43,12 +44,7 @@
   column-rule: 1px solid #bbb;
   column-width: 140px;
 }
-.col1{
-  column-count: 2;
-  column-gap: 3em;
-  column-rule: 1px solid #bbb;
-  column-width: 140px;
-}
+
 .eventos{
   text-align: center;
   column-count:1;
@@ -58,19 +54,29 @@
 }
 
 img {
-
+  border: 1px solid #ccc;
   float: left;
   margin: 15px;
   -webkit-transition: margin 0.5s ease-out;
   -moz-transition: margin 0.5s ease-out;
   -ms-transition: margin 0.5s ease-out;
   transition: margin 0.5s ease-out;
-
-  }
-  
+}
+ /* Zoom para las imagenes de las mascotas en adopcion*/ 
 .zoom {
     transition: transform .2s; 
 }
 .zoom:hover {
     transform: scale(1.5); 
 }
+
+/* Resaltar al pasar por los link de navegacion*/
+.nav-link {
+   text-decoration: none;
+    background:white; padding: 1px 3px;
+    text-decoration:none
+}
+.nav-link:hover {
+   background: #b8b6b5;
+   color: white; }
+
