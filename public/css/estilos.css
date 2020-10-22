@@ -2,6 +2,7 @@
   border-width:1px;
   background-color: rgba(144, 144, 144, 0);
   padding:7px;  
+  height: auto;
   
 }
 
@@ -15,9 +16,10 @@
 
 /* Podemos eliminar este estilo si no queremos que se adapte al ancho máximo */
 .delimitador{
-  width:560px;    /* Ancho máximo */
+  width:700px;    /* Ancho máximo */
   margin:auto;    /* Centramos el vídeo */
 }
+
 /* El contenedor con el padding-top crea el tamaño del vídeo */
 .contenedor{
   height:0px;
@@ -34,9 +36,15 @@
   left:0px;
   padding:30px;
 }
-
+/* CSS para columnas de la pagina principal - mapa */
 .col{
   column-count:2;
+  column-gap: 3em;
+  column-rule: 1px solid #bbb;
+  column-width: 140px;
+}
+.col1{
+  column-count: 2;
   column-gap: 3em;
   column-rule: 1px solid #bbb;
   column-width: 140px;
@@ -47,4 +55,22 @@
   column-gap: 2em;
   column-rule: 1px solid #bbb;
   column-width: 140px;
+}
+
+img {
+
+  float: left;
+  margin: 15px;
+  -webkit-transition: margin 0.5s ease-out;
+  -moz-transition: margin 0.5s ease-out;
+  -ms-transition: margin 0.5s ease-out;
+  transition: margin 0.5s ease-out;
+
+  }
+  
+.zoom {
+    transition: transform .2s; 
+}
+.zoom:hover {
+    transform: scale(1.5); 
 }

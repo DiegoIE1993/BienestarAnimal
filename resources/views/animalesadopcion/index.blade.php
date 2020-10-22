@@ -11,12 +11,12 @@
                             <table class="table">
                                 <thead>
                                     <th>Codigo Animal</th>
+                                    <th>Foto</th>
                                     <th>Nombre del Ejemplar</th>
                                     <th>Especie</th>
                                     <th>Raza</th>
                                     <th>Sexo</th>
                                     <th>Edad</th>
-                                    <th>Accion</th>
                                 </thead>
                         
                                 <tbody>
@@ -24,14 +24,12 @@
                                     @foreach ($registro as $adopcion)
                                     <tr>
                                         <td> {{$adopcion->codigo_animal}}</td>
+                                        <td> <img whidth="50" height="50" src="/storage/{{ $adopcion->imagen}}"></td>
                                         <td> {{$adopcion->nombre_ejemplar}}</td>
                                         <td> {{$adopcion->especie->nombre}}</td>
                                         <td> {{$adopcion->raza->nombre}}</td>
                                         <td> {{$adopcion->genero}}</td>
                                         <td> {{$adopcion->edad}}</td>
-                                        <td>
-                                            <a href="/animalesadopcion/{{$adopcion->codigo_animal}}" class="fa fa-search-plus">Ver</a>  
-                                        </td>
                                     </tr>
                                     @endforeach
                                     

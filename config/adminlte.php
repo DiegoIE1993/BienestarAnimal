@@ -296,10 +296,7 @@ return [
                     'text' => 'Actitud General',
                     'url'  => 'actitudgeneral',
                 ],
-                [
-                    'text' => 'Requisitos Adopcion',
-                    'url'  => 'requisitos',
-                ],
+                
 
                 
             ],

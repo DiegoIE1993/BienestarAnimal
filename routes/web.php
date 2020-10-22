@@ -77,12 +77,10 @@ Route::resource('eventos', EventosController::class);
 
 Auth::routes();
 
-Route::resource('requisitos', RequisitosController::class);
-
-Auth::routes();
-
 Route::resource('educacion', EducacionController::class);
 
 Auth::routes();
 
 Route::resource('animalesadopcion', AnimalesAdopcionController::class);
+
+

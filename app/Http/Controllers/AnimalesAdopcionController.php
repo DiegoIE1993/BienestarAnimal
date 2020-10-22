@@ -49,6 +49,7 @@ class AnimalesAdopcionController extends Controller
     {
         //
     }
+    
 
     /**
      * Display the specified resource.
@@ -56,10 +57,10 @@ class AnimalesAdopcionController extends Controller
      * @param  \App\Models\AnimalesAdopcion  $animalesAdopcion
      * @return \Illuminate\Http\Response
      */
-    public function show($codigo_animal)
+    public function show()
     {
-        $adopcion = RegistrarMascota::findOrFail($codigo_animal); 
-        return view('animalesadopcion.show', compact('adopcion'));
+        $registro = RegistrarMascota::all(); 
+        return view('animalesadopcion.show', compact('registro'));
     }
 
     /**
