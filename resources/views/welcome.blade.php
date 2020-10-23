@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Laravel</title>
+    <title>Bienestar Animal</title>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
@@ -20,29 +19,29 @@
 
 <body>
 
-        <header class="site-header inicio">
-            <!-- Just an image -->
-            <nav class="navbar navbar-light bg-light navbar-expand-md sticky-top">
-                <a class="navbar-brand" href="/">
-                    <img src="{{asset('Imagenes/logo.png')}}" alt="">
-                </a>
-                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-    
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-                    <div class="navbar-nav ml-auto text-center">
-                        <a class="nav-link active" href="/">Inicio <span class="sr-only">(current)</span></a>
-                        <a class="nav-link" href="{{url('animalesadopcion/show')}}">Adopción</a>
-                        <a class="nav-link" href="{{url('educacion/show')}}">Educacion</a>
-                        <a class="nav-link" href="{{url('nosotros/show')}}">Nosotros</a>
-                        <a class="nav-link" href="{{url('eventos/show')}}">Eventos</a>
-                        <a class="nav-link" href="#"></a>
-                    </div>
+    <header class="site-header inicio">
+        <!-- Just an image -->
+        <nav class="navbar navbar-light bg-light navbar-expand-md sticky-top">
+            <a class="navbar-brand" href="/">
+                <img src="{{asset('Imagenes/logo.png')}}" alt="">
+            </a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <div class="navbar-nav ml-auto text-center">
+                    <a class="nav-link active" href="/">Inicio <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{url('animalesadopcion/show')}}">Adopción</a>
+                    <a class="nav-link" href="{{url('educacion/show')}}">Educacion</a>
+                    <a class="nav-link" href="{{url('nosotros/show')}}">Nosotros</a>
+                    <a class="nav-link" href="{{url('eventos/show')}}">Eventos</a>
+                    <a class="nav-link" href="#"></a>
                 </div>
-            </nav>
-        </header>
-     <div>
+            </div>
+        </nav>
+    </header>
+
         <section>
             <div class="row-fluid">
                 <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
@@ -74,39 +73,66 @@
                         <span class="sr-only">Next</span>
                     </a>
                 </div>
-        </section>
-            
-        <section>   
-            <div class="img">
-                <div class="container">
-                    <div class="container fondo">
-                        <div class="col">
-                            <div>
-                                <h1>Contáctanos</h1>
-                            </div>
-                            <div>
-                                <h5>Vía a la Linda, contiguo al hospital geriátrico San Isidro Manizales</h5>
-                            </div>
-                            <div>
-                                <h3>Teléfono Unidad de Protección Animal:</h3> 
-                                <h5> 318 358 6247 – 8703150</h5>                                   
-                            </div>
-                            <div>
-                                <h3>Grupo de Atención y Rescate Animal:</h3> 
-                                <h5>3104020002</h5>                                   
-                            </div>
-                            <div>
-                                <h3>Nuestros Aliados</h3>
-                                <img src="{{asset('Imagenes/gara.png')}}" alt="" >
-                            </div>
-      
-                            <div>
-                                <img width="450" height="350" src="{{asset('Imagenes/ubicacion.png')}}" alt="">
-                            </div> 
-                        </div>
-                    </div>   
-                </div>
             </div>
+        </section>
+
+        <main>
+            <div class="container">
+                <div class="container-adopcion">
+                    <h1 class="fw-300 centrar-texto" align='center' >Adopta un Amigo</h1>
+                    <div class="row row-cols-3">
+                        @foreach ($registro as $adopcion)           
+                            <div>
+                                <p><img class="zoom" src="/storage/{{ $adopcion->imagen}}" height="200" /></p>
+                                <p><h5>Nombre: {{$adopcion->nombre_ejemplar}} </h5></p>
+                                <p><h5>Especie: {{$adopcion->especie->nombre}}</h5></p>
+                                <p><h5>Raza: {{$adopcion->raza->nombre}}</h5></p>
+                                <p><h5>Sexo: {{$adopcion->genero}}</h5></p>
+                                <p><h5>Edad: {{$adopcion->edad}}</h5></p>
+                            </div>                  
+                        @endforeach  
+                        
+                    </div>
+                </div>
+            </div>        
+        </main>
+        
+        <section class="imagen-requisitos">
+            <div class="container container-requisitos">
+                <h1>Requisitos de adopción</h1>
+                <li>Fotocopia de la Cedula</li>
+                <li>Fotocopia de Factura de Luz o Agua</li>
+                <li>Carta Laboral</li> 
+                <a href="{{url('nosotros/show')}}" class="boton boton-nosotros">Sobre Nosotros</a>
+                <p>Todos los animales salen de la UPA esterilizados, desparacitados y con la vacuna de la rabia.</p>
+            </div>
+        </section>
+        
+        <section class="container">   
+            <div class="col">
+                <div>
+                    <h1>Contáctanos</h1>
+                </div>
+                <div>
+                    <h5>Vía a la Linda, contiguo al hospital geriátrico San Isidro Manizales</h5>
+                </div>
+                <div>
+                    <h3>Teléfono Unidad de Protección Animal:</h3> 
+                    <h5> 318 358 6247 – 8703150</h5>                                   
+                </div>
+                <div>
+                    <h3>Grupo de Atención y Rescate Animal:</h3> 
+                    <h5>3104020002</h5>                                   
+                </div>
+                <div>
+                    <h3>Nuestros Aliados</h3>
+                    <img src="{{asset('Imagenes/gara.png')}}" alt="" >
+                </div>
+
+                <div>
+                    <img width="450" height="350" src="{{asset('Imagenes/ubicacion.png')}}" alt="">
+                </div>
+            </div>     
         </section>   
           
 

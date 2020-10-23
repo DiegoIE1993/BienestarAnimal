@@ -8,17 +8,16 @@ use Illuminate\Support\Facades\DB;
 
 class CondicionGeneralController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except'=> 'show']);
+
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */
-
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-    
+     */    
     public function index()
     {
         $condicion = CondicionGeneral::all(); // condicion variable que va a ser igual al controller Razas

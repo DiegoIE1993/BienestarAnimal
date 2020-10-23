@@ -9,16 +9,16 @@ use Symfony\Contracts\Service\Attribute\Required;
 
 class NosotrosController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except'=> 'show']);
+
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-    
+     */    
     public function index()
     {
         $info = Nosotros::all();
