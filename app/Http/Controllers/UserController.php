@@ -50,7 +50,6 @@ class UserController extends Controller
         $usuario->email = $request->email;
         $usuario->password = bcrypt($request->password);
 
-        $usuario->roles()->attach(Role::where('name', 'user')->first());
 
         if ($usuario->save()){
 
