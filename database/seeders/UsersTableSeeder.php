@@ -16,23 +16,23 @@ class UsersTableSeeder extends Seeder
     public function run()
     {
         // Usuario con el rol editor
-        $editor = User::create([
-            'name' => 'editor',
-            'email' => 'editor@gmail.com',
+        $veterinario = User::create([
+            'name' => 'Veterinario',
+            'email' => 'veterinario@gmail.com',
             'password' => bcrypt('123456'),
         ]);
 
-        $editor->roles()->attach(Role::where('name', 'email')->first());
+        $veterinario->roles()->attach(Role::where('name', 'email')->first());
        
         
         // Usuario con el rol moderador
-        $moderador = User::create([
-            'name' => 'moderador',
-            'email' => 'moderador@gmail.com',
+        $administrativo = User::create([
+            'name' => 'Administrativo',
+            'email' => 'administrativo@gmail.com',
             'password' => bcrypt('123456'),
         ]);
 
-        $moderador->roles()->attach(Role::where('name', 'email')->first());
+        $administrativo->roles()->attach(Role::where('name', 'email')->first());
 
         // Usuario con el rol SuperAdmin
         $superAdmin = User::create([
