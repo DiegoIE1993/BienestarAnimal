@@ -169,34 +169,7 @@
                                     </div>
                                 </div>
                             </fieldset>
-                            <!-- <fieldset>
-                                <div class="container">
-                                    <div class="row justify-content-center">
-                                        <div class="col-md-12">
-                                            <div class="card">
-                                                <div class="card-header">
-                                                    <div class="form-group">
-                                                        <label for="piel">Piel Normal</label><br>
-                                                        <input type="checkbox" name="skills" value="alopecia">Alopecia     
-                                                        <input type="checkbox" name="skills" value="descamacion">Descamacion
-                                                        <input type="checkbox" name="skills" value="ulcera">Ulcera
-                                                        <input type="checkbox" name="skills" value="costra">Costra
-                                                        <input type="checkbox" name="skills" value="cicatriz">Cicatriz
-                                                        <input type="checkbox" name="skills" value="herida_abierta">Herida Abierta
-                                                        <input type="checkbox" name="skills" value="DAP">DAP
-                                                        <input type="checkbox" name="skills" value="tumor_minimo">Tumor Minimo
-                                                        <input type="checkbox" name="skills" value="seborrea">Seborrea
-                                                        <input type="checkbox" name="skills" value="sarna">Sarna
-                                                        <input type="checkbox" name="skills" value="tungosis">Tungosis
-                                                        <input type="checkbox" name="skills" value="DAP">DAP
-                                                        <input type="checkbox" name="skills" value="tumor_minimo">Tumor
-                                                    </div>    
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </fieldset>                       -->
+                                     
                             <div class="justify-content-end">
                                 <input type="submit" value="Enviar" class="btn btn-success">
                             </div> 

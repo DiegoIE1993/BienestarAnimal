@@ -81,18 +81,17 @@
                 <h2 align='center'>Adopta un Amigo</h2>
                <div class="row row-cols-3">
                   @foreach ($registro as $adopcion)           
-                      <div>
-                        <p><img class="zoom" src="/storage/{{ $adopcion->imagen}}" height="200" /></p>
-                        <p><h5>Nombre: {{$adopcion->nombre_ejemplar}} </h5></p>
-                        <p><h5>Especie: {{$adopcion->especie->nombre}}</h5></p>
-                        <p><h5>Raza: {{$adopcion->raza->nombre}}</h5></p>
-                        <p><h5>Sexo: {{$adopcion->genero}}</h5></p>
-                        <p><h5>Edad: {{$adopcion->edad}}</h5></p>
+                      <div class="mascota">
+                        <p><img class="zoom" src="/storage/{{ $adopcion->imagen}}" height="400" /></p>
+                        
                       </div>                  
                   @endforeach   
-                  
+
                 </div>  
-                <a href="{{url('animalesadopcion/show')}}" class="boton boton-adopcion ">Ver Todos</a>
+                <div>
+                    <a href="{{url('animalesadopcion/show')}}" class="boton boton-adopcion">Ver Todos</a>
+                </div>
+                
             </div>
         </section>       
         
@@ -133,11 +132,13 @@
                 <div>
                     <img width="450" height="350" src="{{asset('Imagenes/ubicacion.png')}}" alt="">
                 </div>
-            </div>     
+            </div>   
+        
         </section>   
           
-
+        
         <footer align='center'>
+            
             <p>Copyright &copy; Unidad de Proteccion Animal, todos los derechos reservados.</p>
         </footer>    
  

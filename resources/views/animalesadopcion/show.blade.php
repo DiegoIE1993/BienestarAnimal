@@ -79,85 +79,91 @@
                 </div>
         </section>
             
-        <section>   
-            <div class="img">
-                <div class="container">
-                    <div class="container fondo">
-                        <div class="row row-cols-3">
-                            @foreach ($registro as $adopcion)           
-                                <div>
-                                <p><img class="zoom" src="/storage/{{ $adopcion->imagen}}" height="200" data-toggle="modal" data-target="{{url('solicitudadopciones/create')}}"/></p>
-                                <p><h5>Nombre: {{$adopcion->nombre_ejemplar}} </h5></p>
-                                <p><h5>Especie: {{$adopcion->especie->nombre}}</h5></p>
-                                <p><h5>Raza: {{$adopcion->raza->nombre}}</h5></p>
-                                <p><h5>Sexo: {{$adopcion->genero}}</h5></p>
-                                <p><h5>Edad: {{$adopcion->edad}}</h5></p>
-                                
-                                </button>
-                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-                                    Solicitar Adopcion
-                                </div>                  
-                            @endforeach    
-                        </div>
-                    </div>
+        <main class="seccion container">   
+            <div>
+                <div class="row row-cols-3">
+                    @foreach ($registro as $adopcion)           
+                        <div class="mascota">
+                            <p><img class="zoom" src="/storage/{{ $adopcion->imagen}}" height="400" href="#adopcion{{$adopcion->codigo_animal}}" data-toggle="modal"/></p>
+                                <div class="modal fade" id="adopcion{{$adopcion->codigo_animal}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Solicitud de Adopcion</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                            </div>
+                                            <form action="{{ route('solicitudadopciones.store')}}" method="POST" enctype="multipart/form-data">
+                                                @csrf
+                                                <div class="modal-body">
+                                                    <div class="modal-content"> 
+                                                        <ul>
+                                                            <img src="/storage/{{ $adopcion->imagen}}" height="200"/>
+                                                            <h5>Nombre: {{$adopcion->nombre_ejemplar}} </h5>
+                                                            <h5>Especie: {{$adopcion->especie->nombre}}</h5>
+                                                            <h5>Raza: {{$adopcion->raza->nombre}}</h5>
+                                                            <h5>Sexo: {{$adopcion->genero}}</h5>
+                                                            <h5>Edad (Meses): {{$adopcion->edad}}</h5>
+                                                        </ul> 
+                                                        
+                                                        <div>
+                                                            <div class="form-group">
+                                                                <label for="nombre">Nombre y Apellidos</label>
+                                                                <input type="text" name="nombre" class="form-control">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="cedula">Cédula</label>
+                                                                <input type="number" name="cedula" class="form-control">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="telefono">Telefono</label>
+                                                                <input type="text" name="telefono" class="form-control">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="direccion">Dirección</label>
+                                                                <input type="text" name="direccion" class="form-control">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="email">Correo</label>
+                                                                <input type="email" name="correo" require class="form-control">
+                                                            </div> 
+                                                            <div class="form-group">
+                                                                <label for="documentos">Elige el Archivo</label>
+                                                                <input type="file" name="documentos" require class="form-control">
+                                                            </div>   
+                                                            
+                                                        </div>  
+                                                    </div>             
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
+                                                </div>
+                                            </form>  
+                                        </div>
+                                    </div>
+                                </div> 
+                            </div>                  
+                    @endforeach    
                 </div>
             </div> 
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Solicitud de Adopcion</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    </div>
-                    <form>
-                        <div class="modal-body">
-                            <div class="modal-content"> 
-                                <ul>
-                                    <img src="/storage/{{ $adopcion->imagen}}" height="200" data-toggle="modal" data-target="{{url('solicitudadopciones/create')}}"/>
-                                    <h5>Nombre: {{$adopcion->nombre_ejemplar}} </h5>
-                                    <h5>Especie: {{$adopcion->especie->nombre}}</h5>
-                                    <h5>Raza: {{$adopcion->raza->nombre}}</h5>
-                                    <h5>Sexo: {{$adopcion->genero}}</h5>
-                                    <h5>Edad (Meses): {{$adopcion->edad}}</h5>
-                                </ul> 
-                            </div>       
-                                <div>
-                                    <div class="form-group">
-                                        <label for="nombre">Nombre y Apellidos</label>
-                                        <input type="text" name="nombre" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="cedula">Cédula</label>
-                                        <input type="number" name="cedula" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="telefono">Telefono</label>
-                                        <input type="text" name="telefono" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="direccion">Dirección</label>
-                                        <input type="text" name="direccion" class="form-control">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="correo">Correo Electronico</label>
-                                        <input type="email" id="correo" class="form-control" aria-describedby="correo">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="documentos">Cargar Archivos</label>
-                                        <input type="file" class="form-control-file" id="documentos">
-                                </div>   
-                            </div>              
-                        </div>
-                    </form>
-                    <div class="modal-footer">
-                        <button type="submit" class="btn btn-primary" align='center'>Enviar Solicitud</button>
-                    </div>
-                </div>
-                </div>
-            </div>     
-     </section>
+            
+            
+            @if(count($errors) >0)
+            <div class="alert alert-danger">
+                <ul>
+                    @foreach($errors->all() as $error)
+                    <li>{{$error}}</li>      
+                    @endforeach
+                </ul>        
+            </div>
+            @endif
+            @if(\Session::has('success'))
+                <div class="alert alert-success">
+                    <p>{{\Session()->get('success')}}</p>
+                </div> 
+            @endif       
+        </main>
 
      <section>   
       <div class="img">

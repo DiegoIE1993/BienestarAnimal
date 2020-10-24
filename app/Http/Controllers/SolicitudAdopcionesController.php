@@ -2,8 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\SolicitudAdopciones;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use App\Models\SolicitudAdopciones;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
+use Symfony\Component\Console\Input\Input;
+use League\CommonMark\Block\Element\Document;
 
 class SolicitudAdopcionesController extends Controller
 {
@@ -35,7 +40,30 @@ class SolicitudAdopcionesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = request()->validate([
+            'nombre'=> 'Required',
+            'cedula' => 'Required',
+            'telefono' => 'Required',
+            'direccion' => 'Required',
+            'correo' => 'Required',
+            'documentos' => 'Required',
+            
+        ]);
+
+        $ruta_documentos = $request['documentos']->store('upload-documentos', 'public');
+         Storage::path("storage/{$ruta_documentos}"); 
+
+        DB::table('solicitud_adopciones')->insert([
+            'nombre' => $data['nombre'],
+            'cedula' => $data['cedula'],
+            'telefono' => $data['telefono'],
+            'direccion' => $data['direccion'],
+            'correo' => $data['correo'],
+            'documentos' => $ruta_documentos,
+             
+        ]);
+
+        return redirect('animalesadopcion/show')->with('success', 'data saved');
     }
 
     /**
