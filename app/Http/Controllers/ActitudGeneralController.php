@@ -8,16 +8,16 @@ use Illuminate\Support\Facades\DB;
 
 class ActitudGeneralController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except'=> 'show']);
+
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-    
+     */    
     public function index()
     {
         $actitud = ActitudGeneral::all(); // actitud variable que va a ser igual al controller Razas

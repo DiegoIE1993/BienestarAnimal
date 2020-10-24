@@ -16,16 +16,16 @@ use Intervention\Image\Facades\Image;
 
 class RegistrarMascotaController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except'=> 'show']);
+
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-    
     public function index()
     {
         $registro = RegistrarMascota::all();

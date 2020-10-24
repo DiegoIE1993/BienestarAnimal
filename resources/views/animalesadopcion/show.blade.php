@@ -33,7 +33,7 @@
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
                     <div class="navbar-nav ml-auto text-center">
                      <div class="navbar-nav ml-auto text-center">
-                        <a class="nav-link" href="/">Inicio <span class="sr-only">(current)</span></a>
+                        <a class="nav-link accent-blue " href="/">Inicio <span class="sr-only">(current)</span></a>
                         <a class="nav-link" href="{{url('animalesadopcion/show')}}">Adopción</a>
                         <a class="nav-link" href="{{url('educacion/show')}}">Educacion</a>
                         <a class="nav-link" href="{{url('nosotros/show')}}">Nosotros</a>

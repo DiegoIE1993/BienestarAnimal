@@ -8,16 +8,16 @@ use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except'=> 'show']);
+
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-    
+     */    
     public function index()
     {
         $users = User::all();
@@ -49,6 +49,7 @@ class UserController extends Controller
         $usuario->name = $request->name;
         $usuario->email = $request->email;
         $usuario->password = bcrypt($request->password);
+
 
         if ($usuario->save()){
 
