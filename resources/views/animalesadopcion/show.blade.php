@@ -13,6 +13,7 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     {{-- <script src="{{ asset('js/custom.js')}}"></script> --}}
     <link rel="stylesheet" href="{!! asset('css/estilos.css') !!}">
     
@@ -79,25 +80,85 @@
         </section>
             
         <section>   
-         <div class="img">
-             <div class="container fondo">
-               <div class="container">
-                  <div class="row row-cols-3">
-                     @foreach ($registro as $adopcion)           
-                         <div>
-                           <p><img class="zoom" src="/storage/{{ $adopcion->imagen}}" height="200" /></p>
-                           <p><h5>Nombre: {{$adopcion->nombre_ejemplar}} </h5></p>
-                           <p><h5>Especie: {{$adopcion->especie->nombre}}</h5></p>
-                           <p><h5>Raza: {{$adopcion->raza->nombre}}</h5></p>
-                           <p><h5>Sexo: {{$adopcion->genero}}</h5></p>
-                           <p><h5>Edad: {{$adopcion->edad}}</h5></p>
-                         </div>                  
-                     @endforeach   
-                   </div>  
-               </div>
-             </div>
-         </div>   
+            <div class="img">
+                <div class="container">
+                    <div class="container fondo">
+                        <div class="row row-cols-3">
+                            @foreach ($registro as $adopcion)           
+                                <div>
+                                <p><img class="zoom" src="/storage/{{ $adopcion->imagen}}" height="200" data-toggle="modal" data-target="{{url('solicitudadopciones/create')}}"/></p>
+                                <p><h5>Nombre: {{$adopcion->nombre_ejemplar}} </h5></p>
+                                <p><h5>Especie: {{$adopcion->especie->nombre}}</h5></p>
+                                <p><h5>Raza: {{$adopcion->raza->nombre}}</h5></p>
+                                <p><h5>Sexo: {{$adopcion->genero}}</h5></p>
+                                <p><h5>Edad: {{$adopcion->edad}}</h5></p>
+                                
+                                </button>
+                                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                                    Solicitar Adopcion
+                                </div>                  
+                            @endforeach    
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Solicitud de Adopcion</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <form>
+                        <div class="modal-body">
+                            <div class="modal-content"> 
+                                <ul>
+                                    <img src="/storage/{{ $adopcion->imagen}}" height="200" data-toggle="modal" data-target="{{url('solicitudadopciones/create')}}"/>
+                                    <h5>Nombre: {{$adopcion->nombre_ejemplar}} </h5>
+                                    <h5>Especie: {{$adopcion->especie->nombre}}</h5>
+                                    <h5>Raza: {{$adopcion->raza->nombre}}</h5>
+                                    <h5>Sexo: {{$adopcion->genero}}</h5>
+                                    <h5>Edad (Meses): {{$adopcion->edad}}</h5>
+                                </ul> 
+                            </div>       
+                                <div>
+                                    <div class="form-group">
+                                        <label for="nombre">Nombre y Apellidos</label>
+                                        <input type="text" name="nombre" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="cedula">Cédula</label>
+                                        <input type="number" name="cedula" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="telefono">Telefono</label>
+                                        <input type="text" name="telefono" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="direccion">Dirección</label>
+                                        <input type="text" name="direccion" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="correo">Correo Electronico</label>
+                                        <input type="email" id="correo" class="form-control" aria-describedby="correo">
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="documentos">Cargar Archivos</label>
+                                        <input type="file" class="form-control-file" id="documentos">
+                                </div>   
+                            </div>              
+                        </div>
+                    </form>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" align='center'>Enviar Solicitud</button>
+                    </div>
+                </div>
+                </div>
+            </div>     
      </section>
+
      <section>   
       <div class="img">
           <div class="container">
@@ -135,7 +196,8 @@
             <p>Copyright &copy; Unidad de Proteccion Animal, todos los derechos reservados.</p>
         </footer> 
         
- 
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
 </body>
 
 </html>

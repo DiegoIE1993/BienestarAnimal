@@ -18,7 +18,6 @@
 </head>
 
 <body>
-
     <header class="site-header inicio">
         <!-- Just an image -->
         <nav class="navbar navbar-light bg-light navbar-expand-md sticky-top">
@@ -76,37 +75,39 @@
             </div>
         </section>
 
-        <main>
+         {{-- // Seccion de adopcion de animales que redirige al principal de adopcion// --}}
+        <section>   
             <div class="container">
-                <div class="container-adopcion">
-                    <h1 class="fw-300 centrar-texto" align='center' >Adopta un Amigo</h1>
-                    <div class="row row-cols-3">
-                        @foreach ($registro as $adopcion)           
-                            <div>
-                                <p><img class="zoom" src="/storage/{{ $adopcion->imagen}}" height="200" /></p>
-                                <p><h5>Nombre: {{$adopcion->nombre_ejemplar}} </h5></p>
-                                <p><h5>Especie: {{$adopcion->especie->nombre}}</h5></p>
-                                <p><h5>Raza: {{$adopcion->raza->nombre}}</h5></p>
-                                <p><h5>Sexo: {{$adopcion->genero}}</h5></p>
-                                <p><h5>Edad: {{$adopcion->edad}}</h5></p>
-                            </div>                  
-                        @endforeach  
-                        
-                    </div>
-                </div>
-            </div>        
-        </main>
+                <h2 align='center'>Adopta un Amigo</h2>
+               <div class="row row-cols-3">
+                  @foreach ($registro as $adopcion)           
+                      <div>
+                        <p><img class="zoom" src="/storage/{{ $adopcion->imagen}}" height="200" /></p>
+                        <p><h5>Nombre: {{$adopcion->nombre_ejemplar}} </h5></p>
+                        <p><h5>Especie: {{$adopcion->especie->nombre}}</h5></p>
+                        <p><h5>Raza: {{$adopcion->raza->nombre}}</h5></p>
+                        <p><h5>Sexo: {{$adopcion->genero}}</h5></p>
+                        <p><h5>Edad: {{$adopcion->edad}}</h5></p>
+                      </div>                  
+                  @endforeach   
+                  
+                </div>  
+                <a href="{{url('animalesadopcion/show')}}" class="boton boton-adopcion ">Ver Todos</a>
+            </div>
+        </section>       
         
         <section class="imagen-requisitos">
-            <div class="container container-requisitos">
+            <div class="container container-requisitos ">
                 <h1>Requisitos de adopción</h1>
                 <li>Fotocopia de la Cedula</li>
                 <li>Fotocopia de Factura de Luz o Agua</li>
                 <li>Carta Laboral</li> 
-                <a href="{{url('nosotros/show')}}" class="boton boton-nosotros">Sobre Nosotros</a>
+                <a href="{{url('nosotros/show')}}" class="boton boton-nosotros">Mas Sobre Nosotros</a>
                 <p>Todos los animales salen de la UPA esterilizados, desparacitados y con la vacuna de la rabia.</p>
             </div>
         </section>
+
+         
         
         <section class="container">   
             <div class="col">
@@ -138,8 +139,7 @@
 
         <footer align='center'>
             <p>Copyright &copy; Unidad de Proteccion Animal, todos los derechos reservados.</p>
-        </footer> 
-        
+        </footer>    
  
 </body>
 

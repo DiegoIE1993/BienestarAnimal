@@ -75,30 +75,30 @@
               
         <section>   
             <div class="img">
-                <div class="container fondo">
-                    @foreach ($info ?? '' as $nosotros)           
-                        <div class="col-md-14">
-                           
+                <div class="container">
+                    <div class="container fondo">
+                        @foreach ($info ?? '' as $nosotros)           
+                            <div class="col-md-14">
                                 <div class="card-body">
-                                 <div align='center'>
-                                    <h1> {{$nosotros->titulo}} </h1>
-                                 </div>
-                                 <div>
-                                    <h2>Misión</h2>
-                                    <h5>{{$nosotros->mision}}</h5> 
-                                 </div>       
-                                 <div>
-                                    <h2>Visión</h2>
-                                    <h5>{{$nosotros->vision}}</h5>
-                                 </div>
-                                 <div>
-                                    <h2>Horarios</h2>
-                                    <h5>{{$nosotros->horario}}</h5>
-                                </div>          
-                              </div>
-                            
-                        </div>  
-                    @endforeach   
+                                     <div align='center'>
+                                        <h1> {{$nosotros->titulo}} </h1>
+                                     </div>
+                                     <div>
+                                        <h2>Misión</h2>
+                                        <h5>{{$nosotros->mision}}</h5> 
+                                     </div>       
+                                     <div>
+                                        <h2>Visión</h2>
+                                        <h5>{{$nosotros->vision}}</h5>
+                                     </div>
+                                     <div>
+                                        <h2>Horarios</h2>
+                                        <h5>{{$nosotros->horario}}</h5>
+                                    </div>          
+                                </div>  
+                            </div>  
+                        @endforeach  
+                    </div>
                 </div>
             </div>   
         </section> 

@@ -76,22 +76,24 @@
     <section>   
         <div class="img">
             <div class="container">
-                @foreach ($events as $eventos)     
-                    <div class="eventos">
-                        <div class="card">
-                            <div>
-                                <h1> {{$eventos->titulo}} </h1>
-                            </div>
-                            <div>
-                                <p>{{$eventos->descripcion}}</p> 
-                            </div>       
-                            <div>
-                                <p>{{$eventos->fecha}}</p>
-                            </div> 
-                        </div>   
-                    </div>  
-                @endforeach   
-            </div>
+                <div class="container fondo">
+                    @foreach ($events as $eventos)     
+                        <div class="eventos">
+                            <div class="card">
+                                <div>
+                                    <h1> {{$eventos->titulo}} </h1>
+                                </div>
+                                <div>
+                                    <p>{{$eventos->descripcion}}</p> 
+                                </div>       
+                                <div>
+                                    <p>{{$eventos->fecha}}</p>
+                                </div> 
+                            </div>   
+                        </div>  
+                    @endforeach   
+                </div>
+            </div> 
         </div>
     </section> 
     <section>   

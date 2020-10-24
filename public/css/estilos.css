@@ -78,23 +78,13 @@ img {
 /* Resaltar al pasar por los link de navegacion*/
 .nav-link {
    text-decoration: none;
-    background:white; padding: 1px 3px;
-    text-decoration:none
+    background:white;
 }
 .nav-link:hover {
-   background: #b8b6b5;
-   color: white; }
+   background: rgb(255, 255, 255);
+   color: rgb(179, 179, 179); 
+  }
 
-   html {
-    box-sizing: border-box;
-    font-size: 62.5%; /** Reset para REMS - 62.5% = 10px de 16px **/
-}
-body {
-  font-family: 'Lato', sans-serif;
-  font-size: 1.6rem;
-  line-height: 2;
-  
-}
 
 .imagen-requisitos {
   background-image: url('/Imagenes/requisitos.jpg');
@@ -116,6 +106,7 @@ body {
 .container-requisitos p {
   font-size: 1.8rem;
 }
+
 @media (min-width: 768px) {
   .container-adopcion{
       display: flex;
@@ -140,6 +131,7 @@ body {
 
 .boton-adopcion {
   background-color: #E08709;
+ 
   
 }
 .boton-nosotros {
