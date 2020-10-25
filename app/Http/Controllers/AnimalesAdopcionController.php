@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\AnimalesAdopcion;
 use App\Models\RegistrarMascota;
+use App\Models\SolicitudAdopciones;
 use Illuminate\Http\Request;
 
 class AnimalesAdopcionController extends Controller
@@ -25,10 +26,6 @@ class AnimalesAdopcionController extends Controller
         return view('animalesadopcion.index', compact('registro'));
     }
 
-    public function ver($codigo_animal)
-    {
-       
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -37,7 +34,7 @@ class AnimalesAdopcionController extends Controller
      */
     public function create()
     {
-        //
+        
     }
 
     /**

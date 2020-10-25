@@ -262,11 +262,18 @@ return [
             'label_color' => 'success',
         ],
         [
+            'text'        => 'Solicitudes de Adopcion',
+            'url'         => 'solicitudadopciones',
+            'icon'        => 'fa fa-user-plus',
+            'label_color' => 'success',
+        ],
+        [
             'text'        => 'Educacion',
             'url'         => 'educacion',
             'icon'        => 'fa fa-film',
             'label_color' => 'success',
         ],
+        
         [
             'text'    => 'Mantenimiento',
             'icon'    => 'fa fa-wrench',

@@ -132,7 +132,7 @@
                                                                 <label for="documentos">Elige el Archivo</label>
                                                                 <input type="file" name="documentos" require class="form-control">
                                                             </div>   
-                                                            
+                                                            <input type="hidden" name="adopcion_id" value="{{$adopcion->codigo_animal}}">
                                                         </div>  
                                                     </div>             
                                                 </div>

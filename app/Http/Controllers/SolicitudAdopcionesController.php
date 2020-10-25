@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\RegistrarMascota;
 use Illuminate\Support\Facades\DB;
 use App\Models\SolicitudAdopciones;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\File;
 use Intervention\Image\Facades\Image;
 use Illuminate\Support\Facades\Storage;
 use Symfony\Component\Console\Input\Input;
@@ -12,6 +15,11 @@ use League\CommonMark\Block\Element\Document;
 
 class SolicitudAdopcionesController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth', ['except'=> 'show']);
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -19,7 +27,11 @@ class SolicitudAdopcionesController extends Controller
      */
     public function index()
     {
-        return view('welcome');
+        
+        $adopcions = SolicitudAdopciones::all();
+        $registro = RegistrarMascota::all();
+        return view('solicitudadopciones.index', compact('adopcions','registro'));
+        
     }
 
     /**
@@ -47,11 +59,12 @@ class SolicitudAdopcionesController extends Controller
             'direccion' => 'Required',
             'correo' => 'Required',
             'documentos' => 'Required',
+            'adopcion_id' => 'Required',
             
         ]);
 
         $ruta_documentos = $request['documentos']->store('upload-documentos', 'public');
-         Storage::path("storage/{$ruta_documentos}"); 
+         Storage::path("storage/{$ruta_documentos}");  
 
         DB::table('solicitud_adopciones')->insert([
             'nombre' => $data['nombre'],
@@ -60,7 +73,8 @@ class SolicitudAdopcionesController extends Controller
             'direccion' => $data['direccion'],
             'correo' => $data['correo'],
             'documentos' => $ruta_documentos,
-             
+            'adopcion_id' => $data['adopcion_id'],
+            
         ]);
 
         return redirect('animalesadopcion/show')->with('success', 'data saved');
@@ -72,9 +86,12 @@ class SolicitudAdopcionesController extends Controller
      * @param  \App\Models\SolicitudAdopciones  $solicitudAdopciones
      * @return \Illuminate\Http\Response
      */
-    public function show(SolicitudAdopciones $solicitudAdopciones)
+    public function show($id)
     {
-        //
+        $adopcions = SolicitudAdopciones::findOrFail($id);
+        
+        return view('solicitudadopciones.show', compact('adopcions'));
+
     }
 
     /**

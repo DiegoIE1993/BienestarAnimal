@@ -2,7 +2,11 @@
 
 namespace App\Models;
 
+use App\Models\Raza;
+use App\Models\Especies;
 use App\Models\TipoEntrada;
+use App\Models\ActitudGeneral;
+use App\Models\CondicionGeneral;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 

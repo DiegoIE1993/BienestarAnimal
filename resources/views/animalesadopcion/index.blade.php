@@ -21,7 +21,7 @@
                         
                                 <tbody>
                                     
-                                    @foreach ($registro as $adopcion)
+                                    @foreach ($registro ?? '' as $adopcion)
                                     <tr>
                                         <td> {{$adopcion->codigo_animal}}</td>
                                         <td> <img whidth="50" height="50" src="/storage/{{ $adopcion->imagen}}"></td>
