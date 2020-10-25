@@ -10,7 +10,7 @@ class Eventos extends Model
     use HasFactory;
 
     protected $fillable = [
-        'titulo', 'descripcion', 'fecha',
+        'titulo', 'descripcion', 'fecha_hora',
     ];
 
 }

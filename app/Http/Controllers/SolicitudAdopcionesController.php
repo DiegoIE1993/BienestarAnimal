@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Models\RegistrarMascota;
 use Illuminate\Support\Facades\DB;
@@ -61,12 +62,16 @@ class SolicitudAdopcionesController extends Controller
             'documentos' => 'Required',
             'adopcion_id' => 'Required',
             
+            
         ]);
+
+        $fecha_actual = Carbon::now();
 
         $ruta_documentos = $request['documentos']->store('upload-documentos', 'public');
          Storage::path("storage/{$ruta_documentos}");  
 
         DB::table('solicitud_adopciones')->insert([
+            'fecha' => $fecha_actual,
             'nombre' => $data['nombre'],
             'cedula' => $data['cedula'],
             'telefono' => $data['telefono'],
@@ -86,11 +91,11 @@ class SolicitudAdopcionesController extends Controller
      * @param  \App\Models\SolicitudAdopciones  $solicitudAdopciones
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        $adopcions = SolicitudAdopciones::findOrFail($id);
+        $adopcions = SolicitudAdopciones::all();
         
-        return view('solicitudadopciones.show', compact('adopcions'));
+        return view('solicitudadopciones.index', compact('adopcions'));
 
     }
 
@@ -100,9 +105,11 @@ class SolicitudAdopcionesController extends Controller
      * @param  \App\Models\SolicitudAdopciones  $solicitudAdopciones
      * @return \Illuminate\Http\Response
      */
-    public function edit(SolicitudAdopciones $solicitudAdopciones)
+    public function edit($id)
     {
-        //
+        $solicitud = SolicitudAdopciones::findOrFail($id);
+
+        return view('solicitudadopciones.edit', compact('solicitud'));
     }
 
     /**
@@ -112,9 +119,19 @@ class SolicitudAdopcionesController extends Controller
      * @param  \App\Models\SolicitudAdopciones  $solicitudAdopciones
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, SolicitudAdopciones $solicitudAdopciones)
+    public function update(Request $request, $id)
     {
-        //
+        $solicitud = SolicitudAdopciones::findOrFail($id);
+        $solicitud->nombre =$request->nombre;
+        $solicitud->cedula =$request->cedula;
+        $solicitud->telefono =$request->telefono;
+        $solicitud->direccion =$request->direccion;
+        $solicitud->correo =$request->correo;
+        $solicitud->estado_solicitud =$request->estado_solicitud;
+        
+        $solicitud->save();
+
+        return redirect('/solicitudadopciones');
     }
 
     /**

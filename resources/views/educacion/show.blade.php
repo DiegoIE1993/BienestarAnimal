@@ -95,7 +95,7 @@
               <div class="container fondo">
                   <div class="col">
                       <div>
-                          <h1>Contáctanos</h1>
+                          <h2>Contáctanos</h2>
                       </div>
                       <div>
                           <h5>Vía a la Linda, contiguo al hospital geriátrico San Isidro Manizales</h5>

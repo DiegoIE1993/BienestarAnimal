@@ -15,15 +15,17 @@ class CreateSolicitudAdopcionesTable extends Migration
     {
         Schema::create('solicitud_adopciones', function (Blueprint $table) {
             $table->id();
+            $table->date('fecha');
             $table->string('nombre');
             $table->integer('cedula');
             $table->string('telefono');
             $table->string('direccion');
             $table->string('correo');
             $table->string('documentos');
+            $table->string('estado_solicitud')->nullable();
             $table->unsignedBigInteger('adopcion_id');
             $table->foreign('adopcion_id')->references('codigo_animal')->on('registrar_mascotas')->onDelete('cascade');
-            $table->timestamps();
+            $table->timestamps('');
         });
     }
 

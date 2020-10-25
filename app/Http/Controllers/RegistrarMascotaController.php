@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use App\Models\Raza;
 use App\Models\Especies;
 use App\Models\TipoEntrada;
@@ -83,6 +84,8 @@ class RegistrarMascotaController extends Controller
         'imagen' => 'Required|image',
         'disponibilidad' => 'Required',
          ]);
+
+         $fecha_actual = Carbon::now();
         //obtener la ruta de imagen
          $ruta_imagen = $request['imagen']->store('upload-animales', 'public');
          $img  = Image::make( public_path("storage/{$ruta_imagen}"))->fit(500, 600);
@@ -91,6 +94,7 @@ class RegistrarMascotaController extends Controller
 
         DB::table('registrar_mascotas')->insert([
         'tipo_entrada_id' => $data['tipo_entrada_id'],
+        'fecha' => $fecha_actual,
         'codigo_animal' => $data['codigo_animal'], 
         'nombre_ciudadano' => $data['nombre_ciudadano'],
         'direccion' => $data['direccion'],
@@ -137,9 +141,15 @@ class RegistrarMascotaController extends Controller
      * @param  \App\Models\RegistrarMascota  $registrarMascota
      * @return \Illuminate\Http\Response
      */
-    public function edit(RegistrarMascota $registrarMascota)
+    public function edit($codigo_animal)
     {
-        //
+        $item = RegistrarMascota::findOrFail($codigo_animal);
+        $entradas = TipoEntrada::all();
+        $specie = Especies::all();
+        $races = Raza::all();
+        $condicions = CondicionGeneral::all();
+        $actitudes = ActitudGeneral::all();
+        return view('registrarmascota.edit', compact('item','entradas','specie','races','condicions','actitudes'));
     }
 
     /**
@@ -149,9 +159,34 @@ class RegistrarMascotaController extends Controller
      * @param  \App\Models\RegistrarMascota  $registrarMascota
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, RegistrarMascota $registrarMascota)
+    public function update(Request $request, $codigo_animal)
     {
-        //
+        $item = RegistrarMascota::findOrFail($codigo_animal);
+        $item->tipo_entrada_id =$request->tipo_entrada_id;
+        $item->nombre_ciudadano =$request->nombre_ciudadano;
+        $item->direccion =$request->direccion;
+        $item->cedula =$request->cedula;
+        $item->telefono =$request->telefono;
+        $item->correo =$request->correo;
+        $item->nombre_ejemplar =$request->nombre_ejemplar;
+        $item->genero =$request->genero;
+        $item->especie_id =$request->especie_id;
+        $item->raza_id =$request->raza_id;
+        $item->color =$request->color;
+        $item->talla =$request->talla;
+        $item->peso =$request->peso;
+        $item->edad =$request->edad;
+        $item->condicion_id =$request->condicion_id;
+        $item->actitud_id =$request->actitud_id;
+        $item->estado =$request->estado;
+        $item->señales_particulares =$request->señales_particulares;
+        $item->motivo_ingreso_anamnesis =$request->motivo_ingreso_anamnesis;
+        $item->imagen =$request->imagen;
+        $item->disponibilidad =$request->disponibilidad;
+        
+        $item->save();
+
+        return redirect('/registrarmascota');
     }
 
     /**

@@ -17,7 +17,7 @@ class CreateEventosTable extends Migration
             $table->id();
             $table->string('titulo');
             $table->string('descripcion');
-            $table->Date('fecha');
+            $table->string('fecha_hora');
             $table->timestamps();
         });
     }

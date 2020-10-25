@@ -81,6 +81,7 @@
             
         <main class="seccion container">   
             <div>
+                <h1 align='center'>Catalogo Disponible</h1>
                 <div class="row row-cols-3">
                     @foreach ($registro as $adopcion)           
                         <div class="mascota">
@@ -133,6 +134,7 @@
                                                                 <input type="file" name="documentos" require class="form-control">
                                                             </div>   
                                                             <input type="hidden" name="adopcion_id" value="{{$adopcion->codigo_animal}}">
+                                                        
                                                         </div>  
                                                     </div>             
                                                 </div>
@@ -149,7 +151,7 @@
             </div> 
             
             
-            @if(count($errors) >0)
+            {{-- @if(count($errors) >0)
             <div class="alert alert-danger">
                 <ul>
                     @foreach($errors->all() as $error)
@@ -162,7 +164,7 @@
                 <div class="alert alert-success">
                     <p>{{\Session()->get('success')}}</p>
                 </div> 
-            @endif       
+            @endif        --}}
         </main>
 
      <section>   
@@ -171,21 +173,21 @@
               <div class="container fondo">
                   <div class="col">
                       <div>
-                          <h1>Contáctanos</h1>
+                          <h1>Contáctanos</h2>
                       </div>
                       <div>
-                          <h5>Vía a la Linda, contiguo al hospital geriátrico San Isidro Manizales</h5>
+                          <h5>Vía a la Linda, contiguo al hospital geriátrico San Isidro Manizales</h1>
                       </div>
                       <div>
-                          <h3>Teléfono Unidad de Protección Animal:</h3> 
+                          <h4>Teléfono Unidad de Protección Animal:</h4> 
                           <h5> 318 358 6247 – 8703150</h5>                                   
                       </div>
                       <div>
-                          <h3>Grupo de Atención y Rescate Animal:</h3> 
+                          <h4>Grupo de Atención y Rescate Animal:</h4> 
                           <h5>3104020002</h5>                                   
                       </div>
                       <div>
-                          <h3>Nuestros Aliados</h3>
+                          <h4>Nuestros Aliados</h4>
                           <img src="{{asset('Imagenes/gara.png')}}" alt="" >
                       </div>
                       <div>

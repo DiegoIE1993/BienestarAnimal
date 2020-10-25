@@ -46,13 +46,13 @@ class EventosController extends Controller
         $data = request()->validate([
         'titulo'=> 'Required',
         'descripcion' => 'Required',
-        'fecha' => 'Required',
+        'fecha_hora' => 'Required',
     ]);
 
     DB::table('eventos')->insert([
         'titulo' => $data['titulo'],
         'descripcion' => $data['descripcion'],
-        'fecha' => $data['fecha'],
+        'fecha_hora' => $data['fecha_hora'],
         
     ]);
 
@@ -97,7 +97,7 @@ class EventosController extends Controller
       $eventos = Eventos::findOrFail($id);
       $eventos->titulo =$request->titulo;
       $eventos->descripcion =$request->descripcion;
-      $eventos->fecha =$request->fecha;
+      $eventos->fecha_hora =$request->fecha_hora;
       
       $eventos->save();
 

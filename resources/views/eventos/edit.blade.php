@@ -23,7 +23,7 @@
                             </div>
                             <div class="form-group">
                                 <label for="fecha">Fecha</label>
-                                <input type="date" class="form-control" name="fecha"value="{{$events->fecha}}">
+                                <input type="text" class="form-control" name="fecha_hora"value="{{$events->fecha_hora}}">
                             </div>
                             <div class="justify-content-end">
                                 <a href="/eventos" class="btn btn-primary">Atras</a>

@@ -21,8 +21,8 @@
                                 <textarea class="form-control" name="descripcion"></textarea>
                             </div>
                             <div class="form-group">
-                                <label for="fecha">Fecha</label>
-                                <input type="date" class="form-control" name="fecha">
+                                <label for="fecha">Fecha y Hora</label>
+                                <input type="text" class="form-control" name="fecha_hora">
                             </div>
                             <div class="justify-content-end">
                                 <a href="/eventos" class="btn btn-primary">Atras</a>

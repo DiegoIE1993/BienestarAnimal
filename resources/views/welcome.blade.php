@@ -75,15 +75,57 @@
             </div>
         </section>
 
-         {{-- // Seccion de adopcion de animales que redirige al principal de adopcion// --}}
-        <section>   
+        <section>
             <div class="container">
-                <h2 align='center'>Adopta un Amigo</h2>
+                
+                <div class="img-evento">
+                    <h1>Próximos Eventos</h1>
+                    <div class="row row-cols-3"> 
+                        @foreach ($events as $eventos)     
+                            <div class="evento">
+                                <div class="card">
+                                    <div>
+                                        <img width="200" height="200" src="{{asset('Imagenes/calendario.png')}}" alt="">
+                                    </div>
+                                    <div>
+                                        <h2> {{$eventos->titulo}} </h2>
+                                    </div>
+                                    <div>
+                                        <p>{{$eventos->descripcion}}</p> 
+                                    </div>       
+                                    <div>
+                                        <p>Fecha: {{$eventos->fecha_hora}}</p>
+                                    </div> 
+                                </div>   
+                            </div>  
+                        @endforeach  
+                    </div>
+                </div>
+                
+            </div>
+        </section>
+       
+        
+        <section class="imagen-requisitos">
+            <div class="container container-requisitos ">
+                <h2>Requisitos de adopción</h2>
+                <li>Fotocopia de la Cedula</li>
+                <li>Fotocopia de Factura de Luz o Agua</li>
+                <li>Carta Laboral</li> 
+                <a href="{{url('nosotros/show')}}" class="boton boton-nosotros">Mas Sobre Nosotros</a>
+                <p>Todos los animales salen de la UPA esterilizados, desparacitados y con la vacuna de la rabia.</p>
+            </div>
+        </section>
+        
+        {{-- // Seccion de adopcion de animales que redirige al principal de adopcion// --}}
+        <section> 
+              
+            <div class="container">
+                <h1 align='center'>Adopta un Amigo</h1>
                <div class="row row-cols-3">
                   @foreach ($registro as $adopcion)           
                       <div class="mascota">
                         <p><img class="zoom" src="/storage/{{ $adopcion->imagen}}" height="400" /></p>
-                        
                       </div>                  
                   @endforeach   
 
@@ -93,20 +135,7 @@
                 </div>
                 
             </div>
-        </section>       
-        
-        <section class="imagen-requisitos">
-            <div class="container container-requisitos ">
-                <h1>Requisitos de adopción</h1>
-                <li>Fotocopia de la Cedula</li>
-                <li>Fotocopia de Factura de Luz o Agua</li>
-                <li>Carta Laboral</li> 
-                <a href="{{url('nosotros/show')}}" class="boton boton-nosotros">Mas Sobre Nosotros</a>
-                <p>Todos los animales salen de la UPA esterilizados, desparacitados y con la vacuna de la rabia.</p>
-            </div>
         </section>
-
-         
         
         <section class="container">   
             <div class="col">
@@ -135,6 +164,8 @@
             </div>   
         
         </section>   
+
+        
           
         
         <footer align='center'>

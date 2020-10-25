@@ -15,7 +15,7 @@
                                 <thead>
                                     <th>Titulo</th>
                                     <th>Descripcion</th>
-                                    <th>Fecha</th>
+                                    <th>Fecha y Hora</th>
                                     <th>Acciones</th>
                                 </thead>
                         
@@ -24,7 +24,7 @@
                                         <tr>
                                             <td> {{$evento->titulo}}</td>
                                             <td> {{$evento->descripcion}}</td>
-                                            <td> {{$evento->fecha}}</td>                                            
+                                            <td> {{$evento->fecha_hora}}</td>                                            
                                             <td>
                                                 <a href="{{ url('/eventos/'.$evento->id.'/edit')}}" class="btn btn-primary">Editar</a>
                                                 @include('eventos.delete', ['eventos' => $evento]) 

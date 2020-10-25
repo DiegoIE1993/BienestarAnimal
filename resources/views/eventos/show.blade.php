@@ -74,27 +74,31 @@
     </section>
     
     <section>   
-        <div class="img">
             <div class="container">
                 <div class="container fondo">
+                    <div class="row row-cols-3">
                     @foreach ($events as $eventos)     
                         <div class="eventos">
                             <div class="card">
                                 <div>
-                                    <h1> {{$eventos->titulo}} </h1>
+                                    <img width="200" height="200" src="{{asset('Imagenes/calendario.png')}}" alt="">
+                                </div>
+                                <div>
+                                    <h2> {{$eventos->titulo}} </h2>
                                 </div>
                                 <div>
                                     <p>{{$eventos->descripcion}}</p> 
                                 </div>       
                                 <div>
-                                    <p>{{$eventos->fecha}}</p>
+                                    <p>{{$eventos->fecha_hora}}</p>
                                 </div> 
                             </div>   
                         </div>  
-                    @endforeach   
+                    @endforeach 
+                    </div>  
                 </div>
             </div> 
-        </div>
+
     </section> 
     <section>   
         <div class="img">

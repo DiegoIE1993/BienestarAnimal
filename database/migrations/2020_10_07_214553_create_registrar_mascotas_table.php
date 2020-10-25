@@ -15,8 +15,8 @@ class CreateRegistrarMascotasTable extends Migration
     {
         Schema::create('registrar_mascotas', function (Blueprint $table) {
 
-            
             $table->unsignedBigInteger('codigo_animal')->primary();
+            $table->date('fecha');
             $table->string('nombre_ciudadano');
             $table->string('direccion');
             $table->string('cedula');

@@ -14,9 +14,9 @@ class WelcomeController extends Controller
         $registro = RegistrarMascota::latest()->take(3)->get();
         $educations = Educacion::latest()->take(3)->get();
         $info = Nosotros::all();
-        $events = Eventos::all();
+        $events = Eventos::latest()->take(3)->get();
 
-        return view('welcome', compact('educations','info','registro'));
+        return view('welcome', compact('educations','info','registro','events'));
         
     }
 }
