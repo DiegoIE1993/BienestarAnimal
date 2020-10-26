@@ -11,7 +11,7 @@ use App\Http\Controllers\WelcomeController;
 use App\Http\Controllers\EspeciesController;
 use App\Http\Controllers\NosotrosController;
 use App\Http\Controllers\EducacionController;
-use App\Http\Controllers\RequisitosController;
+use App\Http\Controllers\DetalleAdopcionesController;
 use App\Http\Controllers\TipoEntradaController;
 use App\Http\Controllers\ActitudGeneralController;
 use App\Http\Controllers\AnimalesAdopcionController;
@@ -87,5 +87,9 @@ Route::resource('animalesadopcion', AnimalesAdopcionController::class);
 Auth::routes();
 
 Route::resource('solicitudadopciones', SolicitudAdopcionesController::class);
+
+Auth::routes();
+
+Route::resource('detalleadopciones', DetalleAdopcionesController::class);
 
 

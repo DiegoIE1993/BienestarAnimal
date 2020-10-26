@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\DetalleAdopciones;
 use Illuminate\Http\Request;
+use App\Models\RegistrarMascota;
+use App\Models\SolicitudAdopciones;
 
 class DetalleAdopcionesController extends Controller
 {
@@ -14,7 +15,9 @@ class DetalleAdopcionesController extends Controller
      */
     public function index()
     {
-        //
+        $solicitud = SolicitudAdopciones::where('estado_solicitud', 'Aceptado')->get();
+        $registro = RegistrarMascota::where('disponibilidad', 'Disponible')->get();
+        return view('detallesadopciones.index', compact('registro', 'solicitud'));
     }
 
     /**
@@ -41,21 +44,22 @@ class DetalleAdopcionesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\DetalleAdopciones  $detalleAdopciones
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(DetalleAdopciones $detalleAdopciones)
+    public function show($id)
     {
-        //
+        $registro = RegistrarMascota::all(); 
+        return view('detalleadopcion.show', compact('registro'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\DetalleAdopciones  $detalleAdopciones
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(DetalleAdopciones $detalleAdopciones)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +68,10 @@ class DetalleAdopcionesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\DetalleAdopciones  $detalleAdopciones
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, DetalleAdopciones $detalleAdopciones)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +79,10 @@ class DetalleAdopcionesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\DetalleAdopciones  $detalleAdopciones
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(DetalleAdopciones $detalleAdopciones)
+    public function destroy($id)
     {
         //
     }

@@ -273,6 +273,12 @@ return [
             'icon'        => 'fa fa-film',
             'label_color' => 'success',
         ],
+        [
+            'text'        => 'Detalle Adopciones',
+            'url'         => 'detalleadopciones',
+            'icon'        => 'fa fa-list',
+            'label_color' => 'success',
+        ],
         
         [
             'text'    => 'Mantenimiento',
