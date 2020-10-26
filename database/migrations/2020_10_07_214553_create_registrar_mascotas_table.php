@@ -17,11 +17,11 @@ class CreateRegistrarMascotasTable extends Migration
 
             $table->unsignedBigInteger('codigo_animal')->primary();
             $table->date('fecha');
-            $table->string('nombre_ciudadano');
-            $table->string('direccion');
-            $table->string('cedula');
-            $table->string('telefono');
-            $table->string('correo');
+            $table->string('nombre_ciudadano')->nullable();
+            $table->string('direccion')->nullable();
+            $table->string('cedula')->nullable();
+            $table->string('telefono')->nullable();
+            $table->string('correo')->nullable();
             $table->string('nombre_ejemplar');
             $table->string('genero');
             $table->string('color');

@@ -93,9 +93,9 @@
                                                     </div>
                                                     <div class="form-group" style="display:inline-block; width: 300px;">
                                                         <label for="genero">Genero</label>
-                                                        <select  name="genero" class="form-control" value="{{$item->genero}}">
-                                                        <option value="Macho" >Macho</option>
-                                                        <option value="Hembra">Hembra</option> 
+                                                    <select  name="genero" class="form-control">
+                                                            <option {{$item->genero == "Macho" ? 'selected' : '' }} value="{{$item->genero}}">{{$item->genero}}</option>
+                                                            <option {{$item->genero == "Hembra" ? 'selected' : '' }} value="{{$item->genero}}">{{$item->genero}}</option> 
                                                         </select>
                                                     </div>
                                                     <div class="form-group" style="display:inline-block; width: 285px;">
@@ -119,7 +119,7 @@
                                                         <input type="text" name="peso" require class="form-control" value="{{$item->peso}}">
                                                     </div>
                                                     <div class="form-group" style="display:inline-block; width: 200px;">
-                                                        <label for="edad">Edad</label>
+                                                        <label for="edad">Edad (Meses)</label>
                                                         <input type="text" name="edad" require class="form-control" value="{{$item->edad}}">
                                                     </div>                                                    
                                                     <div class="form-group" style="display:inline-block; width: 460px;">

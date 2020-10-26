@@ -80,9 +80,11 @@ class EducacionController extends Controller
      * @param  \App\Models\Educacion  $educacion
      * @return \Illuminate\Http\Response
      */
-    public function edit(Educacion $educacion)
+    public function edit($id)
     {
-        //
+        $educacion = Educacion::findOrFail($id);
+
+        return view('educacion.edit', compact('educacion'));
     }
 
     /**
@@ -92,9 +94,16 @@ class EducacionController extends Controller
      * @param  \App\Models\Educacion  $educacion
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Educacion $educacion)
+    public function update(Request $request, $id)
     {
-        //
+        $educacion = Educacion::findOrFail($id);
+       
+        $educacion->titulo =$request->titulo;
+        $educacion->video =$request->video;
+        
+        $educacion->save();
+
+        return redirect('/educacion');
     }
 
     /**
@@ -103,8 +112,19 @@ class EducacionController extends Controller
      * @param  \App\Models\Educacion  $educacion
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Educacion $educacion)
+    public function destroy($id)
     {
-        //
+        $educacion = Educacion::findOrFail($id);
+
+        //Eliminar Especie
+        if ($educacion->delete()){
+            return redirect('/educacion');
+        }
+        else
+        {
+            return response() ->json([
+                'mensaje' => 'Error al eliminar especie'
+            ]);
+        }
     }
 }

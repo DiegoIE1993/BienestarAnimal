@@ -22,7 +22,7 @@
                                 <textarea class="form-control" name="descripcion" require class="form-control">{{$events->descripcion}}</textarea>
                             </div>
                             <div class="form-group">
-                                <label for="fecha">Fecha</label>
+                                <label for="fecha">Fecha y Hora</label>
                                 <input type="text" class="form-control" name="fecha_hora"value="{{$events->fecha_hora}}">
                             </div>
                             <div class="justify-content-end">
