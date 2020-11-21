@@ -31,6 +31,7 @@
                                 </tbody>
                            
                             </table>
+                            {{$species->links()}}
                         </div>
                     </div>
                         

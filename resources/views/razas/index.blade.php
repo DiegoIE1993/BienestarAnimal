@@ -29,6 +29,8 @@
                                     @endforeach
                                 </tbody>
                             </table>
+                            
+                            {{$races->links()}} 
                         </div>
                     </div>
                 </div>

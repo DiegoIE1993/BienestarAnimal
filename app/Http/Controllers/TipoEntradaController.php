@@ -20,7 +20,7 @@ class TipoEntradaController extends Controller
      */    
     public function index()
     {
-        $entradas = TipoEntrada::all(); // entradas variable que va a ser igual al controller TipoEntrada
+        $entradas = TipoEntrada::paginate(6); // entradas variable que va a ser igual al controller TipoEntrada
         return view ('tipoentrada.index', compact('entradas'));
     }
 
