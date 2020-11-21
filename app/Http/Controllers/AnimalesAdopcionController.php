@@ -23,6 +23,7 @@ class AnimalesAdopcionController extends Controller
     {
         
         $registro = RegistrarMascota::where('disponibilidad', 'Disponible')->get();
+        $registro = RegistrarMascota::paginate(6);
         return view('animalesadopcion.index', compact('registro'));
     }
 

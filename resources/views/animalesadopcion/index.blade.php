@@ -32,18 +32,15 @@
                                         <td> {{$adopcion->edad}}</td>
                                     </tr>
                                     @endforeach
-                                    
-                                    
                                 </tbody>
-                                </table>
-                        </div>
+                            </table>
+                        {{$registro->links()}} 
                     </div>
-    
                 </div>
-                
             </div>
         </div>
+    </div>
         
-    @endsection 
+ @endsection 
 
  

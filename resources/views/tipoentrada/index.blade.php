@@ -28,7 +28,7 @@
                                         @endforeach
                                 </tbody>
                             </table>
-                            {{$races->links()}} 
+                            {{$entradas->links()}} 
                         </div>
                     </div>
                 </div>

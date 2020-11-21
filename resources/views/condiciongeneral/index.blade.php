@@ -29,16 +29,12 @@
                                             </tr>
                                         @endforeach
                                 </tbody>
-                           
                             </table>
+                            {{$condicion->links()}} 
                         </div>
                     </div>
-                        
-
                 </div>
-
             </div>
-            
         </div>
     </div>
     
