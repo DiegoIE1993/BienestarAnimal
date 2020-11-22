@@ -11,11 +11,11 @@
                             <div class="row justify-content-end pb-2">
                                 <a href="{{url('/especies/create')}}" class="btn btn-success">Agregar Especie</a>
                             </div>
-                            <table class="table">
+                            <table  class="table">
                                 <thead>
                                     <th >Nombre Especie</th>
                                     <th >Acciones</th>
-                                </thead>
+                                </thead> 
 
                                 <tbody>
                                     @foreach ($species as $especie)
@@ -31,6 +31,7 @@
                                 </tbody>
                            
                             </table>
+                            {{-- {{$species->links()}} --}}
                         </div>
                     </div>
                         

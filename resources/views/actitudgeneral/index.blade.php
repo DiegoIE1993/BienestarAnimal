@@ -29,16 +29,12 @@
                                             </tr>
                                         @endforeach
                                 </tbody>
-                           
                             </table>
+                            {{$actitud->links()}} 
                         </div>
                     </div>
-                        
-
                 </div>
-
             </div>
-            
         </div>
     </div>
     

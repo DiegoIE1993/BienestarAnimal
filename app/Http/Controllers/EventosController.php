@@ -21,7 +21,7 @@ class EventosController extends Controller
      */
     public function index()
     {
-         $events = Eventos::all();
+         $events = Eventos::paginate(6);
         return view('eventos.index', compact('events'));
     }
 

@@ -13,5 +13,6 @@ class Especies extends Model
 
     protected $fillable = [
         'nombre'
+    
     ];
 }

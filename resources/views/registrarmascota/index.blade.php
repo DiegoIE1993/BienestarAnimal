@@ -40,7 +40,8 @@
                                     </tr>
                                 @endforeach
                             </tbody> 
-                        </table>                
+                        </table> 
+                        {{$registro->links()}}                
                     </div> 
                 </div> 
             </div>

@@ -5,8 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Eventos;
 use App\Models\Nosotros;
 use App\Models\Educacion;
-use App\Models\RegistrarMascota;
 use Illuminate\Http\Request;
+use App\Models\RegistrarMascota;
+use Illuminate\Routing\Controller;
 
 class WelcomeController extends Controller
 {
@@ -18,5 +19,7 @@ class WelcomeController extends Controller
 
         return view('welcome', compact('educations','info','registro','events'));
         
+        
     }
+
 }

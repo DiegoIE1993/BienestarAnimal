@@ -29,7 +29,7 @@ class RegistrarMascotaController extends Controller
      */
     public function index()
     {
-        $registro = RegistrarMascota::all();
+        $registro = RegistrarMascota::paginate(6);
         return view('registrarmascota.index', compact('registro'));
     }
 
@@ -183,6 +183,17 @@ class RegistrarMascotaController extends Controller
         $item->motivo_ingreso_anamnesis =$request->motivo_ingreso_anamnesis;
         $item->imagen =$request->imagen;
         $item->disponibilidad =$request->disponibilidad;
+
+        // Si el usuario quiere cambiar la imagen 
+        if(request('imagen')){
+            // Obtener la ruta de la imagen
+        $ruta_imagen = $request['imagen']->store('upload-animales', 'public');
+        $img  = Image::make( public_path("storage/{$ruta_imagen}"));
+        $img->save();
+
+         // Asignar el objeto 
+         $item->$ruta_imagen;
+        }
         
         $item->save();
 

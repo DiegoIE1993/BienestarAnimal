@@ -20,7 +20,7 @@ class ActitudGeneralController extends Controller
      */    
     public function index()
     {
-        $actitud = ActitudGeneral::all(); // actitud variable que va a ser igual al controller Razas
+        $actitud = ActitudGeneral::paginate(6); // actitud variable que va a ser igual al controller Razas
         return view ('actitudgeneral.index', compact('actitud'));
     }
 

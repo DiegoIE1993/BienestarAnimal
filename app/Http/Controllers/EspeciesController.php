@@ -20,7 +20,8 @@ class EspeciesController extends Controller
      */    
     public function index()
     {
-        $species = Especies::all(); // species variable que va a ser igual al controller Especies
+        // $species = Especies::paginate(5); 
+        $species = Especies::all(); 
         return view ('especies.index', compact('species'));
         
      }
