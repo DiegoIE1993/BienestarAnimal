@@ -162,8 +162,9 @@
                                                         </select>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="imagen">Elige la imagen</label>
+                                                        <label for="imagen">Imagen Actual</label>
                                                         <input type="file" name="imagen" require class="form-control">
+                                                    <img src="/storage/{{$item->imagen}}" style="width: 300px">
                                                     </div>                                                 
                                                 </div>
                                             </div>
