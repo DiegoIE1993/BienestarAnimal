@@ -14,9 +14,7 @@
                             @csrf
                             <div class="form-group">
                                 <label for="nombre">Tipo Entrada</label>
-
                                 <input type="text" name="nombre" class="form-control @error('nombre') is-invalid @enderror" value={{ old('nombre') }}>
-
                                 @error('nombre')
                                     <span class="invalid-feedback d-block" role="alert">    
                                         <strong>{{$message}}</strong>
@@ -24,21 +22,14 @@
                                 @enderror
                             </div>
                           
-                            
                             <div class="justify-content-end">
                                 <a href="/tipoentrada" class="btn btn-primary">Atras</a>
                                 <input type="submit" value="Guardar" class="btn btn-success">
-
                             </div>
-
                         </form>
-
                     </div>
                 </div>
-
             </div>
         </div>
-
     </div>
-
 @endsection

@@ -358,17 +358,36 @@ return [
                 [
                     'type' => 'js',
                     'asset' => false,
-                    'location' => '//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js',
+                    'location' => 'https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js',
+                    
+                ],
+                [   
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => 'https:// ',
+                ],
+                [   
+                    'type' => 'js',
+                    'asset' => false,
+                    'location' => 'https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js',
                 ],
                 [
                     'type' => 'js',
                     'asset' => false,
-                    'location' => '//cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js',
+                    'location' => 'https://cdn.datatables.net/responsive/2.2.6/js/responsive.bootstrap4.min.js',
+                    
                 ],
                 [
                     'type' => 'css',
                     'asset' => false,
-                    'location' => '//cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css',
+                    'location' => 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css',
+                    
+                ],
+                [
+                    'type' => 'css',
+                    'asset' => false,
+                    'location' => 'https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css',
+                    
                 ],
             ],
         ],

@@ -8,11 +8,11 @@
                     <div class="card-header">Nosotros</div>
 
                     <div class="card-body">
-                        <div class="row justify-content-end pb-2">
-                            @if(count($info) == 0 )
-                             <a href="{{url('/nosotros/create')}}" class="btn btn-success">Agregar Informacion</a>
-                             @endif
-                        </div>
+                            <div class="row justify-content-end pb-2">
+                                @if(count($info) == 0 )
+                                <a href="{{url('/nosotros/create')}}" class="btn btn-success">Agregar Informacion</a>
+                                @endif
+                            </div>
                             <table class="table">
                                 <thead>
                                     <th>Titulo</th>

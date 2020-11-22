@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Nosotros;
-use Illuminate\Http\Request;
+use Illuminate\Http\Request;    
 use Illuminate\Support\Facades\DB;
 use Symfony\Contracts\Service\Attribute\Required;
 

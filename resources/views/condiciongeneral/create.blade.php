@@ -15,7 +15,7 @@
                             <div class="form-group">
                                 <label for="nombre">Nombre Condicion General</label>
 
-                                <input type="text" name="nombre" class="form-control @error('nombre') is-invalid @enderror" value={{ old('nombre') }}>
+                                <input type="text" name="nombre" class="form-control    >
 
                                 @error('nombre')
                                     <span class="invalid-feedback d-block" role="alert">    
