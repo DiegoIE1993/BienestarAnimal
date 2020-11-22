@@ -2,7 +2,7 @@
 @section('plugins.Datatables',true)
     
 
-<<<<<<< HEAD
+
 
 @section('content')
     <div class="card">
@@ -28,7 +28,7 @@
                     @endforeach
                 </tbody>
             </table>
-=======
+
 @section('content')
     <div class="container">
         <div class="row justify-content-center">
@@ -62,7 +62,7 @@
                     </div>
                 </div>
             </div> 
->>>>>>> 308dd86b05353a2e66ceb3d0e144378be56fbf6e
+
         </div>
     </div>
    
