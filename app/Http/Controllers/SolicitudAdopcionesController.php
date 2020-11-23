@@ -16,11 +16,11 @@ use League\CommonMark\Block\Element\Document;
 
 class SolicitudAdopcionesController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth', ['except'=> 'show']);
+    // public function __construct()
+    // {
+    //     $this->middleware('auth', ['except'=> 'show']);
 
-    }
+    // }
     /**
      * Display a listing of the resource.
      *

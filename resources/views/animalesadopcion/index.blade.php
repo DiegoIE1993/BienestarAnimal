@@ -34,7 +34,6 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                        {{$registro->links()}} 
                     </div>
                 </div>
             </div>

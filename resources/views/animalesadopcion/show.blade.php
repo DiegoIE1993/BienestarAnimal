@@ -83,6 +83,7 @@
             <div>
                 <h1 align='center'>Catalogo Disponible</h1>
                 <div class="row row-cols-3">
+                    
                     @foreach ($registro as $adopcion)           
                         <div class="mascota">
                             <p><img class="zoom" src="/storage/{{ $adopcion->imagen}}" height="400" href="#adopcion{{$adopcion->codigo_animal}}" data-toggle="modal"/></p>
