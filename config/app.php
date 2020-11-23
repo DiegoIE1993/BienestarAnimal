@@ -163,8 +163,8 @@ return [
         Illuminate\View\ViewServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
 
-        //SEO
-        Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
+        // //SEO
+        // Artesaos\SEOTools\Providers\SEOToolsServiceProvider::class,
 
         /*
          * Package Service Providers...

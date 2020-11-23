@@ -353,7 +353,7 @@ return [
 
     'plugins' => [
         'Datatables' => [
-            'active' => true,
+            'active' => false,
             'files' => [
                 [
                     'type' => 'js',
@@ -364,7 +364,7 @@ return [
                 [   
                     'type' => 'js',
                     'asset' => false,
-                    'location' => 'https:// ',
+                    'location' => 'https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js',
                 ],
                 [   
                     'type' => 'js',
@@ -388,14 +388,7 @@ return [
                     'asset' => false,
                     'location' => 'https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css',
                     
-                ],
-                [
-                    'type' => 'css',
-                    'asset' => false,
-                    'location' => '//cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css',
-                ],
-
-                
+                ],   
             ],
         ],
         'Select2' => [
