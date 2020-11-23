@@ -1,40 +1,45 @@
 @extends('adminlte::page')
 @section('plugins.Datatables',true)
-    
 
 @section('content')
-    <div class="card">
+    
+    <div class="card" >
         <div class="card-body">
+            <div class="card-header bg-dark mb-4">
+                <a href="{{url('/tipoentrada/create')}}" class="btn btn-primary float-right">Nuevo Registro</a>
+            </div>
+            {{-- <div class="row justify-content-end pb-2">
+                <a href="{{url('/tipoentrada/create')}}" class="btn btn-success">Nuevo Registro</a>
+            </div> --}}
             <table class="table table-striped" id="TipoEntrada">
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Nombre Tipo Entrada</th>
-                        <th>Acciones</th>
+                            <th>Nombre Tipo Entrada</th>
+                            <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     @foreach ($entradas as $entrada)
                         <tr>
                             <td> {{$entrada->id}}</td>
-                            <td> {{$entrada->nombre}}</td>
-                            <td>
-                                <a href="{{ url('/tipoentrada/'.$entrada->id.'/edit')}}" class="btn btn-primary">Editar</a>
-                                @include('tipoentrada.delete', ['entrada' => $entrada])  
-                            </td>
+                                <td> {{$entrada->nombre}}</td>
+                                <td>
+                                    <a href="{{ url('/tipoentrada/'.$entrada->id.'/edit')}}" class="btn btn-primary">Editar</a>
+                                    @include('tipoentrada.delete', ['entrada' => $entrada])  
+                                </td>
                         </tr>
                     @endforeach
                 </tbody>
             </table>
         </div>
     </div>
-
-            <script>
-                    $(document).ready(function() {
-                        $('#TipoEntrada').DataTable({
-                            responsive: true,
-                            autoWidth:false,
-                            "language": {
+        <script>
+            $(document).ready(function() {
+                $('#TipoEntrada').DataTable({
+                    responsive: true,
+                    autoWidth:false,
+                    "language": {
                             "lengthMenu": "Mostrar " + 
                                       `<select class="custom-select custom-select-sm form-control form-control-sm">
                                         <option value = '10'>10</option>
@@ -54,9 +59,8 @@
                             "previous": "Anterior",
                         }
                     }
-                        });
-                    } );
-                    
-            </script>
-       
+                });
+            } );
+        </script>
+    
 @endsection

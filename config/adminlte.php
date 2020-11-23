@@ -353,37 +353,27 @@ return [
 
     'plugins' => [
         'Datatables' => [
-            'active' => true,
+            'active' => false,
             'files' => [
                 [
                     'type' => 'js',
                     'asset' => false,
-<<<<<<< HEAD
                     'location' => 'https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js',
                     
                 ],
                 [   
                     'type' => 'js',
                     'asset' => false,
-                    'location' => 'https:// ',
+                    'location' => 'https://cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js',
                 ],
                 [   
                     'type' => 'js',
                     'asset' => false,
                     'location' => 'https://cdn.datatables.net/responsive/2.2.6/js/dataTables.responsive.min.js',
-=======
-                    'location' => '//code.jquery.com/jquery-3.5.1.js',
                 ],
                 [
                     'type' => 'js',
                     'asset' => false,
-                    'location' => '//cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js',
->>>>>>> 308dd86b05353a2e66ceb3d0e144378be56fbf6e
-                ],
-                [
-                    'type' => 'js',
-                    'asset' => false,
-<<<<<<< HEAD
                     'location' => 'https://cdn.datatables.net/responsive/2.2.6/js/responsive.bootstrap4.min.js',
                     
                 ],
@@ -392,27 +382,13 @@ return [
                     'asset' => false,
                     'location' => 'https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css',
                     
-=======
-                    'location' => '//cdn.datatables.net/1.10.22/js/dataTables.bootstrap4.min.js',
->>>>>>> 308dd86b05353a2e66ceb3d0e144378be56fbf6e
                 ],
                 [
                     'type' => 'css',
                     'asset' => false,
-<<<<<<< HEAD
                     'location' => 'https://cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css',
                     
-=======
-                    'location' => '//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css',
->>>>>>> 308dd86b05353a2e66ceb3d0e144378be56fbf6e
-                ],
-                [
-                    'type' => 'css',
-                    'asset' => false,
-                    'location' => '//cdn.datatables.net/1.10.22/css/dataTables.bootstrap4.min.css',
-                ],
-
-                
+                ],   
             ],
         ],
         'Select2' => [
