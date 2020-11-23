@@ -355,6 +355,7 @@ return [
         'Datatables' => [
             'active' => false,
             'files' => [
+                
                 [
                     'type' => 'js',
                     'asset' => false,

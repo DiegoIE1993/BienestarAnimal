@@ -34,6 +34,7 @@
             </table>
         </div>
     </div>
+        
         <script>
             $(document).ready(function() {
                 $('#TipoEntrada').DataTable({
