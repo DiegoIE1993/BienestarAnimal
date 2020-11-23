@@ -6,7 +6,7 @@
     <div class="card" >
         <div class="card-body">
             <div class="card-header bg-dark mb-4">
-                <a href="{{url('/tipoentrada/create')}}" class="btn btn-primary float-right">Nuevo Registro</a>
+                <a href="{{url('/tipoentrada/create')}}" class="btn btn-success float-right">Nuevo Registro</a>
             </div>
             {{-- <div class="row justify-content-end pb-2">
                 <a href="{{url('/tipoentrada/create')}}" class="btn btn-success">Nuevo Registro</a>
