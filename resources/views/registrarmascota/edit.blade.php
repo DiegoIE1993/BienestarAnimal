@@ -177,7 +177,9 @@
                             </fieldset>
                                      
                             <div class="justify-content-end">
+                                <a href="/registrarmascota" class="btn btn-primary">Atras</a>
                                 <input type="submit" value="Guardar Cambios" class="btn btn-success">
+                                
                             </div> 
                         </form>              
                 </div>

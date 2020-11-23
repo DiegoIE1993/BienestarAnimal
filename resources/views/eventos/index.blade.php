@@ -28,7 +28,7 @@
                                             <td>
                                                 <a href="{{ url('/eventos/'.$evento->id.'/edit')}}" class="btn btn-primary">Editar</a>
                                                 @include('eventos.delete', ['eventos' => $evento]) 
-                                                <a href="/eventos/{{$evento->id}}" class="btn btn-primary">ver</a>
+                                                
                                             </td>
                                         </tr>
                                     @endforeach

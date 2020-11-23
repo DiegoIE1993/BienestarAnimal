@@ -3,9 +3,9 @@
 
 @section('content')
     
-    <div class="card" >
-        <div class="card-body">
-            <div class="card-header bg-dark mb-4">
+    <div class="card">
+        <div >
+            <div class="card-header bg-dark mb-3">
                 <a href="{{url('/tipoentrada/create')}}" class="btn btn-success float-right">Nuevo Registro</a>
             </div>
             {{-- <div class="row justify-content-end pb-2">

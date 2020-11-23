@@ -135,13 +135,13 @@
                                                                 <input type="file" name="documentos" require class="form-control">
                                                             </div>   
                                                             <input type="hidden" name="adopcion_id" value="{{$adopcion->codigo_animal}}">
-                                                        
                                                         </div>  
                                                     </div>             
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
                                                 </div>
+                                                
                                             </form>  
                                         </div>
                                     </div>
