@@ -13,6 +13,7 @@ class WelcomeController extends Controller
 {
     public function get_welcome(){
         $registro = RegistrarMascota::latest()->take(3)->get();
+        $registro = RegistrarMascota::where('disponibilidad', '=','Disponible')->get();
         $educations = Educacion::latest()->take(3)->get();
         $info = Nosotros::all();
         $events = Eventos::latest()->take(3)->get();

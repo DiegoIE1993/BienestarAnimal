@@ -6,10 +6,9 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        EDITAR 
-                        REGISTRO HISTORIA CLINICA ANIMAL
+                        EDITAR REGISTRO DEL ANIMAL
                     </div>
-                    <form action="{{ route('registrarmascota.update', $item->codigo_animal)}}" enctype = "multipart / form-data"  novalidate method="post">
+                    <form action="{{ route('registrarmascota.update', $item->codigo_animal)}}" enctype="multipart/form-data"  novalidate method="post">
                         @csrf
                         @method('PUT')
                             <div class="card-body">
@@ -94,8 +93,8 @@
                                                     <div class="form-group" style="display:inline-block; width: 300px;">
                                                         <label for="genero">Genero</label>
                                                     <select  name="genero" class="form-control">
-                                                            <option {{$item->genero == "Macho" ? 'selected' : '' }} value="{{$item->genero}}">{{$item->genero}}</option>
-                                                            <option {{$item->genero == "Hembra" ? 'selected' : '' }} value="{{$item->genero}}">{{$item->genero}}</option> 
+                                                            <option {{$item->genero == "Macho" ? 'selected' : '' }} >Macho</option>
+                                                            <option {{$item->genero == "Hembra" ? 'selected' : '' }}>Hembra</option> 
                                                         </select>
                                                     </div>
                                                     <div class="form-group" style="display:inline-block; width: 285px;">
@@ -138,14 +137,14 @@
                                                             @endforeach
                                                         </select>   
                                                     </div>
-                                                    <div class="form-group" style="display:inline-block; width: 430px;">
-                                                        <label for="estado">Estado de Ingreso</label>
-                                                        <select  name="estado" class="form-control">
-                                                        <option value="Bueno">Bueno</option>
-                                                        <option value="Regular">Regular</option>
-                                                        <option value="Malo">Malo</option>
+                                                    <div class="form-group" style="display:inline-block; width: 300px;">
+                                                        <label for="estado">Estado</label>
+                                                    <select  name="estado" class="form-control">
+                                                            <option {{$item->estado == "Bueno" ? 'selected' : '' }} >Bueno</option>
+                                                            <option {{$item->estado == "Regular" ? 'selected' : '' }}>Regular</option> 
+                                                            <option {{$item->estado == "Malo" ? 'selected' : '' }}>Malo</option> 
                                                         </select>
-                                                    </div>                                                    
+                                                    </div>                                                   
                                                     <div class="form-group">
                                                         <label for="señales_particulares">Señales Particulares</label>
                                                         <textarea class="form-control" name="señales_particulares" rows="3" >{{$item->señales_particulares}}</textarea>
@@ -157,8 +156,8 @@
                                                     <div class="form-group" style="display:inline-block; width: 300px;">
                                                         <label for="disponibilidad">En Adopcion</label>
                                                         <select  name="disponibilidad" class="form-control">
-                                                        <option value="Disponible">Disponible</option>
-                                                        <option value="No_Disponible">No Disponible</option>
+                                                            <option {{$item->disponibilidad == "Disponible" ? 'selected' : '' }} >Disponible</option>
+                                                            <option {{$item->disponibilidad == "No Disponible" ? 'selected' : '' }}>No Disponible</option> 
                                                         </select>
                                                     </div>
                                                     <div class="form-group">
@@ -178,7 +177,9 @@
                             </fieldset>
                                      
                             <div class="justify-content-end">
-                                <input type="submit" value="Enviar" class="btn btn-success">
+                                <a href="/registrarmascota" class="btn btn-primary">Atras</a>
+                                <input type="submit" value="Guardar Cambios" class="btn btn-success">
+                                
                             </div> 
                         </form>              
                 </div>

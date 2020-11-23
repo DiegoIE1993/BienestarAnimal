@@ -83,6 +83,7 @@
             <div>
                 <h1 align='center'>Catalogo Disponible</h1>
                 <div class="row row-cols-3">
+                    
                     @foreach ($registro as $adopcion)           
                         <div class="mascota">
                             <p><img class="zoom" src="/storage/{{ $adopcion->imagen}}" height="400" href="#adopcion{{$adopcion->codigo_animal}}" data-toggle="modal"/></p>
@@ -134,13 +135,13 @@
                                                                 <input type="file" name="documentos" require class="form-control">
                                                             </div>   
                                                             <input type="hidden" name="adopcion_id" value="{{$adopcion->codigo_animal}}">
-                                                        
                                                         </div>  
                                                     </div>             
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="submit" class="btn btn-primary">Enviar Solicitud</button>
                                                 </div>
+                                                
                                             </form>  
                                         </div>
                                     </div>

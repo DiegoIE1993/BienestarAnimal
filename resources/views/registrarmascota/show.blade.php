@@ -6,6 +6,7 @@
    <head>
       <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
    </head>
+   <a href="/registrarmascota" class="btn btn-primary">Atras</a>
    <body>
       <div class="row justify-content-center">
          <h1> {{ $item->nombre_ejemplar }} </h1>
@@ -41,7 +42,7 @@
                </ul>
             </td>
          </table>
-      <a href="/registrarmascota" class="btn btn-primary">Atras</a>
+      
       
    </body>
 </html>

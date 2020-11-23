@@ -6,7 +6,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        REGISTRO HISTORIA CLINICA ANIMAL
+                        REGISTRAR ANIMAL
                     </div>
                         <form action="{{ route('registrarmascota.store')}}" enctype="multipart/form-data" method="post" novalidate>
                             @csrf
