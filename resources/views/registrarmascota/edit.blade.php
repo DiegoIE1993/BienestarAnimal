@@ -9,7 +9,7 @@
                         EDITAR 
                         REGISTRO HISTORIA CLINICA ANIMAL
                     </div>
-                    <form action="{{ route('registrarmascota.update', $item->codigo_animal)}}" method="post">
+                    <form action="{{ route('registrarmascota.update', $item->codigo_animal)}}" enctype = "multipart / form-data"  novalidate method="post">
                         @csrf
                         @method('PUT')
                             <div class="card-body">
@@ -162,9 +162,13 @@
                                                         </select>
                                                     </div>
                                                     <div class="form-group">
-                                                        <label for="imagen">Imagen Actual</label>
-                                                        <input type="file" name="imagen" require class="form-control">
-                                                    <img src="/storage/{{$item->imagen}}" style="width: 300px">
+                                                        <label for="imagen">Imagen</label>
+                                                        <input type="file" name="imagen" id="imagen" require class="form-control">
+                                                        
+                                                        <div class="mt-4">
+                                                            <p>Imagen Actual<p>
+                                                            <img src="/storage/{{$item->imagen}}" style="width: 300px">
+                                                        </div>
                                                     </div>                                                 
                                                 </div>
                                             </div>

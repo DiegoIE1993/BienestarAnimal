@@ -1,34 +1,6 @@
 @extends('adminlte::page')
 @section('plugins.Datatables',true)
     
-
-
-
-@section('content')
-    <div class="card">
-        <div class="card-body">
-            <table class="table table-striped" id="TipoEntrada">
-                <thead>
-                    <tr>
-                        <th>ID</th>
-                        <th>Nombre Tipo Entrada</th>
-                        <th>Acciones</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach ($entradas as $entrada)
-                        <tr>
-                            <td> {{$entrada->id}}</td>
-                            <td> {{$entrada->nombre}}</td>
-                            <td>
-                                <a href="{{ url('/tipoentrada/'.$entrada->id.'/edit')}}" class="btn btn-primary">Editar</a>
-                                @include('tipoentrada.delete', ['entrada' => $entrada])  
-                            </td>
-                        </tr>
-                    @endforeach
-                </tbody>
-            </table>
-
 @section('content')
     <div class="container">
         <div class="row justify-content-center">

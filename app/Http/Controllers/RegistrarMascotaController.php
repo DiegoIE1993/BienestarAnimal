@@ -161,6 +161,32 @@ class RegistrarMascotaController extends Controller
      */
     public function update(Request $request, $codigo_animal)
     {
+        $data = request()->validate([
+          
+            'tipo_entrada_id' => 'Required',
+            'codigo_animal' => 'Required',
+            'nombre_ciudadano'=> 'Required',
+            'direccion' => 'Required',
+            'cedula' => 'Required',
+            'telefono' => 'Required',
+            'correo' => 'Required',
+            'nombre_ejemplar' => 'Required',
+            'genero' => 'Required',
+            'especie_id' => 'Required',
+            'raza_id' => 'Required',
+            'color' => 'Required',
+            'talla' => 'Required',
+            'peso' => 'Required',
+            'edad' => 'Required',
+            'condicion_id' => 'Required',
+            'actitud_id' => 'Required',
+            'estado' => 'Required',
+            'señales_particulares' => 'Required',
+            'motivo_ingreso_anamnesis' => 'Required',
+            'imagen' => 'Required|image',
+            'disponibilidad' => 'Required',
+             ]);
+
         $item = RegistrarMascota::findOrFail($codigo_animal);
         $item->tipo_entrada_id =$request->tipo_entrada_id;
         $item->nombre_ciudadano =$request->nombre_ciudadano;
@@ -181,18 +207,17 @@ class RegistrarMascotaController extends Controller
         $item->estado =$request->estado;
         $item->señales_particulares =$request->señales_particulares;
         $item->motivo_ingreso_anamnesis =$request->motivo_ingreso_anamnesis;
-        $item->imagen =$request->imagen;
         $item->disponibilidad =$request->disponibilidad;
 
         // Si el usuario quiere cambiar la imagen 
         if(request('imagen')){
             // Obtener la ruta de la imagen
         $ruta_imagen = $request['imagen']->store('upload-animales', 'public');
-        $img  = Image::make( public_path("storage/{$ruta_imagen}"));
+        $img  = Image::make( public_path("storage/{$ruta_imagen}"))->fit(1000, 550);
         $img->save();
 
-         // Asignar el objeto 
-         $item->$ruta_imagen;
+         // Asignar al objeto 
+         $item->imagen = $request->$ruta_imagen;
         }
         
         $item->save();
