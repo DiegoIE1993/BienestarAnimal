@@ -5,7 +5,7 @@
     <div class="card" >
         <div class="card-body">
             <div class="card-header bg-dark mb-4">
-                <a href="{{url('/especies/create')}}" class="btn btn-primary float-right">Nuevo Registro</a>
+                <a href="{{url('/especies/create')}}" class="btn btn-success float-right">Nuevo Registro</a>
             </div>
             <table class="table table-striped" id="Especies">
                 <thead>
@@ -21,7 +21,7 @@
                             <td> {{$especie->id}}</td>
                             <td> {{$especie->nombre}}</td>
                             <td>
-                                <a href="{{ url('/especies/'.$especie->id.'/edit')}}" class="btn btn-primary">Editar</a>
+                                <a href="{{ url('/especies/'.$especie->id.'/edit')}}" class="fas fa-pencil-alt"></a>
                                 @include('especies.delete', ['especie' => $especie])  
                             </td>
                         </tr>

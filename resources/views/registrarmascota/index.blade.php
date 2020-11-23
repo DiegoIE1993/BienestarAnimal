@@ -6,14 +6,16 @@
     <div class="card" >
         <div class="card-body">
             <div class="card-header bg-dark mb-4">
-                <a href="{{url('/registrarmascota/create')}}" class="btn btn-primary float-right">Agregar Mascota</a>
+                
+                <a href="{{url('/registrarmascota/create')}}" class="btn btn-success float-right">Agregar Mascota</a>
+                <h4>Listado de Registros</h4>
             </div>
             <table class="table table-striped" id="Usuarios">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Identificacion del Animal</th>
-                        <th>Nombres del Ejemplar</th>
+                        <th>Fecha</th>
+                        <th>Identificacion</th>
+                        <th>Nombre Ejemplar</th>
                         <th>Especie</th>
                         <th>Raza</th>
                         <th>Sexo</th>
@@ -25,7 +27,7 @@
                 <tbody>
                     @foreach ($registro as $item)
                         <tr>
-                            <td>{{$item->id}}</td>
+                            <td>{{$item->fecha}}</td>
                             <td>{{$item->codigo_animal}}</td>
                             <td>{{$item->nombre_ejemplar}}</td>
                             <td>{{$item->especie->nombre}}</td>
@@ -36,9 +38,10 @@
                                 <a href="/registrarmascota/{{$item->codigo_animal}}" class="fa fa-search-plus">Ver</a>  
                             </td>
                             <td>
-                                <a href="{{ url('/registrarmascota/'.$item->codigo_animal.'/edit')}}" class="btn btn-primary">Editar</a> 
-                                    @include('registrarmascota.delete', ['item' => $item])  
+                                <a href="{{ url('/registrarmascota/'.$item->codigo_animal.'/edit')}}" class="fas fa-pencil-alt"></a> 
+                                @include('registrarmascota.delete', ['item' => $item])  
                             </td>
+                            
                         </tr>
                     @endforeach
                 </tbody>

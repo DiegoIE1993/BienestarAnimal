@@ -6,41 +6,38 @@
     <div class="card" >
         <div class="card-body">
             <div class="card-header bg-dark mb-4">
-                {{-- <a href="{{url('/usuarios/create')}}" class="btn btn-primary float-right">Nuevo Usuario</a> --}}
             </div>
-            <table class="table table-striped" id="Solicitudes">
+            <table class="table table-striped" id="Solicitudes" >
                 <thead>
-                    <tr>
-                        <th>ID</th>
+                    <tr align="center">
                         <th>Fecha</th>
                         <th>Codigo Animal</th>
-                        <th>Nombre</th>
+                        <th>Nombres</th>
                         <th>Cedula</th>
                         <th>Telefono</th>
                         <th>Direccion</th>
-                        <th>Correo</th>
+                        {{-- <th>Correo</th> --}}
                         <th>Documentos</th>
                         <th>Estado</th>
                         <th>Editar Estado</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody align="center">
                     @foreach ($adopcions as $solicitud)
                         <tr>
-                            <td> {{$solicitud->id}}</td>
                             <td> {{$solicitud->fecha}}</td>
                             <td> {{$solicitud->adopcion_id}}</td>
                             <td> {{$solicitud->nombre}}</td>
                             <td> {{$solicitud->cedula}}</td>
                             <td> {{$solicitud->telefono}}</td>
                             <td> {{$solicitud->direccion}}</td>
-                            <td> {{$solicitud->correo}}</td>
+                            {{-- <td> {{$solicitud->correo}}</td> --}}
                             <td>
                                 <a target="_blank" href="/storage/{{ $solicitud->documentos}}" alt="">Ver</a>
                             </td>
                             <td> {{$solicitud->estado_solicitud}}</td>
                             <td>
-                                <a href="{{ url('/solicitudadopciones/'.$solicitud->id.'/edit')}}" class="fa fa-paint-brush"></a> 
+                                <a href="{{ url('/solicitudadopciones/'.$solicitud->id.'/edit')}}" class="fas fa-pencil-alt"></a> 
                             </td>
                         </tr>
                     @endforeach

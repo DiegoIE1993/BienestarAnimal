@@ -24,7 +24,7 @@
                             <td> {{$educacion->titulo}}</td>
                             <td> {{$educacion->video}}</td>                                         
                             <td>
-                                <a href="{{ url('/educacion/'.$educacion->id.'/edit')}}" class="btn btn-primary">Editar</a>
+                                <a href="{{ url('/educacion/'.$educacion->id.'/edit')}}" class="fas fa-pencil-alt"></a>
                                 @include('educacion.delete', ['educacion' => $educacion]) 
                             </td>
                         </tr>

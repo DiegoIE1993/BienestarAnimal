@@ -4,8 +4,8 @@
 @section('content')
         
     <div class="card" >
-        <div class="card-body">
-            <div class="card-header bg-dark mb-4">
+        <div class="card-body" >
+            <div class="card-header bg-dark mb-4" align='right'>
                 @if(count($info) == 0 )
                     <a href="{{url('/nosotros/create')}}" class="btn btn-success">Agregar Informacion</a>
                 @endif

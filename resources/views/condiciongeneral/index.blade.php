@@ -22,7 +22,7 @@
                             <td> {{$con->id}}</td>
                             <td> {{$con->nombre}}</td>                  
                             <td>
-                                <a href="{{ url('/condiciongeneral/'.$con->id.'/edit')}}" class="btn btn-primary">Editar</a>
+                                <a href="{{ url('/condiciongeneral/'.$con->id.'/edit')}}" class="fas fa-pencil-alt"></a>
                                 @include('condiciongeneral.delete', ['con' => $con])  
                             </td>
                         </tr>

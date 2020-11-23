@@ -6,7 +6,7 @@
     <div class="card" >
         <div class="card-body">
             <div class="card-header bg-dark mb-4">
-                <a href="{{url('/usuarios/create')}}" class="btn btn-primary float-right">Nuevo Usuario</a>
+                <a href="{{url('/usuarios/create')}}" class="btn btn-success float-right">Nuevo Usuario</a>
             </div>
             <table class="table table-striped" id="Usuarios">
                 <thead>
