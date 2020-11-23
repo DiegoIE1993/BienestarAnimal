@@ -2,11 +2,11 @@
 @section('plugins.Datatables',true)
 
 @section('content')
-    
+        
     <div class="card" >
         <div class="card-body">
             <div class="card-header bg-dark mb-4">
-                <a href="{{url('/tipoentrada/create')}}" class="btn btn-success float-right">Nuevo Registro</a>
+                <a href="{{url('/tipoentrada/create')}}" class="btn btn-primary float-right">Nuevo Registro</a>
             </div>
             {{-- <div class="row justify-content-end pb-2">
                 <a href="{{url('/tipoentrada/create')}}" class="btn btn-success">Nuevo Registro</a>
@@ -50,7 +50,7 @@
                                        </select>` +
                                       " registros por pagina",           
                         "zeroRecords": "Nada encontrado - lo siento",
-                        "info": "Mostrando la pagina_PAGE_ de _PAGES_",
+                        "info": "Página _PAGE_ de _PAGES_",
                         "infoEmpty": "No records available",
                         "infoFiltered": "(filtrado de _MAX_ registros totales)",
                         "search": "Buscar:",

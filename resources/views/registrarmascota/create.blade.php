@@ -19,7 +19,7 @@
                                                 <div class="car-body">
                                                     <div class="form-group" style="display:inline-block; width: 226px;">
                                                         <label for="entrada">Tipo de Entrada</label>
-                                                        <select name="TipoMercanciaId" id="input" class="form-control @error('TipoMercanciaId') is-invalid @enderror" value={{ old('TipoMercanciaId') }}>
+                                                        <select name="tipo_entrada_id" id="input" class="form-control @error('tipo_entrada_id') is-invalid @enderror" value={{ old('tipo_entrada_id') }}>
                                                             @foreach ($entradas as $entrada )
                                                         <option value="{{$entrada->id}}">{{$entrada->nombre}}</option>
                                                             @endforeach
