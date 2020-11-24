@@ -18,6 +18,7 @@ use App\Http\Controllers\AnimalesAdopcionController;
 use App\Http\Controllers\CondicionGeneralController;
 use App\Http\Controllers\RegistrarMascotaController;
 use App\Http\Controllers\SolicitudAdopcionesController;
+use App\Http\Controllers\RolesController;
 
 /*
 |--------------------------------------------------------------------------

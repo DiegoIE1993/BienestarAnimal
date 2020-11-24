@@ -29,7 +29,7 @@ return [
     | https://github.com/jeroennoten/Laravel-AdminLTE/#62-favicon
     |
     */
-
+    
     'use_ico_only' => false,
     'use_full_favicon' => false,
 
@@ -235,7 +235,7 @@ return [
         [
             'text' => 'blog',
             'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
+            'can'  => 'create user',
         ],
         [
             'text'        => 'Usuarios',
@@ -283,6 +283,7 @@ return [
         [
             'text'    => 'Mantenimiento',
             'icon'    => 'fa fa-wrench',
+            'can'     => 'mostrar mantenimiento',
             'submenu' => [
                 [
                     'text' => 'Nosotros',

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Nosotros;
-use Illuminate\Http\Request;    
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Symfony\Contracts\Service\Attribute\Required;
 use SEO;
@@ -12,14 +12,14 @@ class NosotrosController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth', ['except'=> 'show']);
-
+        $this->middleware('auth', ['except' => 'show']);
+        $this->middleware(['can:mostrar mantenimiento']);
     }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
-     */    
+     */
     public function index()
     {
         // SEO::setTitle('unidad de proteccion animal');
@@ -52,7 +52,7 @@ class NosotrosController extends Controller
     public function store(Request $request)
     {
         $data = request()->validate([
-            'titulo'=> 'Required',
+            'titulo' => 'Required',
             'mision' => 'Required',
             'vision' => 'Required',
             'horario' => 'Required',
@@ -68,7 +68,6 @@ class NosotrosController extends Controller
         ]);
 
         return redirect('/nosotros');
-        
     }
 
     /**
@@ -107,12 +106,12 @@ class NosotrosController extends Controller
     public function update(Request $request, $id)
     {
         $nosotros = Nosotros::findOrFail($id);
-        $nosotros->titulo =$request->titulo;
-        $nosotros->mision =$request->mision;
-        $nosotros->vision =$request->vision;
-        $nosotros->horario =$request->horario;
-        $nosotros->contacto =$request->contacto;
-        
+        $nosotros->titulo = $request->titulo;
+        $nosotros->mision = $request->mision;
+        $nosotros->vision = $request->vision;
+        $nosotros->horario = $request->horario;
+        $nosotros->contacto = $request->contacto;
+
         $nosotros->save();
 
         return redirect('/nosotros');
@@ -129,12 +128,10 @@ class NosotrosController extends Controller
         $nosotros = Nosotros::findOrFail($id);
 
         //Eliminar el usuario
-        if ($nosotros->delete()){
+        if ($nosotros->delete()) {
             return redirect('/nosotros');
-        }
-        else
-        {
-            return response() ->json([
+        } else {
+            return response()->json([
                 'mensaje' => 'Error al eliminar la informacion'
             ]);
         }
