@@ -231,17 +231,12 @@ return [
     */
 
     'menu' => [
-        
-        [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'create user',
-        ],
         [
             'text'        => 'Usuarios',
             'url'         => 'usuarios',
             'icon'        => 'fa fa-users',
             'label_color' => 'success',
+            'can'     => 'mostrar mantenimiento',
         ],
         [
             'text'        => 'Registrar Mascotas',
