@@ -53,6 +53,12 @@
                 $('#Usuarios').DataTable({
                     responsive: true,
                     autoWidth:false,
+                    dom: 'Bfrtip',
+                    buttons: [
+                        'excel', 
+                        'pdf', 
+                        'print'
+                    ],
                     "language": {
                             "lengthMenu": "Mostrar " + 
                                       `<select class="custom-select custom-select-sm form-control form-control-sm">
