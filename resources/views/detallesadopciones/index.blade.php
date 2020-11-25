@@ -78,5 +78,4 @@
                 });
             } );
         </script>
-        
     @endsection 
