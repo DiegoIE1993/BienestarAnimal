@@ -27,7 +27,12 @@
                                         <td> {{$animals->nombre}}</td>
                                         <td> {{$animals->cedula}}</td>
                                         <td> {{$animals->telefono}}</td>
-                                        <td> {{$animals->adopcion_id}}</td>         
+                                        <td> {{$animals->adopcion_id}}</td>   
+                                        
+
+                                        
+                                        {{-- <td> {{$item->nombre_ejemplar}}</td>    --}}
+
                                         
                                         @endforeach
                                     </tr>
