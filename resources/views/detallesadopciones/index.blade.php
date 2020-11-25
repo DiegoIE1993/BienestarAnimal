@@ -29,7 +29,7 @@
                                         <td> {{$animals->telefono}}</td>
                                         <td> {{$animals->adopcion_id}}</td>
 
-                                        
+                                        @endforeach
                                     </tr>
 
                                 </tbody>
