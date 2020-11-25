@@ -135,8 +135,6 @@
                                                                 <input type="file" name="documentos" require class="form-control">
                                                             </div>   
                                                             <input type="hidden" name="adopcion_id" value="{{$adopcion->codigo_animal}}">
-                                                            {{-- <input type="hidden" name="nombre_ejemplar" value="{{$adopcion->nombre_ejemplar}}"> --}}
-                                                            {{-- <input type="hidden" name="adopcion_id" value="{{$adopcion->especie->nombre}}"> --}}
                                                             
                                                         </div>  
                                                     </div>             

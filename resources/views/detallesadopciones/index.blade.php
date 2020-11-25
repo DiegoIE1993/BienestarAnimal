@@ -20,24 +20,16 @@
                                     
                                 </thead>
                         
-                                <tbody>
-                                    
-                                    
+                                <tbody>        
                                     <tr>
                                         @foreach ($solicitud as $animals)
                                         <td>{{$animals->fecha}}</td>
                                         <td> {{$animals->nombre}}</td>
                                         <td> {{$animals->cedula}}</td>
                                         <td> {{$animals->telefono}}</td>
-                                        <td> {{$animals->adopcion_id}}</td>
-
+                                        <td> {{$animals->adopcion_id}}</td>         
                                         
-                                    
-                                         
-                                     
-                                        
-                                    @endforeach
-                                    
+                                        @endforeach
                                     </tr>
                                     
                                     

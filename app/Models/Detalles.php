@@ -10,7 +10,7 @@ class Detalles extends Model
     use HasFactory;
     protected $primaryKey = 'codigo_animal';
     protected $fillable = [
-        'id','fecha','nombre','cedula','telefono','direccion','correo','fecha','fecha','fecha','fecha'
+        // 'id','fecha','nombre','cedula','telefono','direccion','correo','fecha','fecha','fecha','fecha'
     ];
 
     public function registro(){
