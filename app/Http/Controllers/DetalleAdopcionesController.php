@@ -20,6 +20,7 @@ class DetalleAdopcionesController extends Controller
        
 
         $registro = RegistrarMascota::where('disponibilidad', 'Disponible')->get();
+        // $registro = RegistrarMascota::all();
           
         return view('detallesadopciones.index', compact('registro', 'solicitud'));
         

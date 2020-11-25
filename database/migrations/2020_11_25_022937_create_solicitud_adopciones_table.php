@@ -24,7 +24,10 @@ class CreateSolicitudAdopcionesTable extends Migration
             $table->string('documentos');
             $table->string('estado_solicitud')->nullable();
             $table->unsignedBigInteger('adopcion_id');
+            $table->string('nombre_ejemplar_registro');
+            $table->string('especie_registro');
             $table->foreign('adopcion_id')->references('codigo_animal')->on('registrar_mascotas')->onDelete('cascade');
+            
             $table->timestamps('');
         });
     }
