@@ -53,7 +53,8 @@
                 $('#Usuarios').DataTable({
                     responsive: true,
                     autoWidth:false,
-                    dom: 'Bfrtip',
+                    
+                    dom: 'Blfrtip',
                     buttons: [
                         'excel', 
                         'pdf', 
