@@ -11,7 +11,7 @@ class UserController extends Controller
     public function __construct()
     {
         $this->middleware('auth', ['except'=> 'show']);
-        $this->middleware(['can:mostrar mantenimiento']);
+        // $this->middleware(['can:mostrar mantenimiento']);
 
     }
     /**

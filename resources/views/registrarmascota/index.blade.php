@@ -48,7 +48,7 @@
             </table>
         </div>
     </div>
-        <script>
+        {{-- <script>
             $(document).ready(function() {
                 $('#Usuarios').DataTable({
                     responsive: true,
@@ -82,6 +82,6 @@
                     }
                 });
             } );
-        </script>
+        </script> --}}
     
 @endsection
