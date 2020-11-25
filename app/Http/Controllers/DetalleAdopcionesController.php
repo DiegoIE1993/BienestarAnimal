@@ -16,8 +16,11 @@ class DetalleAdopcionesController extends Controller
     public function index()
     {
         $solicitud = SolicitudAdopciones::where('estado_solicitud', 'Aceptado')->get();
+
         $registro = RegistrarMascota::where('disponibilidad', 'Disponible')->get();
+          
         return view('detallesadopciones.index', compact('registro', 'solicitud'));
+        
     }
 
     /**
