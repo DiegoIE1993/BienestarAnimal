@@ -37,10 +37,10 @@
                               <div class="form-group">
                                     <label for="estado_solicitud">Estado de Ingreso</label>
                                     <select  name="estado_solicitud" class="form-control">
-                                    <option value="Aceptado">Aceptado</option>
-                                    <option value="Verificacion">Verificacion</option>
-                                    <option value="Rechazado">Rechazado</option>
-                                    </select>
+                                        <option {{$solicitud->estado_solicitud == "Aceptado" ? 'selected' : '' }} >Aceptado</option>
+                                        <option {{$solicitud->estado_solicitud == "Verificacion" ? 'selected' : '' }}>Verificacion</option> 
+                                        <option {{$solicitud->estado_solicitud == "Rechazado" ? 'selected' : '' }}>Rechazado</option> 
+                                    </select>    
                               </div>
                             
                             <div class="justify-content-end">

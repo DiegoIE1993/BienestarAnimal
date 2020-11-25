@@ -10,33 +10,29 @@
                     <div class="card-body">
                             <table class="table table-striped" id="DetalleAdopcion">
                                 <thead>
-                                    <th>Codigo Animal</th>
-                                    <th>Foto</th>
+                                    <th>Fecha Adopcion</th>
+                                    <th>Nombre del Adoptante</th>
+                                    <th>Cedula</th>
+                                    <th>Telefono</th>
+                                    <th>Codigo del Animal</th>
                                     <th>Nombre del Ejemplar</th>
                                     <th>Especie</th>
-                                    <th>Nombre Adoptante</th>
-                                    <th>Telefono</th>
-                                    <th>Correo</th>
+                                    
                                 </thead>
                         
-                                <tbody>
+                                <tbody>        
+                                    <tr>
+                                        @foreach ($solicitud as $animals)
+                                        <td>{{$animals->fecha}}</td>
+                                        <td> {{$animals->nombre}}</td>
+                                        <td> {{$animals->cedula}}</td>
+                                        <td> {{$animals->telefono}}</td>
+                                        <td> {{$animals->adopcion_id}}</td>         
+                                        
+                                        @endforeach
+                                    </tr>
                                     
-                                    @foreach ($registro ?? '' as $adopcion)
-                                    <tr>
-                                        <td> {{$adopcion->codigo_animal}}</td>
-                                        <td> <img whidth="50" height="50" src="/storage/{{ $adopcion->imagen}}"></td>
-                                        <td> {{$adopcion->nombre_ejemplar}}</td>
-                                        <td> {{$adopcion->especie->nombre}}</td>
-                                         
-                                    </tr>
-                                    @endforeach
-                                    @foreach ($solicitud as $prueba)
-                                    <tr>
-                                        <td> {{$prueba->nombre}}</td>
-                                        
-                                    </tr>
-                                        
-                                    @endforeach
+                                    
                                     
                                     
                                 </tbody>

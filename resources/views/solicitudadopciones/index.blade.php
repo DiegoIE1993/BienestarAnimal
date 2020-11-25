@@ -33,7 +33,7 @@
                             <td> {{$solicitud->direccion}}</td>
                             {{-- <td> {{$solicitud->correo}}</td> --}}
                             <td>
-                                <a target="_blank" href="/storage/{{ $solicitud->documentos}}" alt="">Ver</a>
+                                <a target="_blank" href="/storage/{{ $solicitud->documentos}}" alt="">Visualizar</a>
                             </td>
                             <td> {{$solicitud->estado_solicitud}}</td>
                             <td>

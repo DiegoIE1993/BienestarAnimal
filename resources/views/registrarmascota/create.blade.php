@@ -200,7 +200,7 @@
                                                     </div>
                                                     
                                                     <div class="form-group" style="display:inline-block; width: 200px;">
-                                                        <label for="edad">Edad</label>
+                                                        <label for="edad">Edad (Meses)</label>
                                                         <input type="text" name="edad" require class="form-control @error('edad') is-invalid @enderror" value={{ old('edad') }}>
                                                         @error('edad')
                                                             <span class="invalid-feedback d-block" role="alert">    

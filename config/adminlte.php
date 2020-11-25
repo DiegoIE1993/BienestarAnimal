@@ -15,7 +15,7 @@ return [
     */
 
     'title' => '',
-    'title_prefix' => 'Bienestar animal | ',
+    'title_prefix' => 'Bienestar animal ',
     'title_postfix' => '',
 
     /*
