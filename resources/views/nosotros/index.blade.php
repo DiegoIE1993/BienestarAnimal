@@ -1,16 +1,19 @@
 @extends('adminlte::page')
-@section('plugins.Datatables',true)
+
 
 @section('content')
         
     <div class="card" >
         <div class="card-body" >
+            
             <div class="card-header bg-dark mb-4" align='right'>
                 @if(count($info) == 0 )
                     <a href="{{url('/nosotros/create')}}" class="btn btn-success">Agregar Informacion</a>
+                    
                 @endif
-                
+                <h4 align='left'>Nosotros</h4>
             </div>
+            
             <table class="table table-striped" id="Informacion">
                 <thead>
                     <tr>
@@ -33,7 +36,7 @@
                             <td> {{$nosotros->horario}}</td>
                             <td> {{$nosotros->contacto}}</td>
                             <td>
-                                <a href="{{ url('/nosotros/'.$nosotros->id.'/edit')}}" class="btn btn-primary">Editar</a>
+                                <a href="{{ url('/nosotros/'.$nosotros->id.'/edit')}}" class="fas fa-pencil-alt"></a>
                                 @include('nosotros.delete', ['nosotros' => $nosotros])  
                             </td>
                         </tr>
@@ -42,7 +45,7 @@
             </table>
         </div>
     </div>
-        <script>
+        {{-- <script>
             $(document).ready(function() {
                 $('#Informacion').DataTable({
                     responsive: true,
@@ -69,6 +72,6 @@
                     }
                 });
             } );
-        </script>
+        </script> --}}
     
 @endsection

@@ -7,12 +7,13 @@
         <div class="card-body">
             <div class="card-header bg-dark mb-4">
                 <a href="{{url('/usuarios/create')}}" class="btn btn-success float-right">Nuevo Usuario</a>
+                <h4>Listado de Usuarios</h4>
             </div>
             <table class="table table-striped" id="Usuarios">
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Name</th>
+                        <th>#</th>
+                        <th>Nombre</th>
                         <th>Email</th>
                         <th>Rol</th>
                         <th>Acciones</th>
@@ -26,7 +27,7 @@
                             <td>{{$usuario->email }}</td>
                             <td>{{$usuario->roles->implode('name',', ')}}</td>
                             <td>
-                                <a href="{{ url('/usuarios/'.$usuario->id.'/edit')}}" class="btn btn-primary">Editar</a>
+                                <a href="{{ url('/usuarios/'.$usuario->id.'/edit')}}" class="fas fa-pencil-alt"></a>
                                 @include('usuarios.delete', ['usuario' => $usuario])             
                             </td>
                         </tr>

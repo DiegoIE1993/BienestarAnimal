@@ -6,7 +6,8 @@
     <div class="card" >
         <div class="card-body">
             <div class="card-header bg-dark mb-4">
-                <a href="{{url('/condiciongeneral/create')}}" class="btn btn-primary float-right">Nuevo Registro</a>
+                <a href="{{url('/condiciongeneral/create')}}" class="btn btn-success float-right">Nuevo Registro</a>
+                <h4>Listado Condicion General</h4>
             </div>
             <table class="table table-striped" id="CondicionGeneral">
                 <thead>

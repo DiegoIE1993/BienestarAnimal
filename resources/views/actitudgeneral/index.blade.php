@@ -6,6 +6,7 @@
         <div class="card-body">
             <div class="card-header bg-dark mb-4">
                 <a href="{{url('/actitudgeneral/create')}}" class="btn btn-success float-right">Nuevo Registro</a>
+                <h4>Listado Actitud General</h4>
             </div>
             <table class="table table-striped" id="ActitudGeneral">
                 <thead>

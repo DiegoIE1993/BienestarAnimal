@@ -6,11 +6,12 @@
         <div class="card-body">
             <div class="card-header bg-dark mb-4">
                 <a href="{{url('/especies/create')}}" class="btn btn-success float-right">Nuevo Registro</a>
+                <h4>Listado de Especies</h4>
             </div>
             <table class="table table-striped" id="Especies">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>#</th>
                         <th >Nombre Especie</th>
                         <th >Acciones</th>
                     </tr>

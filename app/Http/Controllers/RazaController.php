@@ -20,7 +20,7 @@ class RazaController extends Controller
      */    
     public function index()
     {
-        $races = Raza::paginate(6);
+        $races = Raza::all();
         return view ('razas.index', compact('races'));
     }
 

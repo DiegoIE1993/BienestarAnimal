@@ -6,7 +6,8 @@
     <div class="card" >
         <div class="card-body">
             <div class="card-header bg-dark mb-4">
-                <a href="{{url('/tipoentrada/create')}}" class="btn btn-primary float-right">Nuevo Registro</a>
+                <a href="{{url('/tipoentrada/create')}}" class="btn btn-success float-right">Nuevo Registro</a>
+                <h4>Listado Tipo de Entradas</h4>
             </div>
             {{-- <div class="row justify-content-end pb-2">
                 <a href="{{url('/tipoentrada/create')}}" class="btn btn-success">Nuevo Registro</a>
@@ -25,7 +26,7 @@
                             <td> {{$entrada->id}}</td>
                                 <td> {{$entrada->nombre}}</td>
                                 <td>
-                                    <a href="{{ url('/tipoentrada/'.$entrada->id.'/edit')}}" class="btn btn-primary">Editar</a>
+                                    <a href="{{ url('/tipoentrada/'.$entrada->id.'/edit')}}" class="fas fa-pencil-alt"></a>
                                     @include('tipoentrada.delete', ['entrada' => $entrada])  
                                 </td>
                         </tr>
