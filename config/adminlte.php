@@ -29,7 +29,7 @@ return [
     | https://github.com/jeroennoten/Laravel-AdminLTE/#62-favicon
     |
     */
-
+    
     'use_ico_only' => false,
     'use_full_favicon' => false,
 
@@ -231,17 +231,12 @@ return [
     */
 
     'menu' => [
-        
-        [
-            'text' => 'blog',
-            'url'  => 'admin/blog',
-            'can'  => 'manage-blog',
-        ],
         [
             'text'        => 'Usuarios',
             'url'         => 'usuarios',
             'icon'        => 'fa fa-users',
             'label_color' => 'success',
+            'can'     => 'mostrar mantenimiento',
         ],
         [
             'text'        => 'Registrar Mascotas',
@@ -283,6 +278,7 @@ return [
         [
             'text'    => 'Mantenimiento',
             'icon'    => 'fa fa-wrench',
+            'can'     => 'mostrar mantenimiento',
             'submenu' => [
                 [
                     'text' => 'Nosotros',
