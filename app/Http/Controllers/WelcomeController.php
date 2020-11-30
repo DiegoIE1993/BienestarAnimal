@@ -18,13 +18,13 @@ class WelcomeController extends Controller
         
         SEO::setTitle('unidad de proteccion animal');
         SEO::setDescription('unidad de proteccion animal');
-        SEO::opengraph()->setUrl('http://ejemplo.com');
+        SEO::opengraph()->setUrl('https://www.facebook.com/Unidad-de-Protecci%C3%B3n-Animal-Manizales-110494213988453');
         SEO::setCanonical('https://ejemplo.com');
         SEO::opengraph()->addProperty('type', 'welcome');
         SEO::twitter()->setSite('@ejemplo');
 
         $registro = RegistrarMascota::latest()->take(3)->get();
-        $registro = RegistrarMascota::where('disponibilidad', '=','Disponible')->get();
+        // $registro = RegistrarMascota::where('disponibilidad', '=','Disponible')->get();
         $educations = Educacion::latest()->take(3)->get();
         $info = Nosotros::all();
         $events = Eventos::latest()->take(3)->get();

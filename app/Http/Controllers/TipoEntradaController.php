@@ -21,7 +21,7 @@ class TipoEntradaController extends Controller
      */    
     public function index()
     {
-        $entradas = TipoEntrada::paginate(6); // llamar los datos y paginar
+        $entradas = TipoEntrada::all(); // llamar los datos 
         return view ('tipoentrada.index', compact('entradas'));
     }
 

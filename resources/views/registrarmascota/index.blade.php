@@ -1,8 +1,12 @@
 @extends('adminlte::page')
+
 @section('plugins.Datatables',true)
 
 @section('content')
-
+    <style>
+        .disponible {background-color : #38b831 !important; }
+        .no_disponible {background-color : #ce3b6f !important; }
+    </style>
     <div class="card" >
         <div class="card-body">
             <div class="card-header bg-dark mb-4">
@@ -33,7 +37,13 @@
                             <td>{{$item->especie->nombre}}</td>
                             <td>{{$item->raza->nombre}}</td>
                             <td>{{$item->genero}}</td>
-                            <td>{{$item->disponibilidad}}</td>
+
+                            @if ($item->disponibilidad == 'Disponible')
+                            <td class="disponible">{{$item->disponibilidad}}</td>
+                            @elseif($item->disponibilidad == 'No Disponible')
+                            <td class="no_disponible">{{$item->disponibilidad}}</td>
+                            @endif
+
                             <td>
                                 <a href="/registrarmascota/{{$item->codigo_animal}}" class="fa fa-search-plus">Ver</a>  
                             </td>

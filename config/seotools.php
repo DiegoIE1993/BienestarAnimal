@@ -9,11 +9,11 @@ return [
          * The default configurations to be used by the meta generator.
          */
         'defaults'       => [
-            'title'        => "unidad de proteccion animal", // set false to total remove
+            'title'        => "unidad protectora de animales", // set false to total remove
             'titleBefore'  => false, // Put defaults.title before page title, like 'It's Over 9000! - Dashboard'
-            'description'  => 'unidad de proteccion animal', // set false to total remove
+            'description'  => 'unidad protectora de animales realiza adopcion de mascotas en la ciudad de manizales', // set false to total remove
             'separator'    => ' - ',
-            'keywords'     => [],
+            'keywords'     => ['adopcion'], // palasbras claves
             'canonical'    => false, // Set null for using Url::current(), set false to total remove
             'robots'       => false, // Set to 'all', 'none' or any combination of index/noindex and follow/nofollow
         ],

@@ -29,7 +29,7 @@ class RegistrarMascotaController extends Controller
      */
     public function index()
     {
-        $registro = RegistrarMascota::paginate(6);
+        $registro = RegistrarMascota::all();
         return view('registrarmascota.index', compact('registro'));
     }
 

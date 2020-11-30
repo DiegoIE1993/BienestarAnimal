@@ -2,7 +2,11 @@
 @section('plugins.Datatables',true)
 
 @section('content')
-        
+    <style>
+        .aprobado {background-color : #38b831 !important; }
+        .verificacion {background-color : #3b6ace !important; }
+        .rechazado {background-color : #ce3b6f !important; }
+    </style>
     <div class="card" >
         <div class="card-body">
             <div class="card-header bg-dark mb-4">
@@ -37,7 +41,14 @@
                             <td>
                                 <a target="_blank" href="/storage/{{ $solicitud->documentos}}" alt="">Visualizar</a>
                             </td>
-                            <td> {{$solicitud->estado_solicitud}}</td>
+
+                            @if ($solicitud->estado_solicitud == 'Aceptado')
+                            <td class="aprobado">{{$solicitud->estado_solicitud}}</td>
+                            @elseif($solicitud->estado_solicitud == 'Verificacion')
+                            <td class="verificacion">{{$solicitud->estado_solicitud}}</td>
+                            @elseif($solicitud->estado_solicitud == 'Rechazado')
+                            <td class="rechazado">{{$solicitud->estado_solicitud}}</td>
+                            @endif
                             <td>
                                 <a href="{{ url('/solicitudadopciones/'.$solicitud->id.'/edit')}}" class="fas fa-pencil-alt"></a> 
                             </td>

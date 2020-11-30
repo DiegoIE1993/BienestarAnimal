@@ -21,7 +21,7 @@ class CondicionGeneralController extends Controller
      */    
     public function index()
     {
-        $condicion = CondicionGeneral::paginate(6); // condicion variable que va a ser igual al controller Razas
+        $condicion = CondicionGeneral::all(); // condicion variable que va a ser igual al controller Razas
         return view ('condiciongeneral.index', compact('condicion'));
     }
 

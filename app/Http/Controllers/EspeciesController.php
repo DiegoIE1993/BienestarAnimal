@@ -21,7 +21,7 @@ class EspeciesController extends Controller
      */    
     public function index()
     {
-        // $species = Especies::paginate(5); 
+        
         $species = Especies::all(); 
         return view ('especies.index', compact('species'));
         
