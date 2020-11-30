@@ -75,7 +75,7 @@
             <div class="img">
                 <div class="container">
                     <div class="container fondo">
-                        <h2 align='center'>Videos Educativos</h2>
+                        <h1 align='center'>Videos Educativos</h1>
                         @foreach ($educations as $edu) 
                             <div class="delimitador">
                                 <h5 align='center'> {{$edu->titulo}} </h5> 
@@ -95,7 +95,7 @@
               <div class="container fondo">
                   <div class="col">
                       <div>
-                          <h2>Contáctanos</h2>
+                          <h1>Contáctanos</h1>
                       </div>
                       <div>
                           <h5>Vía a la Linda, contiguo al hospital geriátrico San Isidro Manizales</h5>

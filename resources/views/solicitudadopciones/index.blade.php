@@ -6,7 +6,9 @@
     <div class="card" >
         <div class="card-body">
             <div class="card-header bg-dark mb-4">
+                <h4>Solicitudes de Adopcion</h4> 
             </div>
+            
             <table class="table table-striped" id="Solicitudes" >
                 <thead>
                     <tr align="center">

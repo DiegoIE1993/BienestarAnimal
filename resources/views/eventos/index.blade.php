@@ -6,7 +6,8 @@
     <div class="card" >
         <div class="card-body">
             <div class="card-header bg-dark mb-4">
-                <a href="{{url('/eventos/create')}}" class="btn btn-primary float-right">Agregar Evento</a>
+                <a href="{{url('/eventos/create')}}" class="btn btn-success float-right">Agregar Evento</a>
+                <h4>Listado de Eventos</h4>
             </div>
             <table class="table table-striped" id="Eventos">
                 <thead>
@@ -26,7 +27,7 @@
                             <td> {{$evento->descripcion}}</td>
                             <td> {{$evento->fecha_hora}}</td>                                            
                             <td>
-                                <a href="{{ url('/eventos/'.$evento->id.'/edit')}}" class="btn btn-primary">Editar</a>
+                                <a href="{{ url('/eventos/'.$evento->id.'/edit')}}" class="fas fa-pencil-alt"></a>
                                 @include('eventos.delete', ['eventos' => $evento]) 
                             </td>
                         </tr>

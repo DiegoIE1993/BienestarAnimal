@@ -19,7 +19,7 @@
                         <th>Especie</th>
                         <th>Raza</th>
                         <th>Sexo</th>
-                        <th>Edad</th>
+                        <th>Estado</th>
                         <th>Detalles</th>
                         <th>Acciones</th>
                     </tr>
@@ -33,7 +33,7 @@
                             <td>{{$item->especie->nombre}}</td>
                             <td>{{$item->raza->nombre}}</td>
                             <td>{{$item->genero}}</td>
-                            <td>{{$item->edad}}</td>
+                            <td>{{$item->disponibilidad}}</td>
                             <td>
                                 <a href="/registrarmascota/{{$item->codigo_animal}}" class="fa fa-search-plus">Ver</a>  
                             </td>
@@ -48,26 +48,26 @@
             </table>
         </div>
     </div>
-        {{-- <script>
+        <script>
             $(document).ready(function() {
                 $('#Usuarios').DataTable({
                     responsive: true,
                     autoWidth:false,
                     
-                    dom: 'Blfrtip',
-                    buttons: [
-                        'excel', 
-                        'pdf', 
-                        'print'
-                    ],
+                    // dom: 'Blfrtip',
+                    // buttons: [
+                    //     'excel', 
+                    //     'pdf', 
+                    //     'print'
+                    // ],
                     "language": {
-                            "lengthMenu": "Mostrar " + 
+                            "lengthMenu": " Mostrar " + 
                                       `<select class="custom-select custom-select-sm form-control form-control-sm">
-                                        <option value = '10'>10</option>
-                                        <option value = '25'>25</option>
-                                        <option value = '50'>50</option>
-                                        <option value = '100'>100</option>
-                                        <option value = '-1'>All</option>
+                                        <option value = '10'> 10</option>
+                                        <option value = '25'> 25</option>
+                                        <option value = '50'> 50</option>
+                                        <option value = '100'> 100</option>
+                                        <option value = '-1'> All</option>
                                        </select>` +
                                       " registros por pagina",           
                         "zeroRecords": "Nada encontrado - lo siento",
@@ -82,6 +82,6 @@
                     }
                 });
             } );
-        </script> --}}
+        </script>
     
 @endsection

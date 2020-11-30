@@ -186,29 +186,7 @@ class RegistrarMascotaController extends Controller
             'disponibilidad' => 'Required',
              ]);
 
-            //  $item-> tipo_entrada_id = $data['codigo_animal'];
-            //  $item-> tipo_entrada_id = $data['tipo_entrada_id'];
-            //  $item-> nombre_ciudadano = $data['nombre_ciudadano'];
-            //  $item-> direccion = $data['direccion'];
-            //  $item-> cedula = $data['cedula'];
-            //  $item-> telefono = $data['telefono'];
-            //  $item-> correo = $data['correo'];
-            //  $item-> nombre_ejemplar = $data['nombre_ejemplar'];
-            //  $item-> genero = $data['genero'];
-            //  $item-> especie_id = $data['especie_id'];
-            //  $item-> raza_id = $data['raza_id'];
-            //  $item-> color = $data['color'];
-            //  $item-> talla = $data['talla'];
-            //  $item-> peso = $data['peso'];
-            //  $item-> edad = $data['edad'];
-            //  $item-> condicion_id = $data['condicion_id'];
-            //  $item-> actitud_id = $data['actitud_id'];
-            //  $item-> estado = $data['estado'];
-            //  $item-> señales_particulares = $data['señales_particulares'];
-            //  $item-> motivo_ingreso_anamnesis = $data['motivo_ingreso_anamnesis'];
-            //  $item-> disponibilidad = $data['disponibilidad'];
-
-             
+      
              
         $item = RegistrarMascota::findOrFail($codigo_animal);
         $item->tipo_entrada_id =$request->tipo_entrada_id;
@@ -236,7 +214,7 @@ class RegistrarMascotaController extends Controller
         if(request('imagen')){
             // Obtener la ruta de la imagen
             $ruta_imagen = $request['imagen']->store('upload-animales', 'public');
-            $img  = Image::make( public_path("storage/{$ruta_imagen}"))->fit(500, 600);
+            $img  = Image::make( public_path("storage/{$ruta_imagen}"))->fit(501, 600);
             $img->save();
 
          // Asignar al objeto 

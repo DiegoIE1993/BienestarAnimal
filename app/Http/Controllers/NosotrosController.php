@@ -22,12 +22,6 @@ class NosotrosController extends Controller
      */
     public function index()
     {
-        // SEO::setTitle('unidad de proteccion animal');
-        // SEO::setDescription('unidad de proteccion animal');
-        // SEO::opengraph()->setUrl('http://ejemplo.com');
-        // SEO::setCanonical('https://ejemplo.com');
-        // SEO::opengraph()->addProperty('type', 'nosotros');
-        // SEO::twitter()->setSite('@ejemplo');
 
         $info = Nosotros::all();
         return view('nosotros.index', compact('info'));

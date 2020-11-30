@@ -6,7 +6,8 @@
     <div class="card" >
         <div class="card-body">
             <div class="card-header bg-dark mb-4">
-                <a href="{{url('/educacion/create')}}" class="btn btn-primary float-right">Agregar Contenido</a>
+                <a href="{{url('/educacion/create')}}" class="btn btn-success float-right">Agregar Contenido</a>
+                <h4>Lista de Videos Educativos</h4>
             </div>
             <table class="table table-striped" id="ContenidoEducativo">
                 <thead>

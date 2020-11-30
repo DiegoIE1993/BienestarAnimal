@@ -76,6 +76,7 @@
     <section>   
             <div class="container">
                 <div class="container fondo">
+                    <h1 align='center'>Próximos Eventos</h1>
                     <div class="row row-cols-3">
                     @foreach ($events as $eventos)     
                         <div class="eventos">

@@ -1,57 +1,41 @@
 @extends('adminlte::page')
+@section('plugins.Datatables',true)
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12">
-                <div class="card">
-                    <div class="card-header">Animales Adopcion</div>
-
-                    <div class="card-body">
-                            <table class="table table-striped" id="DetalleAdopcion">
-                                <thead>
-                                    <th>Fecha Adopcion</th>
-                                    <th>Nombre del Adoptante</th>
-                                    <th>Cedula</th>
-                                    <th>Telefono</th>
-                                    <th>Codigo del Animal</th>
-                                    <th>Nombre del Ejemplar</th>
-                                    <th>Especie</th>
-                                    
-                                </thead>
-                        
-                                <tbody>        
-                                    <tr>
-                                        @foreach ($solicitud as $animals)
-                                        <td>{{$animals->fecha}}</td>
-                                        <td> {{$animals->nombre}}</td>
-                                        <td> {{$animals->cedula}}</td>
-                                        <td> {{$animals->telefono}}</td>
-                                        <td> {{$animals->adopcion_id}}</td>
-
-                                        @endforeach
-                                    </tr>
-
-                                </tbody>
-                                </table>
-                        </div>
-                    </div>
-    
-                </div>
-                
+    <div class="card" >
+        <div class="card-body">
+            <div class="card-header bg-dark mb-4">
+                <h4>Animales en Adopcion</h4>
             </div>
+            <table class="table table-striped" id="AdopcionAnimal">
+                <thead>
+                    <tr>
+                        <th>Fecha Adopcion</th>
+                        <th>Nombre del Adoptante</th>
+                        <th>Cedula</th>
+                        <th>Telefono</th>
+                        <th>Codigo del Animal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach ($solicitud as $animals)
+                        <tr>
+                            <td>{{$animals->fecha}}</td>
+                            <td> {{$animals->nombre}}</td>
+                            <td> {{$animals->cedula}}</td>
+                            <td> {{$animals->telefono}}</td>
+                            <td> {{$animals->adopcion_id}}</td>
+                        </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
+    </div>
         <script>
             $(document).ready(function() {
-                $('#DetalleAdopcion').DataTable({
+                $('#AdopcionAnimal').DataTable({
                     responsive: true,
                     autoWidth:false,
-                    dom: 'Bfrtip',
-                    buttons: [
-                        'excel', 
-                        'pdf', 
-                        'print'
-                    ],
                     "language": {
                             "lengthMenu": "Mostrar " + 
                                       `<select class="custom-select custom-select-sm form-control form-control-sm">
@@ -75,4 +59,4 @@
                 });
             } );
         </script>
-    @endsection 
+@endsection

@@ -5,11 +5,11 @@
 @section('plugins.Datatables', true)
 
 @section('content_header')
-    <h1>Dashboard</h1>
+    <h1>Inicio</h1>
 @stop
 
 @section('content')
-    <p>Welcome to this beautiful admin panel.</p>
+    <p>Bienvenido </p>
 @stop
 
 @section('css')
