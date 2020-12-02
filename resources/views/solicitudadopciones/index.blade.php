@@ -42,12 +42,14 @@
                                 <a target="_blank" href="/storage/{{ $solicitud->documentos}}" alt="">Visualizar</a>
                             </td>
 
-                            @if ($solicitud->estado_solicitud == 'Aceptado')
+                            @if ($solicitud->estado_solicitud == 'Aprobado')
                             <td class="aprobado">{{$solicitud->estado_solicitud}}</td>
                             @elseif($solicitud->estado_solicitud == 'Verificacion')
                             <td class="verificacion">{{$solicitud->estado_solicitud}}</td>
                             @elseif($solicitud->estado_solicitud == 'Rechazado')
                             <td class="rechazado">{{$solicitud->estado_solicitud}}</td>
+                            @else
+                               <td>{{$solicitud->estado_solicitud}}</td> 
                             @endif
                             <td>
                                 <a href="{{ url('/solicitudadopciones/'.$solicitud->id.'/edit')}}" class="fas fa-pencil-alt"></a> 

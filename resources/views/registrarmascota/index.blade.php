@@ -42,6 +42,8 @@
                             <td class="disponible">{{$item->disponibilidad}}</td>
                             @elseif($item->disponibilidad == 'No Disponible')
                             <td class="no_disponible">{{$item->disponibilidad}}</td>
+                            @else
+                                {{$item->disponibilidad}}
                             @endif
 
                             <td>

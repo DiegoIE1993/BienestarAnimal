@@ -15,7 +15,7 @@ class DetalleAdopcionesController extends Controller
      */
     public function index()
     {
-        $solicitud = SolicitudAdopciones::where('estado_solicitud', 'Aceptado')->get();
+        $solicitud = SolicitudAdopciones::where('estado_solicitud', 'Aprobado')->get();
 
        
 

@@ -275,7 +275,7 @@
                                                         <label for="disponibilidad">En Adopcion</label>
                                                         <select  name="disponibilidad" class="form-control @error('disponibilidad') is-invalid @enderror" value={{ old('disponibilidad') }}>
                                                         <option value="Disponible">Disponible</option>
-                                                        <option value="No_Disponible">No Disponible</option>
+                                                        <option value="No Disponible">No Disponible</option>
                                                         </select>
                                                         @error('disponibilidad')
                                                             <span class="invalid-feedback d-block" role="alert">    
